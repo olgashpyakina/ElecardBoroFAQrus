@@ -60,21 +60,21 @@
 <li><a class="reference internal" href="#id11">2.4.2. Q: Редактирование конфигурационного файла</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id14">2.5. Мониторинг мультикаст вещания</a><ul>
-<li><a class="reference internal" href="#id15">2.5.1. Q: Как определить, вижу ли я мультикаст на своей машине?</a></li>
+<li><a class="reference internal" href="#id12">2.5. Мониторинг мультикаст вещания</a><ul>
+<li><a class="reference internal" href="#id13">2.5.1. Q: Как определить, вижу ли я мультикаст на своей машине?</a></li>
 <li><a class="reference internal" href="#boro">2.5.2. Почему Boro «не видит мультикаст», плеер на этой машине играет поток!</a></li>
-<li><a class="reference internal" href="#id16">2.5.3. Почему Boro «не видит мультикаст», плеер на этой машине не играет поток</a></li>
-<li><a class="reference internal" href="#id23">2.5.4. Q: Как “сдампить” мультикаст поток, для дальнейшего анализа?</a></li>
+<li><a class="reference internal" href="#id14">2.5.3. Почему Boro «не видит мультикаст», плеер на этой машине не играет поток</a></li>
+<li><a class="reference internal" href="#id21">2.5.4. Q: Как “сдампить” мультикаст поток, для дальнейшего анализа?</a></li>
 <li><a class="reference internal" href="#igmp">2.5.5. Версии протокола IGMP</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id27">2.6. Регистрируемые параметры</a><ul>
-<li><a class="reference internal" href="#id28">2.6.1. Графики</a></li>
-<li><a class="reference internal" href="#id29">2.6.2. Эскизы</a></li>
-<li><a class="reference internal" href="#id30">2.6.3. Параметры, события и ошибки</a></li>
+<li><a class="reference internal" href="#id25">2.6. Регистрируемые параметры</a><ul>
+<li><a class="reference internal" href="#id26">2.6.1. Графики</a></li>
+<li><a class="reference internal" href="#id27">2.6.2. Эскизы</a></li>
+<li><a class="reference internal" href="#id28">2.6.3. Параметры, события и ошибки</a></li>
 <li><a class="reference internal" href="#ott">2.6.4. Параметры OTT</a></li>
-<li><a class="reference internal" href="#id34">2.6.5. События и ошибки OTT</a></li>
-<li><a class="reference internal" href="#id35">2.6.6. Системные ошибки</a></li>
+<li><a class="reference internal" href="#id32">2.6.5. События и ошибки OTT</a></li>
+<li><a class="reference internal" href="#id33">2.6.6. Системные ошибки</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#ethernet">2.7. Вычисление Ethernet параметров</a><ul>
@@ -83,6 +83,30 @@
 <li><a class="reference internal" href="#q-maximum-inter-packet-arrival-time-iat">2.7.3. Q: Что такое Maximum Inter-packet Arrival Time (IAT)?</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#id34">2.8. Выбор Ethernet контроллера</a><ul>
+<li><a class="reference internal" href="#id35">2.8.1. Общая информация</a><ul>
+<li><a class="reference internal" href="#ethernet-timestamping">2.8.1.1. Метки времени приема Ethernet пакетов (timestamping)</a></li>
+<li><a class="reference internal" href="#receive-side-scaling">2.8.1.2. Очереди приема в контроллерах (Receive-Side Scaling)</a></li>
+<li><a class="reference internal" href="#id38">2.8.1.3. Сводная информация по некоторым контроллерам</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#linux">2.8.2. Как узнать какой контроллер/адаптер у меня установлен (Linux)?</a></li>
+<li><a class="reference internal" href="#hardware-timestamping">2.8.3. Как узнать, поддерживает ли мой сетевой адаптер hardware timestamping?</a></li>
+<li><a class="reference internal" href="#id40">2.8.4. Как узнать запущена ли балансировка прерываний адаптера (Linux)?</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id41">2.9. Поддержка карт захвата</a><ul>
+<li><a class="reference internal" href="#boro-asi-sdi-hdmi">2.9.1. Может ли Boro мониторить различные карточки захвата, например, ASI/SDI/HDMI?</a></li>
+<li><a class="reference internal" href="#dvb">2.9.2. Есть ли поддержка анализа DVB сигнала?</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id42">2.10. Некорректное поведение анализатора</a><ul>
+<li><a class="reference internal" href="#liveview-badsource">2.10.1. Анализатор постоянно падает, система “тормозит”, на LiveView периодически регистрируются хаотичные состояния BadSource</a></li>
+<li><a class="reference internal" href="#c-liveview-cc-clockcontinuity">2.10.2. Cистема “тормозит”, на LiveView периодически регистрируются ложные CC и ClockContinuity ошибки</a></li>
+<li><a class="reference internal" href="#q-windows">2.10.3. Q: Значительный расход дискового пространства в Windows</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id43">2.11. Поддерживаемые форматы</a></li>
 </ul>
 </li>
 </ul>
@@ -218,7 +242,7 @@
 <ul class="simple">
 <li>Неустойчивое Internet соединение (попробуйте повторный запуск);</li>
 <li>Выход в Internet осуществляется через прокси сервер, но он не указан (указан неправильно) в файле <em>monitor.cfg</em>, либо строка в конфиге «закомментирована»;</li>
-<li>Firewall (Brandmauer) ограничивает доступ приложения к сети. Решение данной проблемы описано в <a href="#id36"><span class="problematic" id="id37">`Q: Почему Boro «не видит мультикаст»`_</span></a> -&gt; <strong>A1: Firewall (Brandmauer)</strong>.</li>
+<li>Firewall (Brandmauer) ограничивает доступ приложения к сети. Решение данной проблемы описано в <a href="#id48"><span class="problematic" id="id49">`Q: Почему Boro «не видит мультикаст»`_</span></a> -&gt; <strong>A1: Firewall (Brandmauer)</strong>.</li>
 </ul>
 <p><strong>A2:</strong> В файле <em>monitor.cfg</em> были внесены правки, нарушающие формат .json, или добавлены данные, которые не соответствуют структуре данных, определенных в файле <em>monitor.cfg</em>. Кроме этого, <strong>файл monitor.cfg обязан сохраняться в utf-8</strong>. Обычно, при проблемах с конфигурационным файлом в лог консоли попадают сообщения об ошибках парсинга при запуске. Это первый признак проблем в файле <em>monitor.cfg</em>.
 <strong>Решение проблемы:</strong></p>
@@ -500,8 +524,8 @@ Platform: lin64
 <li><p class="first">Поддерживаются C-подобные комментарии:</p>
 <blockquote>
 <div><ul class="simple">
-<li>Текст, начинающийся с /* и оканчивающийся на <a href="#id12"><span class="problematic" id="id13">*</span></a>/, образует блок комментариев.</li>
-<li>Текст, начинающийся с // и до конца строки, является комментарием.</li>
+<li>Текст, начинающийся с «/<em>» и оканчивающийся на «</em>/», образует блок комментариев.</li>
+<li>Текст, начинающийся с «//» и до конца строки, является комментарием.</li>
 </ul>
 </div></blockquote>
 </li>
@@ -621,15 +645,15 @@ Platform: lin64
 </div>
 </div>
 </div>
-<div class="section" id="id14">
-<h2>2.5. Мониторинг мультикаст вещания<a class="headerlink" href="#id14" title="Ссылка на этот заголовок">¶</a></h2>
-<div class="section" id="id15">
-<h3>2.5.1. Q: Как определить, вижу ли я мультикаст на своей машине?<a class="headerlink" href="#id15" title="Ссылка на этот заголовок">¶</a></h3>
+<div class="section" id="id12">
+<h2>2.5. Мониторинг мультикаст вещания<a class="headerlink" href="#id12" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="section" id="id13">
+<h3>2.5.1. Q: Как определить, вижу ли я мультикаст на своей машине?<a class="headerlink" href="#id13" title="Ссылка на этот заголовок">¶</a></h3>
 <p><strong>A0:</strong> Попытаться запустить зонд и поставить ему задачу анализировать нужный мультикаст поток.</p>
 <p><strong>A1:</strong> Достаточно простой способ: попытаться проиграть поток в сетевом плеере (например, в <a class="reference external" href="https://www.videolan.org/">vlc плеере</a>).</p>
 <p>Если поток начинает проигрываться, это означает, что вещание доходит до вашего компьютера и может быть принято Boro зондом.</p>
 <p>Если поток плеером не проигрывается, это еще не означает, что вы не получаете мультикаст. Возможно, у вас неправильно (иначе) настроена таблица маршрутизации. Для обхода правил маршрутизации, Boro использует прямое указание сетевого интерфейса: заполните правильно поле “IP адрес интерфейса” и проверьте, принимает ли Boro зонд данные. Если поле “IP адрес интерфейса” оставлено пустым, зонд будет принимать данные согласно таблице маршрутизации.</p>
-<p><strong>A2:</strong> Другим способом является попытка “сдампить” поток утилитой socat. Подробнее об утилите и пример команды читайте в разделе  <a class="reference internal" href="#id23">Q: Как “сдампить” мультикаст поток, для дальнейшего анализа?</a>. Если дамп создается успешно, это означает, что вы принимаете поток. Если файл дампа создается, но в него ничего не записывается (размер файла равен 0), это означает, что вы по каким-либо причинам не получаете указанный поток в user space.</p>
+<p><strong>A2:</strong> Другим способом является попытка “сдампить” поток утилитой socat. Подробнее об утилите и пример команды читайте в разделе  <a class="reference internal" href="#id21">Q: Как “сдампить” мультикаст поток, для дальнейшего анализа?</a>. Если дамп создается успешно, это означает, что вы принимаете поток. Если файл дампа создается, но в него ничего не записывается (размер файла равен 0), это означает, что вы по каким-либо причинам не получаете указанный поток в user space.</p>
 <div class="admonition note">
 <p class="first admonition-title">Примечание</p>
 <p class="last">Стоит упомянуть, что в указанном примере работы с socat используется прямое указание сетевого интерфейса, поэтому таблица маршрутизации не влияет на возможность получения потока.</p>
@@ -649,8 +673,8 @@ Platform: lin64
 <p><strong>A2:</strong> Второй типичной ошибкой является указание неправильного IP адреса интерфейса. Проверьте правильность указания IP адреса, убедитесь, что данный интерфейс все еще присутствует в системе и, что именно данный интерфейс используется для приема мультикаста. В качестве адреса могут выступать IP сетевых карт, виртуальных интерфейсов и адрес 127.0.0.1 (т.н. localhost). Если адрес не задан, потоки будут приниматься согласно системной таблице маршрутизации.</p>
 <p>Данная ошибка часто возникает при копировании конфигов анализаторов с одной машины на другую. Мы рекомендуем для данных целей использовать удобный инструмент управления и сохранения конфигураций зонда, доступный на странице настройки зонда. Кнопки “Сохранить конфигурацию зонда” и “Применить конфигурацию зонда”.</p>
 </div>
-<div class="section" id="id16">
-<h3>2.5.3. Почему Boro «не видит мультикаст», плеер на этой машине не играет поток<a class="headerlink" href="#id16" title="Ссылка на этот заголовок">¶</a></h3>
+<div class="section" id="id14">
+<h3>2.5.3. Почему Boro «не видит мультикаст», плеер на этой машине не играет поток<a class="headerlink" href="#id14" title="Ссылка на этот заголовок">¶</a></h3>
 <p><strong>A0:</strong> Необходимо разобраться, доходит ли мультикаст вещание до машины или нет. Для этого необходимо выполнить два шага:</p>
 <ol class="arabic simple">
 <li>Подписаться на мультикаст группу.</li>
@@ -678,7 +702,7 @@ Platform: lin64
 </li>
 </ol>
 <p><strong>Windows</strong></p>
-<p>Подписаться на мультикаст группу можно, запустив поток в <a class="reference external" href="https://www.videolan.org/">vlc плеере</a> или начав дампить поток с помощью утилиты socat (описание в <a class="reference internal" href="#id23">Q: Как “сдампить” мультикаст поток, для дальнейшего анализа?</a>).</p>
+<p>Подписаться на мультикаст группу можно, запустив поток в <a class="reference external" href="https://www.videolan.org/">vlc плеере</a> или начав дампить поток с помощью утилиты socat (описание в <a class="reference internal" href="#id21">Q: Как “сдампить” мультикаст поток, для дальнейшего анализа?</a>).</p>
 <p>Для отслеживания трафика рекомендуется использовать следующие утилиты:</p>
 <ol class="arabic">
 <li><p class="first">Утилита <strong>WinDump</strong>. <a class="reference external" href="https://www.winpcap.org/windump/install/default.htm">Скачать</a>. <a class="reference external" href="https://www.winpcap.org/windump/docs/manual.htm">Руководство</a>. Требует <a class="reference external" href="https://www.winpcap.org/install/default.htm">установки</a> драйвера <strong>WinPcap</strong>.
@@ -751,8 +775,8 @@ Platform: lin64
 </pre></div>
 </div>
 </div>
-<div class="section" id="id23">
-<h3>2.5.4. Q: Как “сдампить” мультикаст поток, для дальнейшего анализа?<a class="headerlink" href="#id23" title="Ссылка на этот заголовок">¶</a></h3>
+<div class="section" id="id21">
+<h3>2.5.4. Q: Как “сдампить” мультикаст поток, для дальнейшего анализа?<a class="headerlink" href="#id21" title="Ссылка на этот заголовок">¶</a></h3>
 <p><strong>A:</strong> Самый простой способ “сдампить” (сохранить в .ts файл) мультикаст поток - утилитой socat.</p>
 <p><strong>Windows</strong></p>
 <p>Сборку socat для Windows можно скачать <a class="reference external" href="http://blog.gentilkiwi.com/programmes/socat">тут</a>. <a class="reference external" href="http://www.dest-unreach.org/socat/doc/socat.html">Руководство</a>. На момент написания статьи была протестирована версия socat 2.0.0 (beta 5) под управлением Windows 8.1.</p>
@@ -780,10 +804,10 @@ Platform: lin64
 </div>
 </div>
 </div>
-<div class="section" id="id27">
-<h2>2.6. Регистрируемые параметры<a class="headerlink" href="#id27" title="Ссылка на этот заголовок">¶</a></h2>
-<div class="section" id="id28">
-<h3>2.6.1. Графики<a class="headerlink" href="#id28" title="Ссылка на этот заголовок">¶</a></h3>
+<div class="section" id="id25">
+<h2>2.6. Регистрируемые параметры<a class="headerlink" href="#id25" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="section" id="id26">
+<h3>2.6.1. Графики<a class="headerlink" href="#id26" title="Ссылка на этот заголовок">¶</a></h3>
 <p><strong>Download rate</strong> – график, отображающий скорость загрузки по протоколам HTTP/HTTPS. Для HLS-потоков скорость загрузки характеризуется отношением размера сегментов данных ко времени их скачивания.</p>
 <p><strong>Multicast Rate</strong> – график, отображающий общий битрейт входящего UDP/RTP.</p>
 <p><strong>Bitrate</strong> – график, отображающий битрейт потоков, как несущих полезную нагрузку (аудио и видео потоков), так и служебных потоков с EIT таблицами и PID 0x1fff, используемого для заполнения потока до фиксированного битрейта (т. н. «нули», null packet, padding).</p>
@@ -794,18 +818,18 @@ Platform: lin64
 <p><strong>Continuity Counter Errors</strong> - график распределения CC ошибок  (TR 101 290 error 1.4 Continuity Counter) во времени.</p>
 <p><strong>Clock Continuity Errors</strong> - график распределения ошибок ClockContinuity во времени.</p>
 </div>
-<div class="section" id="id29">
-<h3>2.6.2. Эскизы<a class="headerlink" href="#id29" title="Ссылка на этот заголовок">¶</a></h3>
+<div class="section" id="id27">
+<h3>2.6.2. Эскизы<a class="headerlink" href="#id27" title="Ссылка на этот заголовок">¶</a></h3>
 <p><strong>Thumbnails</strong> – захват эскизов видеопотока с настраиваемым интервалом времени между снимками. Дополнительно настраивается интервал между снимками в период рекламы, обозначенный метками SCTE35. Для активации захвата эскизов необходимо установить галочку «Захват эскизов» в форме постановки задачи.</p>
 </div>
-<div class="section" id="id30">
-<h3>2.6.3. Параметры, события и ошибки<a class="headerlink" href="#id30" title="Ссылка на этот заголовок">¶</a></h3>
+<div class="section" id="id28">
+<h3>2.6.3. Параметры, события и ошибки<a class="headerlink" href="#id28" title="Ссылка на этот заголовок">¶</a></h3>
 <p><strong>Mapping</strong> - массив чисел, обозначающих количество TS пакетов внутри одного IP пакета, которые были обнаружены за последние 3 секунды, в порядке, пропорциональном частоте появления. Обычно 7 транспортных пакетов упаковываются в один IP пакет.</p>
 <p><strong>TOS/DSCP</strong> - <a class="reference external" href="https://en.wikipedia.org/wiki/Type_of_service">Type-of-service</a>, поле в IP заголовке. Может трактоваться совершенно по разному в различном оборудовании.</p>
 <p><strong>TTL</strong> - <a class="reference external" href="https://en.wikipedia.org/wiki/Time_to_live">Time to live</a></p>
 <p><strong>Src address/Src MAC</strong> - IP и MAC адреса источника мультикаст вещания.</p>
 <p><strong>Dst MAC</strong> -  Destination MAC. Для доставки мультикаста по IPv4 используется пул Ethernet MAC адресов 01:00:5e:00:00:00–01:00:5e:7f:ff:ff. Более подробную информацию можно найти, перейдя по <a class="reference external" href="https://en.wikipedia.org/wiki/IP_multicast">ссылке</a>.</p>
-<p><strong>Maximum Inter-packet Arrival Time (IAT)</strong> – график, отображающий максимальное время между приходящими пакетами. Джиттер может быть охарактеризован при помощи проверки времени между приходящими пакетами.  Максимальное время между приходящими пакетами (IAT) является суммой среднего времени между пакетами и джиттером. Фиксируется максимальное значение IAT за секунду. Измеряется в миллисекундах. Подробнее о данном параметре можно прочитать в параграфе <a href="#id38"><span class="problematic" id="id39">`Что такое Maximum Inter-packet Arrival Time (IAT)?`_</span></a></p>
+<p><strong>Maximum Inter-packet Arrival Time (IAT)</strong> – график, отображающий максимальное время между приходящими пакетами. Джиттер может быть охарактеризован при помощи проверки времени между приходящими пакетами.  Максимальное время между приходящими пакетами (IAT) является суммой среднего времени между пакетами и джиттером. Фиксируется максимальное значение IAT за секунду. Измеряется в миллисекундах. Подробнее о данном параметре можно прочитать в параграфе <a href="#id50"><span class="problematic" id="id51">`Что такое Maximum Inter-packet Arrival Time (IAT)?`_</span></a></p>
 <p><strong>MinIAT</strong> – минимальное значение времени между приходящими пакетами (IAT), зафиксированное за одну секунду измерений. Измеряется в миллисекундах.</p>
 <p><strong>AvgIAT</strong> – среднее значение времени между приходящими пакетами (IAT), вычисляемое на интервале в одну секунду. Измеряется в миллисекундах. Получаемое значение AvgIAT приближено к расчетному значению IAT для Constant bitrate потока с постоянном mapping равным 7.</p>
 <p><strong>MDI Media Delivery Index [Delay factor (DF) : Media Loss Rate (MLR)]</strong> - <a class="reference external" href="https://tools.ietf.org/html/rfc4445">индекс</a>, который может быть использован как индикатор качества при мониторинге сети доставки вещания видеосервисов, чувствительной к джиттеру и потере данных. Определяется джиттером потока, характеризуемым как отклонение битрейта от ожидаемого значения (флуктуация), и потерями данных потока (MLR). Флуктуация битрейта, вызванная джиттером и потерями данных, может быть определена как относительная глубина буфера (DF), необходимого для приема такого потока.</p>
@@ -896,8 +920,8 @@ Platform: lin64
 <p><strong>Start with an IDR frame</strong> – если сегмент не зашифрован и не сброшен перед началом анализа, то зонд производит проверку на наличие IDR кадра в начале сегмента (требование HLS спецификации). Если сегмент начинается с IDR кадра, то значение - OK, если нет, значение - Error.</p>
 <p><strong>INDEPENDENT tag</strong> – логический тип, Yes означает наличие #EXT-X-INDEPENDENT-SEGMENTS тега в Master или Media плейлистах.</p>
 </div>
-<div class="section" id="id34">
-<h3>2.6.5. События и ошибки OTT<a class="headerlink" href="#id34" title="Ссылка на этот заголовок">¶</a></h3>
+<div class="section" id="id32">
+<h3>2.6.5. События и ошибки OTT<a class="headerlink" href="#id32" title="Ссылка на этот заголовок">¶</a></h3>
 <p><strong>HlsEvent</strong> – регистрация события скачивания очередного сегмента данных протокола HLS. Фиксируется время и дата скачивания, название, размер, длительность и порядковый номер сегмента. Размер сегмента и время его скачивания характеризуют скорость скачивания.</p>
 <p><strong>Profile changed (HlsBandwidthSwitched)</strong> – зафиксировано переключение на профиль с другим битрейтом. Только для анализатора в режиме «Плеер».</p>
 <p><strong>The number of profiles changed (HlsNumberOfProfilesChanged)</strong> – зафиксировано изменение количества профилей в плейлисте верхнего уровня (Master Playlist).</p>
@@ -922,8 +946,8 @@ Platform: lin64
 <p><strong>Curl error</strong> (HlsCurlError) – код ошибки приема HLS и ее описание, возвращаемые модулем libcurl. Подробнее об ошибках можно узнать на официальной странице <a class="reference external" href="https://curl.haxx.se/libcurl/c/libcurl-errors.html">проекта libcurl</a>.</p>
 <p><strong>HTTP error</strong> (HlsHTTPError)  – ошибка приема HLS, возвращается код HTTP ошибки.</p>
 </div>
-<div class="section" id="id35">
-<h3>2.6.6. Системные ошибки<a class="headerlink" href="#id35" title="Ссылка на этот заголовок">¶</a></h3>
+<div class="section" id="id33">
+<h3>2.6.6. Системные ошибки<a class="headerlink" href="#id33" title="Ссылка на этот заголовок">¶</a></h3>
 <p><strong>Error</strong> – группа системных ошибок и ошибок общего плана:</p>
 <ul class="simple">
 <li><strong>“Buffer overflow, data skipped”</strong> – данные сбрасываются перед декодером. Такая ситуация возникает в результате недостаточной производительности системы. Необходимо отметить, что данные сбрасываются уже после прохождения анализа на целостность сигнала (TR 101 290) и вычисления битрейта, поэтому данная ошибка не влияет на результаты вычисления целостности. Это утверждение также применимо для OTT: данные сбрасываются перед декодированием, не влияя на вычисление скорости загрузки сегментов и детектирование OTT ошибок. Сброс данных может появиться при вычислении следующих параметров: ошибки замирания картинки, захват эскизов и вычисление EPSNR.</li>
@@ -972,7 +996,299 @@ Platform: lin64
 <div class="section" id="q-maximum-inter-packet-arrival-time-iat">
 <h3>2.7.3. Q: Что такое Maximum Inter-packet Arrival Time (IAT)?<a class="headerlink" href="#q-maximum-inter-packet-arrival-time-iat" title="Ссылка на этот заголовок">¶</a></h3>
 <p><strong>A: Maximum Inter-packet Arrival Time (IAT)</strong> – максимальное время между приходящими пакетами. Джиттер может быть охарактеризован при помощи проверки времени между приходящими пакетами. Максимальное время между приходящими пакетами (IAT) является суммой среднего времени между пакетами и джиттером. Фиксируется максимальное значение IAT за секунду.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/IATideology_ru_en.png"><img alt="_images/IATideology_ru_en.png" src="_images/IATideology_ru_en.png" style="width: 859.2px; height: 136.0px;" /></a>
 </div>
+</div>
+</div>
+<div class="section" id="id34">
+<h2>2.8. Выбор Ethernet контроллера<a class="headerlink" href="#id34" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="section" id="id35">
+<h3>2.8.1. Общая информация<a class="headerlink" href="#id35" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Сетевой контроллер является важной частью системы анализа, его внутренняя архитектура определяет производительность системы и точность измерений.</p>
+<div class="admonition note">
+<p class="first admonition-title">Примечание</p>
+<p class="last">следует понимать, что Ethernet параметры (<a class="reference internal" href="#ethernet">Вычисление Ethernet параметров</a>) (IAT, DF и MLR) измеряются на основании механизма захвата и маркировки Ethernet пакетов. Данный процесс происходит на аппаратном и программном уровнях.</p>
+</div>
+<p>В данном параграфе описываются несколько свойств контроллеров, и приводится сводная таблица с особенностями ряда контроллеров, которая поможет вам осуществить выбор. При выборе контроллера необходимо учитывать и понимать следующие пункты.</p>
+<div class="section" id="ethernet-timestamping">
+<h4>2.8.1.1. Метки времени приема Ethernet пакетов (timestamping)<a class="headerlink" href="#ethernet-timestamping" title="Ссылка на этот заголовок">¶</a></h4>
+<p>В данном пункте описываются факторы, влияющие на точность вычисления параметров IAT и DF.</p>
+<p>При захвате пакетов, каждый из них получает метку времени. Метки времени могут расставляться как программным путем, так и непосредственно сетевым контроллером. Особенности вычисления меток времени операционной системой более подробно описаны на сайте утилиты tcpdump в разделе <a class="reference external" href="http://www.tcpdump.org/manpages/pcap-tstamp.7.html">PCAP-TSTAMP</a> (английский язык). Механизм расстановки меток аппаратным путем (hardware time stamping) снижает общую нагрузку на host машину и, самое главное, увеличивает точность вычисления и устраняет зависимость точности расстановки меток от нагрузки host машины. Программный метод менее точен и имеет зависимость от нагрузки CPU, при высокой нагрузке на центральный процессор погрешность вычисления параметров может многократно увеличиваться.</p>
+<p>В свою очередь, аппаратный метод имеет различные реализации, наиболее эффективной является расстановка меток для каждого пакета (в терминологии Intel - Per-packet timestamp). Зонд автоматически пытается использовать аппаратный метод, если он доступен.</p>
+<p>Исследования компании Elecard показали, что при умеренной нагрузке на CPU разница в вычислении параметров Maximum и Average IAT программным путем и при использовании аппаратного режима Per-packet timestamp составила около 10-15%. Однако, при вычислении параметра Minimum IAT разница может составить -100%..+10000% от ожидаемого значения при использовании программного или аппаратного (отличного от Per-packet timestamp) режимов. Сказываются особенности проставления меток времени.</p>
+<p><strong>Вывод:</strong> Джиттер характеризуют по параметру Maximum IAT, который достаточно точно вычисляется даже в программном режиме, при условии умеренной загрузки CPU. Недорогие адаптеры поддерживают только программный режим и могут быть рекомендованы для тестов системы. Для полноценной постоянной работы рекомендуется адаптер с аппаратной поддержкой расстановки меток времени (hardware time stamping).</p>
+<p>Для максимально точных измерений всех параметров (включая Minimum IAT) необходимо использовать карты с поддержкой маркировки временными метками каждого пакета (Per-packet timestamp).</p>
+<div class="admonition note">
+<p class="first admonition-title">Примечание</p>
+<p class="last">Hardware time stamping поддерживается только в ОС Linux</p>
+</div>
+</div>
+<div class="section" id="receive-side-scaling">
+<h4>2.8.1.2. Очереди приема в контроллерах (Receive-Side Scaling)<a class="headerlink" href="#receive-side-scaling" title="Ссылка на этот заголовок">¶</a></h4>
+<p>Данный пункт имеет влияние на вычисление MLR и общую производительность системы.</p>
+<p>Следующей важной особенностью сетевого контроллера является поддержка технологии Receive-Side Scaling (RSS) (<a class="reference external" href="https://www.kernel.org/doc/Documentation/networking/scaling.txt">ссылка 1</a>, <a class="reference external" href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Performance_Tuning_Guide/network-rss.html">ссылка 2</a>).</p>
+<p>«Суть технологии RSS достаточно проста – входящий поток данных сетевого уровня разбивается на несколько очередей, обработка каждой из которых (вызов прерываний, копирование информации) производится выделенным виртуальным процессором (т.е. или отдельным физическим, или ядром). Таким образом, в случае наличия нескольких процессоров Вы можете распределить интенсивный сетевой трафик по ним, снизив количество вызовов прерываний, переключений контекста, очистки кэша и прочих неприятностей, которые, если происходят много тысяч раз в секунду, могут ощутимо навредить производительности системы в целом…» (Цитата из технической статьи «<a class="reference external" href="https://www.atraining.ru/windows-network-tuning/">Тонкая настройка сетевого стека на Windows-хостах</a>»).</p>
+<p>Вышесказанное справедливо, и при распределении прерываний между ядрами только одного процессора, нагрузка по обслуживанию прерываний перераспределяется между ядрами, что исключает чрезмерную загрузку одного ядра.</p>
+<p>С практической точки зрения недорогой сетевой адаптер, не имеющей технологии RSS, начнет терять данные (регистрировать ложные MLR и CC ошибки) при определенном битрейте. Вся нагрузка по обслуживанию прерываний контроллера ляжет на одно ядро, которое будет загружено на 100%, хотя остальные ядра будут свободны. Величина этого битрейта будет зависеть от производительности CPU и системы в целом.</p>
+<p>Наличие поддержки RSS сетевым контроллером еще не означает, что ваша ОС использует разные ядра для обслуживания прерываний. Для автоматического распределения прерываний по ядрам в ОС Linux может быть установлен и запущен пакет irqbalance, который осуществляет балансировку прерываний на различные ядра. Подробнее о балансировке в параграфе «<a href="#id52"><span class="problematic" id="id53">`Q: Как узнать запущена ли балансировка прерываний сетевого контроллера (Linux)?`_</span></a>». Кроме этого, в Linux, <a class="reference external" href="https://downloadcenter.intel.com/download/15817/Intel-Network-Adapter-Driver-for-PCIe-Intel-Gigabit-Ethernet-Network-Connections-Under-Linux-">для части контроллеров компании Intel</a> используется драйвер <a class="reference external" href="https://www.kernel.org/doc/Documentation/networking/e1000e.txt">e1000e</a>, который не имеет поддержки RSS (даже если в документации на контроллер заявлена поддержка нескольких очередей).</p>
+<p>Нельзя дать однозначный совет, при каком битрейте необходимо переходить на карты с несколькими очередями, различные системы показывают различные результаты. Если вы явно испытываете большую нагрузку на одном из ядер процессора при отключенном вычислении Ethernet parameters (<a class="reference internal" href="#ethernet">Вычисление Ethernet параметров</a> может давать схожую неравномерную нагрузку одного или нескольких ядер), необходимо переходить на контроллеры с поддержкой RSS.</p>
+<p><strong>Вывод:</strong> рекомендуется использовать сетевые адаптеры с поддержкой нескольких очередей (Receive-Side Scaling).</p>
+</div>
+<div class="section" id="id38">
+<h4>2.8.1.3. Сводная информация по некоторым контроллерам<a class="headerlink" href="#id38" title="Ссылка на этот заголовок">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Name</strong></th>
+<th class="head"><a class="reference external" href="https://www.intel.com/content/www/us/en/ethernet-products/gigabit-server-adapters/ethernet-i350-server-adapter-brief.html">Intel I350</a></th>
+<th class="head"><a class="reference external" href="https://www.intel.com/content/www/us/en/embedded/products/networking/82580-gbe-controller-brief.html?asset=9608">Intel I340(82580)</a></th>
+<th class="head"><a class="reference external" href="https://www.intel.com/content/www/us/en/embedded/products/networking/i211-at-ethernet-controller-brief.html">Intel I211</a></th>
+<th class="head"><a class="reference external" href="https://www-ssl.intel.com/content/www/us/en/support/network-and-i-o/ethernet-products/intel-gigabit-server-adapters/intel-ethernet-server-adapter-i210-series/intel-ethernet-server-adapter-i210-t1.html">Intel I210</a></th>
+<th class="head"><a class="reference external" href="https://www-ssl.intel.com/content/www/us/en/embedded/products/networking/82574-gigabit-ethernet-controller-family-documentation.html">82574L</a> Intel® Gigabit CT Desktop Adapter</th>
+<th class="head"><a class="reference external" href="https://www.intel.com/content/dam/www/public/us/en/documents/datasheets/82576eb-gigabit-ethernet-controller-datasheet.pdf">Intel 82576</a></th>
+<th class="head">Intel 82575</th>
+<th class="head"><a class="reference external" href="https://docs.broadcom.com/docs/1211168571583?eula=true">Broadcom BCM5719</a></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>HW timestamping</strong></td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr class="row-odd"><td><strong>Per-packet timestamp</strong></td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>?</td>
+</tr>
+<tr class="row-even"><td><strong>Rx queue # (RSS) per port</strong></td>
+<td>Up to 8</td>
+<td>2</td>
+<td>Up to 2</td>
+<td>Up to 4</td>
+<td>e1000e driver</td>
+<td>Up to 16</td>
+<td>4</td>
+<td>Up to 17</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="linux">
+<h3>2.8.2. Как узнать какой контроллер/адаптер у меня установлен (Linux)?<a class="headerlink" href="#linux" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Подробно информация изложена в <a class="reference external" href="https://losst.ru/harakteristiki-ethernet-adaptera-linux">информационной статье</a> на сайте losst.ru</p>
+<p>Коротко можно указать следующие команды.</p>
+<p>Просмотр всех, подключенных к системе интерфейсов: название, описание и производитель адаптера, скорость, драйвер и прочее:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">lshw</span> <span class="o">-</span><span class="k">class</span> <span class="nc">network</span>
+</pre></div>
+</div>
+<p>Продукт и имя производителя вашей сетевой карты:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lspci</span> <span class="o">|</span> <span class="n">grep</span> <span class="o">-</span><span class="n">i</span> <span class="s1">&#39;net&#39;</span>
+</pre></div>
+</div>
+<p>Информация о адаптере eth0 (указать свой): настройки, статус соединения, скорость и пр.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">ethtool</span> <span class="n">eth0</span>
+</pre></div>
+</div>
+<p>Информация о драйвере:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">ethtool</span> <span class="o">-</span><span class="n">i</span> <span class="n">eth0</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Примечание</p>
+<p class="last">Необходимо отметить, что все способы требуют установки соответствующих утилит.</p>
+</div>
+</div>
+<div class="section" id="hardware-timestamping">
+<h3>2.8.3. Как узнать, поддерживает ли мой сетевой адаптер hardware timestamping?<a class="headerlink" href="#hardware-timestamping" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Полезные ссылки: <a class="reference external" href="http://www.tcpdump.org/manpages/pcap-tstamp.7.html">http://www.tcpdump.org/manpages/pcap-tstamp.7.html</a></p>
+<p><strong>A1:</strong> Посмотреть поддерживаемые режимы выставления меток времени можно с помощью утилиты tcpdump:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tcpdump</span> <span class="o">-</span><span class="n">J</span> <span class="o">-</span><span class="n">i</span> <span class="o">&lt;</span><span class="n">INTERFACE_NAME</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Пример исполнения команды:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@localhost</span> <span class="o">~</span><span class="p">]</span><span class="c1"># tcpdump -J -i enp2s0</span>
+<span class="n">Time</span> <span class="n">stamp</span> <span class="n">types</span> <span class="k">for</span> <span class="n">enp2s0</span> <span class="p">(</span><span class="n">use</span> <span class="n">option</span> <span class="o">-</span><span class="n">j</span> <span class="n">to</span> <span class="nb">set</span><span class="p">):</span>
+  <span class="n">host</span> <span class="p">(</span><span class="n">Host</span><span class="p">)</span>
+  <span class="n">ADAPTER</span> <span class="p">(</span><span class="n">ADAPTER</span><span class="p">)</span>
+  <span class="n">ADAPTER_UNSYNCED</span> <span class="p">(</span><span class="n">ADAPTER</span><span class="p">,</span> <span class="n">NOT</span> <span class="n">SYNCED</span> <span class="n">WITH</span> <span class="n">SYSTEM</span> <span class="n">TIME</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Выделены режимы, в которых сетевой адаптер проставляет метки времени.</p>
+<p><strong>A2:</strong> При запуске зонда в логе есть информация об устройстве захвата пакетов:</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/SnifferTimestampMode_ru_en.png"><img alt="_images/SnifferTimestampMode_ru_en.png" src="_images/SnifferTimestampMode_ru_en.png" style="width: 838.4000000000001px; height: 422.40000000000003px;" /></a>
+</div>
+<p>Sniff interface - имя интерфейса, который захватывает пакеты.</p>
+<p>UseHWTimeStamps() - информация о поддержке hardware time stamping адаптером. Одно из двух сообщений ниже означает, что есть поддержка HW time stamps:</p>
+<blockquote>
+<div><p>Sniffer use timestamp type: adapter (3)</p>
+<p>Sniffer use timestamp type: adapter_unsynced (4)</p>
+</div></blockquote>
+</div>
+<div class="section" id="id40">
+<h3>2.8.4. Как узнать запущена ли балансировка прерываний адаптера (Linux)?<a class="headerlink" href="#id40" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Как указано в статье о <a class="reference external" href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Performance_Tuning_Guide/network-rss.html">Receive-Side Scaling (RSS)</a>, для проверки, распределены ли прерывания интерфейса на различные ядра, можно воспользоваться следующим способом:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">egrep</span> <span class="s1">&#39;CPU|p1p1&#39;</span> <span class="o">/</span><span class="n">proc</span><span class="o">/</span><span class="n">interrupts</span><span class="p">,</span>
+</pre></div>
+</div>
+<p>где p1p1 имя исследуемого интерфейса.</p>
+<p>Если в ответе на команду будет несколько строк, например так:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">CPU0</span>    <span class="n">CPU1</span>    <span class="n">CPU2</span>    <span class="n">CPU3</span>    <span class="n">CPU4</span>    <span class="n">CPU5</span>
+<span class="mi">89</span><span class="p">:</span>   <span class="mi">40187</span>       <span class="mi">0</span>       <span class="mi">0</span>       <span class="mi">0</span>       <span class="mi">0</span>       <span class="mi">0</span>   <span class="n">MSI</span><span class="o">-</span><span class="n">edge</span>   <span class="n">p1p1</span><span class="o">-</span><span class="mi">0</span>
+<span class="mi">90</span><span class="p">:</span>       <span class="mi">0</span>     <span class="mi">790</span>       <span class="mi">0</span>       <span class="mi">0</span>       <span class="mi">0</span>       <span class="mi">0</span>   <span class="n">MSI</span><span class="o">-</span><span class="n">edge</span>   <span class="n">p1p1</span><span class="o">-</span><span class="mi">1</span>
+<span class="mi">91</span><span class="p">:</span>       <span class="mi">0</span>       <span class="mi">0</span>     <span class="mi">959</span>       <span class="mi">0</span>       <span class="mi">0</span>       <span class="mi">0</span>   <span class="n">MSI</span><span class="o">-</span><span class="n">edge</span>   <span class="n">p1p1</span><span class="o">-</span><span class="mi">2</span>
+<span class="mi">92</span><span class="p">:</span>       <span class="mi">0</span>       <span class="mi">0</span>       <span class="mi">0</span>    <span class="mi">3310</span>       <span class="mi">0</span>       <span class="mi">0</span>   <span class="n">MSI</span><span class="o">-</span><span class="n">edge</span>   <span class="n">p1p1</span><span class="o">-</span><span class="mi">3</span>
+<span class="mi">93</span><span class="p">:</span>       <span class="mi">0</span>       <span class="mi">0</span>       <span class="mi">0</span>       <span class="mi">0</span>     <span class="mi">622</span>       <span class="mi">0</span>   <span class="n">MSI</span><span class="o">-</span><span class="n">edge</span>   <span class="n">p1p1</span><span class="o">-</span><span class="mi">4</span>
+<span class="mi">94</span><span class="p">:</span>       <span class="mi">0</span>       <span class="mi">0</span>       <span class="mi">0</span>       <span class="mi">0</span>       <span class="mi">0</span>    <span class="mi">2475</span>   <span class="n">MSI</span><span class="o">-</span><span class="n">edge</span>   <span class="n">p1p1</span><span class="o">-</span><span class="mi">5</span>
+</pre></div>
+</div>
+<p>это означает, что драйвер создает шесть очередей. В ответе указывается, какое количество прерываний обработано каждым ядром и как прерывания распределены между ядрами.</p>
+<p>Если в ответе только одна строка, например так:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>                  <span class="n">CPU0</span>       <span class="n">CPU1</span>
+<span class="mi">27</span><span class="p">:</span>        <span class="mi">108</span>    <span class="mi">1595151</span>   <span class="n">PCI</span><span class="o">-</span><span class="n">MSI</span><span class="o">-</span><span class="n">edge</span>      <span class="n">enp2s0</span>
+</pre></div>
+</div>
+<p>это означает, что задействована только одна очередь. Либо адаптер не поддерживает несколько очередей, либо не настроено распределение/балансировка прерываний.</p>
+<p>Проверить, запущен ли <a class="reference external" href="https://github.com/Irqbalance/irqbalance">irqbalance</a> на CentOS 7 (входит в стандартную сборку), можно командой: systemctl -l status irqbalance.service.</p>
+<p>Если в ответе Active: active (running), значит демон запущен и работает.</p>
+<p>Подробнее о настройке irqbalance можно прочитать в <a class="reference external" href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux_for_Real_Time/7/html/Tuning_Guide/Interrupt_and_process_binding.html">официальной документации RedHat</a>.</p>
+</div>
+</div>
+<div class="section" id="id41">
+<h2>2.9. Поддержка карт захвата<a class="headerlink" href="#id41" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="section" id="boro-asi-sdi-hdmi">
+<h3>2.9.1. Может ли Boro мониторить различные карточки захвата, например, ASI/SDI/HDMI?<a class="headerlink" href="#boro-asi-sdi-hdmi" title="Ссылка на этот заголовок">¶</a></h3>
+<p><strong>A:</strong> Boro может мониторить только IP потоки и файлы TS. Но, если поток с карточки может быть доставлен в IP, например в интерфейс localhost, тогда можно проводить измерения. Это касается только карты ASI.</p>
+<div class="admonition note">
+<p class="first admonition-title">Примечание</p>
+<p class="last">В картах захвата SDI/HDMI используются несжатые данные, неупакованные в транспортный поток, поэтому использовать Boro нельзя, т.к. основным свойством системы является измерение целостности транспортных потоков.</p>
+</div>
+</div>
+<div class="section" id="dvb">
+<h3>2.9.2. Есть ли поддержка анализа DVB сигнала?<a class="headerlink" href="#dvb" title="Ссылка на этот заголовок">¶</a></h3>
+<p><strong>A:</strong> Boro не поддерживает карты захвата DVB сигнала. Однако реализована и испытана следующая схема построения анализатора:</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/DVB_common_ru_en.png"><img alt="_images/DVB_common_ru_en.png" src="_images/DVB_common_ru_en.png" style="width: 791.5200000000001px; height: 358.36px;" /></a>
+</div>
+<p>Применяются карты захвата под управлением <a class="reference external" href="http://www.elecard.com/ru/products/digital-tv-solutions/software-servers/codecworks.html">ПО Elecard CodecWorks Encoder</a>. Транспортный поток направляется в localhost или в один из доступных сетевых интерфейсов, откуда, его захватывает анализатор Boro. Поток может быть как в исходном MPTS формате с различными таблицами, так и ремультиплексированным на SPTS потоки.  Поддержки формата T2MI нет.</p>
+<p>CodecWorks Encoder поддерживает следующие карты захвата DVB:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.digital-devices.eu/shop/en/sets-und-offers/for-dvb-cc2tt2/14/dd-cine-c2t2-v7-und-duoflex-c2t2-v3-set-4-tuner-dvb-c/c2/t/t2-for-pcie">igital Devices DuoFlex C2T2</a> (DVB-T/T2/С);</li>
+<li><a class="reference external" href="http://www.beholder.ru/products/t8/">Behold TV T8</a> (DVB-T/T2/С);</li>
+<li><a class="reference external" href="http://avertv.avermedia.com/Product/ProductDetail.aspx?Id=592">AVerMedia Nova T2</a> (DVB-T/T2).</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id42">
+<h2>2.10. Некорректное поведение анализатора<a class="headerlink" href="#id42" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="section" id="liveview-badsource">
+<h3>2.10.1. Анализатор постоянно падает, система “тормозит”, на LiveView периодически регистрируются хаотичные состояния BadSource<a class="headerlink" href="#liveview-badsource" title="Ссылка на этот заголовок">¶</a></h3>
+<p><strong>A:</strong> Стоит обратить внимание на утилизацию оперативной памяти, особенно при большом количестве запущенных задач и использовании декодера (включена одна или несколько опций: вычисление EPSNR, захват эскизов, анализ замирания картинки). Процессы приложения начинают вытесняться в swap, и скорости не хватает для нормальной работы анализаторов (которые начинают периодически перезагружаться из-за долгого молчания).</p>
+<p>Оценочные значения утилизации памяти:</p>
+<p>SD: TR 101290 (only) - 34MB/stream;  TR 101290 + decoder - 53MB/stream;</p>
+<p>HD: TR 101290 (only) - 34MB/stream;  TR 101290 + decoder - 105MB/stream.</p>
+</div>
+<div class="section" id="c-liveview-cc-clockcontinuity">
+<h3>2.10.2. Cистема “тормозит”, на LiveView периодически регистрируются ложные CC и ClockContinuity ошибки<a class="headerlink" href="#c-liveview-cc-clockcontinuity" title="Ссылка на этот заголовок">¶</a></h3>
+<p><strong>A:</strong> Стоит обратить внимание на загрузку CPU. Особенно при большом количестве запущенных задач и использовании декодера (включена одна или несколько опций: вычисление EPSNR, захват эскизов, анализ замирания картинки). Вычисление EPSNR создает очень большую нагрузку на CPU, т.к. алгоритм требует полного декодирования видеопотоков. Производительность зависит от разрешения видеоданных в потоке и битрейта потока.</p>
+<p>При большой нагрузке система “не успевает” обрабатывать входящие данные, появляются ложные ошибки.</p>
+<p>Оценочные таблицы производительности вы можете получить по запросу у команды технической поддержки проекта: <a class="reference external" href="mailto:tsup&#37;&#52;&#48;elecard&#46;ru">tsup<span>&#64;</span>elecard<span>&#46;</span>ru</a>.</p>
+</div>
+<div class="section" id="q-windows">
+<h3>2.10.3. Q: Значительный расход дискового пространства в Windows<a class="headerlink" href="#q-windows" title="Ссылка на этот заголовок">¶</a></h3>
+<p><strong>A:</strong> Наблюдается существенный расход пространства на диске С, при детальном изучении в каталоге C:WindowsTemp создается временный файл, который продолжает стремительно расти. После остановки анализатора дисковое пространство высвобождается. Проблема проявляется при анализе потоков, получаемых по протоколу http. <strong>Причина проблемы - антивирус</strong>, установленный в операционной системе. Нами была зафиксирована проблема с NOD32 на Windows 10. В среде Internet зарегистрировано множество сообщений с подобными проблемами с различными антивирусами. Для устранения проблемы необходимо блокировать работу антивируса или деинсталлировать его.</p>
+<div class="admonition note">
+<p class="first admonition-title">Примечание</p>
+<p class="last">Описанная проблема вызвана особенностью работы ПО антивируса, а не недостатками ПО Boro.</p>
+</div>
+</div>
+</div>
+<div class="section" id="id43">
+<h2>2.11. Поддерживаемые форматы<a class="headerlink" href="#id43" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Видеокодеки: MPEG-2, AVC/H.264, HEVC/H.265</p>
+<p>Транспорт: MPEG-2 TS (SPTS /MPTS)</p>
+<p>Источники:</p>
+<p><strong>Доставка по сети</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Тип <a class="footnote-reference" href="#id46" id="id44">[2]</a></th>
+<th class="head">Пример URI</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>UDP</td>
+<td>udp://235.0.0.8:1234</td>
+</tr>
+<tr class="row-odd"><td>RTP</td>
+<td>rtp://235.0.0.10:4444</td>
+</tr>
+<tr class="row-even"><td>http/https</td>
+<td><a class="reference external" href="http://localhost:8888/stream">http://localhost:8888/stream</a> <a class="reference external" href="https://storage.streamsample.ru/stream5458993">https://storage.streamsample.ru/stream5458993</a></td>
+</tr>
+<tr class="row-odd"><td>HLS v3</td>
+<td><a class="reference external" href="http://95.170.157.5:80/channel1.m3u8">http://95.170.157.5:80/channel1.m3u8</a> <a class="reference external" href="https://127.0.0.1:8080/channel25.m3u8">https://127.0.0.1:8080/channel25.m3u8</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Анализ файла</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Тип <a class="footnote-reference" href="#id47" id="id45">[3]</a></th>
+<th class="head">Пример URI</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Файл</td>
+<td><a class="reference external" href="file://d:StreamsSPTSdump45689.ts">file://d:StreamsSPTSdump45689.ts</a></td>
+</tr>
+<tr class="row-odd"><td>HLS v3 из папки</td>
+<td><a class="reference external" href="file://c:HLSHLS_SD.m3u8">file://c:HLSHLS_SD.m3u8</a></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id46" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id44">[2]</a></td><td>Для всех типов сетевой доставки поддерживается только транспорт MPEG-2 TS (SPTS /MPTS)</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id47" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id45">[3]</a></td><td>Для всех типов анализа из файла поддерживается только транспорт MPEG-2 TS (SPTS /MPTS)</td></tr>
+</tbody>
+</table>
 </div>
 </div>
 
