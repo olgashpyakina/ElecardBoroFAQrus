@@ -1,0 +1,1002 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>2. Зонд &#8212; Документация Elecard Boro: Часто задаваемые вопросы </title>
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/bizstyle.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="genindex.html" />
+    <link rel="search" title="Поиск" href="search.html" />
+    <link rel="prev" title="1. Технические требования" href="requirements.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Алфавитный указатель"
+             accesskey="I">указатель</a></li>
+        <li class="right" >
+          <a href="requirements.html" title="1. Технические требования"
+             accesskey="P">назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Документация Elecard Boro: Часто задаваемые вопросы </a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Оглавление</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">2. Зонд</a><ul>
+<li><a class="reference internal" href="#linux-windows">2.1. Различия и ограничения Linux и Windows версий</a></li>
+<li><a class="reference internal" href="#id2">2.2. Запуск и настройка зонда</a><ul>
+<li><a class="reference internal" href="#q">2.2.1. Q: Как начать работать с системой мониторинга?</a></li>
+<li><a class="reference internal" href="#id3">2.2.2. Q: Как запустить зонд в консоли?</a></li>
+<li><a class="reference internal" href="#id4">2.2.3. Q: Как правильно остановить зонд, запущенный в консоли?</a></li>
+<li><a class="reference internal" href="#id5">2.2.4. Q: Зонд не запускается</a></li>
+<li><a class="reference internal" href="#id6">2.2.5. Q: Запуск и остановка зонда как служба (демон процесс)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id7">2.3. Обновление зонда</a><ul>
+<li><a class="reference internal" href="#q-web">2.3.1. Q: Удаленное обновление зонда из web</a></li>
+<li><a class="reference internal" href="#id8">2.3.2. Q: Обновление зонда из командной строки</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id9">2.4. Конфигурационный файл</a><ul>
+<li><a class="reference internal" href="#id10">2.4.1. Q: Что такое конфигурационный файл?</a></li>
+<li><a class="reference internal" href="#id11">2.4.2. Q: Редактирование конфигурационного файла</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id14">2.5. Мониторинг мультикаст вещания</a><ul>
+<li><a class="reference internal" href="#id15">2.5.1. Q: Как определить, вижу ли я мультикаст на своей машине?</a></li>
+<li><a class="reference internal" href="#boro">2.5.2. Почему Boro «не видит мультикаст», плеер на этой машине играет поток!</a></li>
+<li><a class="reference internal" href="#id16">2.5.3. Почему Boro «не видит мультикаст», плеер на этой машине не играет поток</a></li>
+<li><a class="reference internal" href="#id23">2.5.4. Q: Как “сдампить” мультикаст поток, для дальнейшего анализа?</a></li>
+<li><a class="reference internal" href="#igmp">2.5.5. Версии протокола IGMP</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id27">2.6. Регистрируемые параметры</a><ul>
+<li><a class="reference internal" href="#id28">2.6.1. Графики</a></li>
+<li><a class="reference internal" href="#id29">2.6.2. Эскизы</a></li>
+<li><a class="reference internal" href="#id30">2.6.3. Параметры, события и ошибки</a></li>
+<li><a class="reference internal" href="#ott">2.6.4. Параметры OTT</a></li>
+<li><a class="reference internal" href="#id34">2.6.5. События и ошибки OTT</a></li>
+<li><a class="reference internal" href="#id35">2.6.6. Системные ошибки</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ethernet">2.7. Вычисление Ethernet параметров</a><ul>
+<li><a class="reference internal" href="#ethernet-pcap">2.7.1. Ethernet параметры и библиотека pcap</a></li>
+<li><a class="reference internal" href="#q-ethernet">2.7.2. Q: Ограничения на вычисление Ethernet параметров в зависимости от ОС?</a></li>
+<li><a class="reference internal" href="#q-maximum-inter-packet-arrival-time-iat">2.7.3. Q: Что такое Maximum Inter-packet Arrival Time (IAT)?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Предыдущий раздел</h4>
+  <p class="topless"><a href="requirements.html"
+                        title="предыдущая глава">1. Технические требования</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Эта страница</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/probe.rst.txt"
+            rel="nofollow">Исходный текст</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Быстрый поиск</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Искать" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>2. Зонд<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="section" id="linux-windows">
+<h2>2.1. Различия и ограничения Linux и Windows версий<a class="headerlink" href="#linux-windows" title="Ссылка на этот заголовок">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Свойство</th>
+<th class="head">Linux</th>
+<th class="head">Windows</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Вычисление Ethernet параметров(IAT/MLR/DF).</td>
+<td>Зонд должен быть запущен с правами суперпользователя(sudo ./streamMonitor).</td>
+<td>На компьютере, где запускается зонд, должна быть установлена библиотека захвата пакетов WinPcap (<a class="reference external" href="https://www.winpcap.org/install/">https://www.winpcap.org/install/</a>).</td>
+</tr>
+<tr class="row-odd"><td>Вычисление Ethernet параметров для localhost (127.0.0.1).</td>
+<td>Ограничения нет.</td>
+<td>Вычисление IAT для localhost невозможно.</td>
+</tr>
+<tr class="row-even"><td>Вычисление Ethernet параметров на основе меток времени, проставляемых сетевым адаптером. (Высокая точность вычисления IAT).</td>
+<td>Поддерживается. Данный режим используется автоматически (если есть поддержка в адаптере). Подробнее в параграфе <a class="reference internal" href="#ethernet">Вычисление Ethernet параметров</a>.</td>
+<td>Не поддерживается.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id2">
+<h2>2.2. Запуск и настройка зонда<a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="section" id="q">
+<h3>2.2.1. Q: Как начать работать с системой мониторинга?<a class="headerlink" href="#q" title="Ссылка на этот заголовок">¶</a></h3>
+<p><strong>A:</strong> Необходимо знать несколько базовых вещей:</p>
+<ol class="arabic simple">
+<li>Система состоит из сервера мониторинга (находится в облаке) и клиентской части - зонда, который пользователь размещает в своей сети.</li>
+<li>Пользователь самостоятельно выбирает аппаратное обеспечение для зонда.</li>
+<li>Вам необходимо скачать архив зонда в личном кабинете. Обратите внимание, что пакет привязан к проекту в вашем кабинете. Это означает, что запущенный зонд будет отображать данные только в проекте, из которого он был загружен.</li>
+<li>Следующим шагом необходимо запустить зонд и убедиться, что он появился в системе мониторинга (выпадающая левая панель в ЛК на сервисе boro.elecard.ru).</li>
+<li>Следует знать, что можно запускать несколько зондов. Количество зондов фактически ограничивается количеством анализируемых потоков в приобретенной подписке.</li>
+<li>Если требуется запуск нескольких зондов на одной машине, необходимо сделать копию всей папки зонда (например папки win64), так как приложения streamMonitor, запущенные из одной папки, будут иметь конкурирующий доступ к некоторым файлам!</li>
+<li>Кроме этого, следует знать, что зонд не отправляет потоки на облачный сервер в каком-либо виде. Весь анализ проводится локально. На сервер отправляются статистические данные (величина битрейта, зарегистрированные ошибки), структура потока (PSI таблица), Closed Caption и SCTE35 данные и эскизы видеопрограмм.</li>
+</ol>
+</div>
+<div class="section" id="id3">
+<h3>2.2.2. Q: Как запустить зонд в консоли?<a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h3>
+<p><strong>A:</strong> Для того, чтобы получить приложение, необходимо пройти несколько этапов. Более подробное описание можно найти в <strong>Руководстве по быстрому старту</strong>. Если вы скачали архив с приложением, для его запуска нужно осуществить следующие действия:</p>
+<p><strong>Linux</strong></p>
+<ol class="arabic">
+<li><p class="first">Скопируйте скачанный архив зондов в необходимый каталог на Linux машине.</p>
+</li>
+<li><p class="first">При необходимости установите пакет <strong>unzip</strong>. Пример инсталляции на CentOs:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">yum</span> <span class="n">install</span> <span class="n">unzip</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Перейдите в каталог с архивом зондов и разархивируйте его, пример распаковки с созданием директории Boro:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unzip</span> <span class="o">-</span><span class="n">d</span> <span class="o">./</span><span class="n">boro</span> <span class="n">ESenSay</span><span class="o">.</span><span class="mi">2016</span><span class="o">-</span><span class="n">v1</span><span class="o">.</span><span class="mi">00</span><span class="o">-</span><span class="mf">2016.11</span><span class="o">.</span><span class="mf">07.</span><span class="n">proj244</span><span class="o">.</span><span class="n">zip</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Зайдите в каталог, соответствующий разрядности и типу вашей ОС.</p>
+</li>
+<li><p class="first">В файле monitor.cfg отредактируйте поле «AppDescription» (задайте имя анализатору, которое будет отображаться в системе) и при необходимости задействуйте поле «proxy», убрав // перед строкой прокси сервера.</p>
+</li>
+<li><p class="first">Запустите анализатор в консоли:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">./</span><span class="n">streamMonitor</span>
+</pre></div>
+</div>
+<p>Необходимо использовать <strong>привилегии суперпользователя</strong> для снятия некоторых ограничений операционной системы и получения доступа к библиотеке захвата сетевых пакетов.</p>
+</li>
+<li><p class="first">В случае успешного запуска (зонд отображается в боковой панели личного кабинета зеленой точкой) все дальнейшие действия (запуск, редактирование и остановка задач) производятся при помощи браузера.</p>
+</li>
+<li><p class="first">Если зонд не запускается, обратитесь к параграфу <a class="reference internal" href="#id5">Q: Зонд не запускается</a>.</p>
+</li>
+</ol>
+<p><strong>Windows</strong></p>
+<ol class="arabic simple">
+<li>Разархивируйте полученный файл в необходимую директорию.</li>
+<li>Зайдите в папку, соответствующую разрядности и типу вашей ОС.</li>
+<li>В файле monitor.cfg отредактируйте поле «AppDescription» (задайте имя анализатору, которое будет отображаться в системе) и при необходимости задействуйте поле «proxy», убрав // перед строкой прокси сервера.</li>
+<li>Запустите анализатор <strong>«от администратора»</strong> (правый клик на файле streamMonitor.exe -&gt; Запуск от имени администратора). Должна запуститься консоль.</li>
+<li>В случае успешного запуска (зонд отображается в боковой панели личного кабинета зеленой точкой) все дальнейшие действия (запуск, редактирование и остановка задач) производятся при помощи браузера.</li>
+<li>Если зонд не запускается, обратитесь к параграфу <a class="reference internal" href="#id5">Q: Зонд не запускается</a>.</li>
+</ol>
+</div>
+<div class="section" id="id4">
+<h3>2.2.3. Q: Как правильно остановить зонд, запущенный в консоли?<a class="headerlink" href="#id4" title="Ссылка на этот заголовок">¶</a></h3>
+<p><strong>A:</strong> Правильным методом является <strong>одинарное</strong> нажатие <strong>Ctrl+C</strong> в консоли, после этого необходимо ожидать корректного завершения работы зонда (до 1 минуты). Данный метод используется в Linux и Windows системах.</p>
+<p>Если просто закрыть консоль, выполнение программы завершится некорректно, программа не будет иметь возможности передать на сервер команду остановки. Сервер будет ожидать отклик от некорректно завершенного зонда до 1 минуты, и только потом переведет задачи в состояние «завершенные» с пометкой «некорректно».</p>
+</div>
+<div class="section" id="id5">
+<h3>2.2.4. Q: Зонд не запускается<a class="headerlink" href="#id5" title="Ссылка на этот заголовок">¶</a></h3>
+<p><strong>A1:</strong> Нет связи с сервером. Для запуска зонда необходимо устойчивое Internet соединение, чтобы анализатор мог зарегистрироваться на сервере. После регистрации зонд устойчив к потере связи и использует буфер для накопления и дальнейшей передачи статистики.
+Перечень возможных проблем с организацией связи до сервера:</p>
+<ul class="simple">
+<li>Неустойчивое Internet соединение (попробуйте повторный запуск);</li>
+<li>Выход в Internet осуществляется через прокси сервер, но он не указан (указан неправильно) в файле <em>monitor.cfg</em>, либо строка в конфиге «закомментирована»;</li>
+<li>Firewall (Brandmauer) ограничивает доступ приложения к сети. Решение данной проблемы описано в <a href="#id36"><span class="problematic" id="id37">`Q: Почему Boro «не видит мультикаст»`_</span></a> -&gt; <strong>A1: Firewall (Brandmauer)</strong>.</li>
+</ul>
+<p><strong>A2:</strong> В файле <em>monitor.cfg</em> были внесены правки, нарушающие формат .json, или добавлены данные, которые не соответствуют структуре данных, определенных в файле <em>monitor.cfg</em>. Кроме этого, <strong>файл monitor.cfg обязан сохраняться в utf-8</strong>. Обычно, при проблемах с конфигурационным файлом в лог консоли попадают сообщения об ошибках парсинга при запуске. Это первый признак проблем в файле <em>monitor.cfg</em>.
+<strong>Решение проблемы:</strong></p>
+<ul class="simple">
+<li>Попытаться найти ошибки в файле (сложно для начинающих);</li>
+<li>Скачать заново архив из личного кабинета и положить свежий неизмененный <em>monitor.cfg</em> в каталог, где производилась попытка запуска зонда. Однако, в таком случае, вы потеряете все настройки и список задач, сохраненные в <em>monitor.cfg</em> на момент последней остановки зонда. Необходимо заново задать имя зонда, при необходимости установить прокси сервер и поставить задачи запущенному зонду из web.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Примечание</p>
+<p class="last">Рекомендуем пользоваться сохранением/загрузкой конфига на сервере, таким образом, вы избежите проблем с редактированием monitor.cfg, и у вас всегда будет backup конфигурации.</p>
+</div>
+<p>Подробную информацию о конфигурационном файле вы можете найти в разделе <a class="reference internal" href="#id9">Конфигурационный файл</a>.</p>
+<p><strong>A3:</strong> Возможно, в каталоге с приложением были удалены или повреждены некоторые библиотеки. Скачайте архив заново, подмените в свежем пакете файлы <em>monitor.cfg</em> и <em>authkey.pub</em> вашими файлами. Желательно скопировать скрытый файл <em>.stored.cache</em>, тогда не будет создано повторной записи с одинаковым именем зонда.</p>
+<p><strong>A4:</strong> Возможно, вы пытаетесь запустить очень старую версию зонда. Попробуйте скачать свежую версию пакета зондов в личном кабинете, отредактируйте файл <em>monitor.cfg</em> и попробуйте запуск снова.</p>
+<p><strong>A5:</strong> Используется устаревшая версия ОС Linux. Необходима поддержка glibc-2.11 и выше.</p>
+</div>
+<div class="section" id="id6">
+<h3>2.2.5. Q: Запуск и остановка зонда как служба (демон процесс)<a class="headerlink" href="#id6" title="Ссылка на этот заголовок">¶</a></h3>
+<p><strong>A1: служба в Widows</strong></p>
+<p>Не поддерживается</p>
+<p><strong>A2: Сервис в systemd (CentOs 7, Ubuntu 16.04)</strong></p>
+<p>Полезные ссылки: <a class="reference external" href="https://habrahabr.ru/company/centosadmin/blog/255845/">https://habrahabr.ru/company/centosadmin/blog/255845/</a> (RU)
+<a class="reference external" href="https://www.dynacont.net/documentation/linux/Useful_SystemD_commands/">https://www.dynacont.net/documentation/linux/Useful_SystemD_commands/</a> (EN)</p>
+<ol class="arabic">
+<li><p class="first">Создайте файл /etc/systemd/system/boro-client.service следующего содержания:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Unit</span><span class="p">]</span>
+<span class="n">Description</span><span class="o">=</span><span class="n">boro</span> <span class="n">probe</span>
+<span class="n">Documentation</span><span class="o">=</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">boro</span><span class="o">.</span><span class="n">elecard</span><span class="o">.</span><span class="n">com</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">boro</span><span class="o">.</span><span class="n">elecard</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pdf</span><span class="o">/</span><span class="n">FAQ_en</span><span class="o">.</span><span class="n">pdf</span>
+<span class="n">After</span><span class="o">=</span><span class="n">network</span><span class="o">-</span><span class="n">online</span><span class="o">.</span><span class="n">target</span>
+<span class="n">Wants</span><span class="o">=</span><span class="n">network</span><span class="o">-</span><span class="n">online</span><span class="o">.</span><span class="n">target</span>
+
+
+<span class="p">[</span><span class="n">Service</span><span class="p">]</span>
+<span class="c1">#Type=simple</span>
+<span class="n">User</span><span class="o">=</span><span class="n">root</span>
+<span class="c1">#Group=root</span>
+<span class="n">WorkingDirectory</span><span class="o">=/</span><span class="n">opt</span><span class="o">/</span><span class="n">boro</span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">lin64</span>
+<span class="n">ExecStart</span><span class="o">=/</span><span class="n">opt</span><span class="o">/</span><span class="n">boro</span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">lin64</span><span class="o">/</span><span class="n">streamMonitor</span>
+<span class="n">PrivateTmp</span><span class="o">=</span><span class="n">false</span>
+<span class="n">Restart</span><span class="o">=</span><span class="n">always</span>
+<span class="n">RestartSec</span><span class="o">=</span><span class="mi">120</span><span class="n">s</span>
+
+<span class="p">[</span><span class="n">Install</span><span class="p">]</span>
+<span class="n">WantedBy</span><span class="o">=</span><span class="n">multi</span><span class="o">-</span><span class="n">user</span><span class="o">.</span><span class="n">target</span><span class="p">,</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>где необходимо правильно указать поля WorkingDirectory и ExecStart - директорию, в которой находится зонд, и путь до исполняемого файла, соответственно.</p>
+<ol class="arabic" start="2">
+<li><p class="first">Для проверки состояния сервиса необходимо выполнить следующую команду:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[user@localhost ~]$ systemctl -l status boro-client
+boro-client.service - boro client
+Loaded: loaded (/etc/systemd/system/boro-client.service; disabled; vendor preset: disabled)
+Active: inactive (dead)
+</pre></div>
+</div>
+<p>Выделенные поля говорят о том, что автозапуск не включен, и приложение не запущено.</p>
+</li>
+<li><p class="first">Для запуска демона необходимо выполнить команду:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">systemctl</span> <span class="n">start</span> <span class="n">boro</span><span class="o">-</span><span class="n">client</span>
+</pre></div>
+</div>
+<p>Для остановки демона необходимо выполнить команду:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">systemctl</span> <span class="n">stop</span> <span class="n">boro</span><span class="o">-</span><span class="n">client</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Примечание</p>
+<p class="last">Cледует понимать, что после перезапуска Linux, демон будет запущен вновь, если включен его автозапуск.</p>
+</div>
+<ol class="arabic" start="4">
+<li><p class="first">Для разрешения автозапуска выполните команду:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">systemctl</span> <span class="n">enable</span> <span class="n">boro</span><span class="o">-</span><span class="n">client</span>
+</pre></div>
+</div>
+<p>Для отключения автозапуска:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">systemctl</span> <span class="n">disable</span> <span class="n">boro</span><span class="o">-</span><span class="n">client</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Проверьте состояние запущенного демона:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[user@localhost lin64]$ systemctl -l status boro-client
+boro-client.service - boro client
+Loaded: loaded (/etc/systemd/system/boro-client.service; enabled; vendor preset: disabled)
+Active: active (running) since Tue 2017-03-28 16:01:35 +07; 2s ago
+</pre></div>
+</div>
+<p>Выделенные поля указывают, на то, что демону разрешен автозапуск (enabled), и он сейчас запущен (Active: active (running)).</p>
+</li>
+</ol>
+<p><strong>A3: Сервис в SysV (устаревшие дистрибутивы Linux)</strong></p>
+<p>Полезные ссылки: <a class="reference external" href="https://www.opennet.ru/base/sys/run_services_tips.txt.html">https://www.opennet.ru/base/sys/run_services_tips.txt.html</a> (RU).</p>
+<p>Необходимо сказать, что данная система запуска сервисов сохраняется как наследие в современных дистрибутивах. Также необходимо знать, что функции в скрипте запуска (/etc/rc.d/init.d/functions) могут иметь разные аргументы в зависимости от дистрибутива, ознакомьтесь с документацией системы инициализации сервисов вашего дистрибутива для корректировки скрипта.</p>
+<p>В данном разделе рассмотрена реализация скрипта автоматического запуска для дистрибутива <strong>Linux CentOs 6.8</strong>. Документация на подготовку скрипта:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">doc</span><span class="o">/</span><span class="n">initscripts</span><span class="o">-*/</span><span class="n">sysvinitfiles</span><span class="o">.</span>
+</pre></div>
+</div>
+<ol class="arabic">
+<li><p class="first">Перейдите в директорию /etc/rc.d/init.d</p>
+</li>
+<li><p class="first">Создайте файл boro-client (необходимы привилегии суперпользователя) со скриптом ниже. Будьте внимательны, создавая скрипт в Windows (CRLF), интерпретатор bash требует строгого соблюдения Linux стиля (только LF) переноса строк.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/bin/sh
+# chkconfig: - 98 02
+# description: OTT and multicast probe.
+# processname: BoroProbe
+
+# Source function library.
+if [ -f /etc/init.d/functions ] ; then
+        . /etc/init.d/functions
+elif [ -f /etc/rc.d/init.d/functions ] ; then
+        . /etc/rc.d/init.d/functions
+else
+        exit 0
+fi
+KIND=&quot;Boro-probe&quot;
+PROCPATH=&quot;/opt/boro/lin64&quot;
+
+start() {
+  echo -n $&quot;Starting $KIND services: &quot;
+  daemon --check=streamMonitor $PROCPATH/streamMonitor &gt;/dev/null 2&gt;&amp;1 &amp;
+  #daemon --check=streamMonitor $PROCPATH/streamMonitor &gt;$PROCPATH/proclog.log 2&gt;&amp;1 &amp;
+  echo
+}
+
+stop() {
+        echo -n $&quot;Shutting down $KIND services: &quot;
+        killproc streamMonitor
+        echo
+}
+
+restart() {
+        echo -n $&quot;Restarting $KIND services: &quot;
+                stop
+                start
+}
+
+case &quot;$1&quot; in
+        start)
+                start
+                ;;
+        stop)
+                stop
+                ;;
+        restart)
+                restart
+                ;;
+        status)
+                status streamMonitor
+                ;;
+        *)
+                echo $&quot;Usage: $0 {start|stop|restart|status}&quot;
+                exit 1
+esac
+exit $?
+</pre></div>
+</div>
+</li>
+<li><p class="first">В скрипте необходимо правильно задать переменную PROCPATH - путь до каталога с зондом.</p>
+</li>
+<li><p class="first">В скрипте необходимо выбрать, хотите ли вы сохранять лог процесса.
+Лог не будет сохраняться:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>daemon --check=streamMonitor $PROCPATH/streamMonitor &gt;/dev/null 2&gt;&amp;1 &amp;
+#daemon --check=streamMonitor $PROCPATH/streamMonitor &gt;$PROCPATH/proclog.log 2&gt;&amp;1
+</pre></div>
+</div>
+<p>Лог будет сохраняться в файл proclog.log в папке с зондом:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#daemon --check=streamMonitor $PROCPATH/streamMonitor &gt;/dev/null 2&gt;&amp;1 &amp;
+daemon --check=streamMonitor $PROCPATH/streamMonitor &gt;$PROCPATH/proclog.log 2&gt;&amp;1
+</pre></div>
+</div>
+</li>
+<li><p class="first">Сохраните изменения в файле  boro-client.</p>
+</li>
+<li><p class="first">Необходимо назначить права на исполнение для скрипта (необходимы привилегии суперпользователя): chmod 755 /etc/rc.d/init.d/boro-client</p>
+</li>
+<li><p class="first">Добавляем скрипт в систему запуска:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chkconfig</span> <span class="o">--</span><span class="n">add</span> <span class="n">boro</span><span class="o">-</span><span class="n">client</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Включаем автостарт сервиса:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chkconfig</span> <span class="n">boro</span><span class="o">-</span><span class="n">client</span> <span class="n">on</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">После перезагрузки анализатор будет автоматически запущен как сервис. Для сервиса можно проверить статус, запустить и остановить его “вручную” следующими командами, находясь в директории /etc/rc.d/init.d:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">boro</span><span class="o">-</span><span class="n">client</span> <span class="n">status</span>
+<span class="o">./</span><span class="n">boro</span><span class="o">-</span><span class="n">client</span> <span class="n">start</span>
+<span class="o">./</span><span class="n">boro</span><span class="o">-</span><span class="n">client</span> <span class="n">stop</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Список установленных сервисов в системе и их статус можно проверить командой:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chkconfig</span> <span class="o">--</span><span class="nb">list</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Автозапуск сервиса можно отключить командой:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chkconfig</span> <span class="n">boro</span><span class="o">-</span><span class="n">client</span> <span class="n">off</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>2.3. Обновление зонда<a class="headerlink" href="#id7" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Существует два способа обновления зонда:</p>
+<ul class="simple">
+<li>web обновление командой из личного кабинета;</li>
+<li>из командной строки.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Примечание</p>
+<p class="last">При обновлении все настройки и задачи зонда сохраняются. Однако, компания Elecard рекомендует произвести сохранение конфигурации на сервере или создать копию конфигурационного файла monitor.cfg непосредственно перед обновлением зонда.</p>
+</div>
+<div class="section" id="q-web">
+<h3>2.3.1. Q: Удаленное обновление зонда из web<a class="headerlink" href="#q-web" title="Ссылка на этот заголовок">¶</a></h3>
+<p><strong>A:</strong> Запустите ваш текущий зонд/зонды и перейдите на страницу настройки зонда, кликнув на соответствующее имя зонда в боковой выпадающей панели.</p>
+<p>На рисунке ниже видно, что есть обновление для запущенного зонда (голубая ссылка <strong>Update to/Обновить</strong> с номером обновления). Необходимо нажать на данную ссылку.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/probe_update_ru.png"><img alt="_images/probe_update_ru.png" src="_images/probe_update_ru.png" style="width: 736.8000000000001px; height: 197.60000000000002px;" /></a>
+</div>
+<p>Зонд должен обновиться в течение одной минуты, после этого страница обновится, и в поле Version/Версия вы увидите новую версию зонда. Если страница автоматически не обновилась, нажмите F5.</p>
+<p>Если до обновления использовалась слишком старая версия зонда, при обновлении могут возникнуть проблемы. В таком случае может понадобиться перезапуск зонда непосредственно на удаленной машине. Кроме этого, до определенной версии, зонд не поддерживал команду обновления из web, воспользуйтесь обновлением из консоли, описанным ниже.</p>
+</div>
+<div class="section" id="id8">
+<h3>2.3.2. Q: Обновление зонда из командной строки<a class="headerlink" href="#id8" title="Ссылка на этот заголовок">¶</a></h3>
+<p><strong>A:</strong> Для обновления из командной строки выполните следующую последовательность действий:</p>
+<ol class="arabic">
+<li><p class="first">Если зонд запущен, остановите его нажатием Ctrl+C в командной строке. Если зонд запущен как демон/служба, обратитесь к вопросу <a class="reference internal" href="#id6">Q: Запуск и остановка зонда как служба (демон процесс)</a>.</p>
+</li>
+<li><p class="first">В консоли перейдите в директорию, в которой находится зонд, и запустите его с параметром -u:</p>
+<p>Linux:        ./streamMonitor -u</p>
+<p>Windows:   streamMonitor.exe -u</p>
+<p>Если на сервере есть обновление, зонд обновит нужные компоненты и покажет версию, до которой он обновился.
+Если доступного обновления нет, в консоли будет сообщение: No updates!</p>
+</li>
+<li><p class="first">Проверить текущую версию зонда можно, используя ключ -v</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>user@localhost lin64]$ ./streamMonitor -v
+date changed[pid:20373]: 29.03.2017
+Version: 1.01
+Build info: 2017.03.20 08:36:02 UTC
+Platform: lin64
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>2.4. Конфигурационный файл<a class="headerlink" href="#id9" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Примечание</p>
+<p class="last">В связи с интенсивным развитием проекта, данный параграф может содержать расхождения и неточности. Стоит отметить, что разработчики компании Elecard стараются максимально сохранить обратную совместимость конфигурационного файла со свежими релизами ПО зонда. При управлении зондом из браузера все настройки и изменения отражаются в файле monitor.cfg. При этом происходит полное переформатирование текста файла к формату по умолчанию для используемой версии ПО зонда. Поэтому, если вы намерены назначать задачи зонду путем редактирования файла monitor.cfg, всегда сохраняйте резервную копию файла.</p>
+</div>
+<div class="section" id="id10">
+<h3>2.4.1. Q: Что такое конфигурационный файл?<a class="headerlink" href="#id10" title="Ссылка на этот заголовок">¶</a></h3>
+<p><strong>A:</strong> Это файл monitor.cfg, получаемый в пакете зонда из личного кабинета (см. Руководстве по быстрому старту), лежащий в директории с исполняемым файлом streamMonitor. Файл предназначен для хранения настроек зонда, включая список задач. При управлении зондом, назначении задач для анализа и др. действиях на сервере данный файл модифицируется приложением зонда. При запуске, перезапуске и незапланированном перезапуске зонд использует monitor.cfg для восстановления состояния.
+Один из вариантов постановки задач зонду - редактирование файла monitor.cfg.
+Один из вариантов переноса настроек и бекапа - сохранение и копирование файла monitor.cfg.</p>
+</div>
+<div class="section" id="id11">
+<h3>2.4.2. Q: Редактирование конфигурационного файла<a class="headerlink" href="#id11" title="Ссылка на этот заголовок">¶</a></h3>
+<p><strong>A1:</strong> Перед редактированием конфигурации необходимо знать несколько базовых вещей:</p>
+<ol class="arabic simple">
+<li>Минимальный набор параметров, необходимый для успешного запуска приложения зонда, уже включен в monitor.cfg в загруженном архиве зонда.</li>
+<li>Очень внимательно отнеситесь к .json синтаксису (частая причина ошибок).</li>
+<li>Файл monitor.cfg необходимо сохранять в формате utf-8.</li>
+<li>Попробуйте поставить зонду пару задач из web и посмотрите, как изменится пустой конфиг на достаточно сложные массивы.</li>
+<li>Перед управлением из браузера сохраняйте копию monitor.cfg при отладке.</li>
+<li>Не стоит пугаться сложного конфига, сформированного автоматически! Задачи зонду можно поставить простым списком в monitor.cfg. А все необходимые настройки добавляются групповым редактированием задач в браузере.</li>
+<li>Всегда можно изменить настройки в браузере, ваша цель - сформировать список URI и имен задач, пригодный для запуска зонда.</li>
+<li>Обратитесь к примерам ниже , они проще примеров, сформированных автоматически.</li>
+</ol>
+<p>Конфигурация сохраняется в формате, схожем с форматом json. Дополнительно:</p>
+<ul>
+<li><p class="first">Поддерживаются C-подобные комментарии:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Текст, начинающийся с /* и оканчивающийся на <a href="#id12"><span class="problematic" id="id13">*</span></a>/, образует блок комментариев.</li>
+<li>Текст, начинающийся с // и до конца строки, является комментарием.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Поддерживается дополнительная запятая после последнего значения в массиве или в объекте.</p>
+</li>
+</ul>
+<p><strong>Поля и параметры</strong></p>
+<p>Ниже описаны поля, необходимые для формирования минимального конфигурационного файла, достаточного для передачи списка задач зонду. Предполагается, что все необходимые настройки будут выполнены через web управление после запуска зонда.</p>
+<p><strong>«AppDescription»</strong> – текстовое описание/название зонда (кириллица поддерживается). Данное поле описывает зонд, например, адрес его расположения. Данная информация появится в виде записи в левой колонке «Зонды» вашего браузера (работа с сервером).</p>
+<div class="admonition note">
+<p class="first admonition-title">Примечание</p>
+<p>После первого запуска зонда на сервере будет создана запись, которую вы не сможете изменить редактированием поля AppDescription в конфигурационном файле. Если необходимо, отредактируйте имя в браузере или используйте следующий ключ для создания новой записи в колонке «Зонды»:</p>
+<p class="last">streamMonitor.exe –create-new-record</p>
+</div>
+<p><strong>«uri» &amp; «addr»</strong> - пути к анализируемым потокам. Существует несколько вариантов указания URI (групп URI). Пожалуйста, обратитесь к примерам в конце данного параграфа.</p>
+<p>Поддерживаются следующие префиксы: <a class="reference external" href="file://">file://</a>, udp://, rtp://, http://. Кроме этого, поддерживается формат HLS (URL должен оканчиваться на .m3u или. m3u8).</p>
+<p>Каждому потоку можно присвоить название, заполнив поле <strong>«name»</strong> (кириллица поддерживается).</p>
+<p>Дополнительно существует возможность связать URI (группы URI) с определенным сетевым интерфейсом путем указания параметра <strong>«iface»</strong>.</p>
+<p>Если в конфигурации задана группа URI, в случае истечения срока действия подписки, будет анализироваться только один поток из списка.</p>
+<p><strong>«proxy»</strong> – указывает proxy сервер для коммуникации Boro-зонда с сервером.</p>
+<p><strong>«defaultBindAddress»</strong> – определяет NIC IP адрес по умолчанию. Данный параметр позволяет принимать потоки из различных сетей без редактирования таблицы маршрутизации.</p>
+<p><strong>«iface»</strong> – связывает указанный URI (группу URI) с сетевым интерфейсом.</p>
+<p><strong>«name»</strong> – имя потока (например, название канала).</p>
+<p><strong>Примеры</strong></p>
+<p>Пример указания задач «в строку», поля URI и name. Поле defaultBindAddress будет распространяться на все задачи в списке. Таким способом удобно формировать конфигурационный файл в редакторах таблиц:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="s2">&quot;config&quot;</span><span class="p">:</span>       <span class="p">{</span>
+                        <span class="s2">&quot;AppDescription&quot;</span><span class="p">:</span>       <span class="s2">&quot;Elecard probe&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;server&quot;</span><span class="p">:</span> <span class="s2">&quot;https://boro.elecard.ru&quot;</span>
+                        <span class="s2">&quot;defaultBindAddress&quot;</span><span class="p">:</span> <span class="s2">&quot;192.168.0.129&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;uri&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span><span class="s2">&quot;addr&quot;</span><span class="p">:</span> <span class="s2">&quot;udp://239.0.0.22:1234&quot;</span><span class="p">,</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Channel_1&quot;</span><span class="p">,</span><span class="s2">&quot;iface&quot;</span><span class="p">:</span><span class="s2">&quot;10.10.30.197&quot;</span><span class="p">,},</span>
+        <span class="p">{</span><span class="s2">&quot;addr&quot;</span><span class="p">:</span> <span class="s2">&quot;udp://239.0.0.41:1234&quot;</span><span class="p">,</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Channel_2&quot;</span><span class="p">,</span><span class="s2">&quot;iface&quot;</span><span class="p">:</span><span class="s2">&quot;10.10.30.197&quot;</span><span class="p">,},</span>
+                                        <span class="p">{</span><span class="s2">&quot;addr&quot;</span><span class="p">:</span> <span class="s2">&quot;udp://239.0.0.71:1234&quot;</span><span class="p">,</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Channel_3&quot;</span><span class="p">,},</span>
+                                        <span class="p">{</span><span class="s2">&quot;addr&quot;</span><span class="p">:</span> <span class="s2">&quot;udp://239.0.0.73:1234&quot;</span><span class="p">,</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Channel_4&quot;</span><span class="p">,},</span>
+                                        <span class="p">{</span><span class="s2">&quot;addr&quot;</span><span class="p">:</span> <span class="s2">&quot;udp://239.0.0.181:1234&quot;</span><span class="p">,</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Channel_5&quot;</span><span class="p">,},</span>
+                        <span class="p">]</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Аналогичный пример, разбитый на строки:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;config&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="s2">&quot;AppDescription&quot;</span><span class="p">:</span> <span class="s2">&quot;Test Probe, Russia, Tomsk, 3 Razvitiya ave&quot;</span><span class="p">,</span>
+<span class="s2">&quot;defaultBindAddress&quot;</span><span class="p">:</span><span class="s2">&quot;192.168.0.129&quot;</span><span class="p">,</span>
+<span class="s2">&quot;uri&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">&quot;addr&quot;</span><span class="p">:</span><span class="s2">&quot;udp://239.0.0.22:1234&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Channel_1&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;iface&quot;</span><span class="p">:</span><span class="s2">&quot;10.10.30.197&quot;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="s2">&quot;addr&quot;</span><span class="p">:</span><span class="s2">&quot;udp://239.0.0.41:1234&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Channel_2&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;iface&quot;</span><span class="p">:</span><span class="s2">&quot;10.10.30.197&quot;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="s2">&quot;addr&quot;</span><span class="p">:</span><span class="s2">&quot;udp://239.0.0.73:1234&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Channel_4&quot;</span><span class="p">,</span>
+        <span class="p">},</span>
+<span class="p">],</span>
+<span class="o">//</span><span class="s2">&quot;proxy&quot;</span><span class="p">:</span> <span class="s2">&quot;http://10.192.173.239:3128&quot;</span><span class="p">,</span>
+<span class="p">}}</span>
+</pre></div>
+</div>
+<p>Другие варианты назначения задач:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;config&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;AppDescription&quot;</span><span class="p">:</span> <span class="s2">&quot;Test Probe, Russia, Tomsk, 3 Razvitiya ave&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;defaultBindAddress&quot;</span><span class="p">:</span><span class="s2">&quot;192.168.0.129&quot;</span><span class="p">,</span>
+
+<span class="o">//</span><span class="n">sample</span> <span class="c1">#1  Single URI</span>
+<span class="s2">&quot;uri&quot;</span><span class="p">:</span><span class="s2">&quot;file:///opt/serga/myWorkLog/2015/02/02.19/scte35/mpegwithscte35.ts&quot;</span><span class="p">,</span>
+
+<span class="o">//</span><span class="n">sample</span> <span class="c1">#2  groupe of URI</span>
+        <span class="s2">&quot;uri&quot;</span><span class="p">:</span> <span class="p">[</span>
+<span class="s2">&quot;http://tv2.seversk.ru:8005/stream/1kanal&quot;</span><span class="p">,</span>
+<span class="s2">&quot;udp://235.0.0.2:1234&quot;</span><span class="p">,</span>
+<span class="s2">&quot;udp://235.0.0.1:1234&quot;</span>
+        <span class="p">],</span>
+
+<span class="o">//</span><span class="n">sample</span> <span class="c1">#3 mix type</span>
+        <span class="s2">&quot;uri&quot;</span><span class="p">:</span> <span class="p">[</span>
+<span class="p">{</span>
+<span class="s2">&quot;addr&quot;</span><span class="p">:</span><span class="s2">&quot;udp://234.4.4.4:1234&quot;</span><span class="p">,</span>
+<span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;1st channel&quot;</span><span class="p">,</span>
+<span class="s2">&quot;iface&quot;</span><span class="p">:</span><span class="s2">&quot;192.168.4.8&quot;</span><span class="p">,</span>
+<span class="p">},</span>
+<span class="p">{</span>
+        <span class="s2">&quot;addr&quot;</span><span class="p">:</span><span class="s2">&quot;http://samples.ffmpeg.org/ffmpeg-bugs/trac/ticket3356/mpegwithscte35.ts&quot;</span><span class="p">,</span>
+<span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;2nd channel&quot;</span><span class="p">,</span>
+<span class="s2">&quot;iface&quot;</span><span class="p">:</span><span class="s2">&quot;172.16.1.59&quot;</span><span class="p">,</span>
+<span class="p">},</span>
+<span class="s2">&quot;http://95.170.157.5:8880/eda.m3u8&quot;</span><span class="p">,</span>
+<span class="s2">&quot;http://95.170.157.5:80/channel84.m3u8&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+
+<span class="o">//</span><span class="n">sample</span> <span class="c1">#4 mix type</span>
+        <span class="s2">&quot;uri&quot;</span><span class="p">:</span> <span class="p">[</span>
+<span class="p">{</span>
+<span class="s2">&quot;addr&quot;</span><span class="p">:[</span>
+<span class="s2">&quot;udp://235.0.0.1:1234&quot;</span><span class="p">,</span>
+<span class="s2">&quot;udp://235.0.0.3:1234&quot;</span><span class="p">,</span>
+<span class="s2">&quot;udp://234.5.5.57:10200&quot;</span>
+<span class="p">],</span>
+<span class="s2">&quot;iface&quot;</span><span class="p">:</span><span class="s2">&quot;10.10.30.231&quot;</span><span class="p">,</span>
+<span class="p">},</span>
+<span class="p">{</span>
+<span class="s2">&quot;addr&quot;</span><span class="p">:</span><span class="s2">&quot;udp://235.0.0.4:1234&quot;</span><span class="p">,</span>
+<span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;3rd channel&quot;</span><span class="p">,</span>
+<span class="s2">&quot;iface&quot;</span><span class="p">:</span><span class="s2">&quot;10.10.30.231&quot;</span><span class="p">,</span>
+<span class="p">},</span>
+<span class="s2">&quot;http://95.170.157.5:8880/eda.m3u8&quot;</span><span class="p">,</span>
+<span class="s2">&quot;http://95.170.157.5:80/channel84.m3u8&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+<span class="p">}}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id14">
+<h2>2.5. Мониторинг мультикаст вещания<a class="headerlink" href="#id14" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="section" id="id15">
+<h3>2.5.1. Q: Как определить, вижу ли я мультикаст на своей машине?<a class="headerlink" href="#id15" title="Ссылка на этот заголовок">¶</a></h3>
+<p><strong>A0:</strong> Попытаться запустить зонд и поставить ему задачу анализировать нужный мультикаст поток.</p>
+<p><strong>A1:</strong> Достаточно простой способ: попытаться проиграть поток в сетевом плеере (например, в <a class="reference external" href="https://www.videolan.org/">vlc плеере</a>).</p>
+<p>Если поток начинает проигрываться, это означает, что вещание доходит до вашего компьютера и может быть принято Boro зондом.</p>
+<p>Если поток плеером не проигрывается, это еще не означает, что вы не получаете мультикаст. Возможно, у вас неправильно (иначе) настроена таблица маршрутизации. Для обхода правил маршрутизации, Boro использует прямое указание сетевого интерфейса: заполните правильно поле “IP адрес интерфейса” и проверьте, принимает ли Boro зонд данные. Если поле “IP адрес интерфейса” оставлено пустым, зонд будет принимать данные согласно таблице маршрутизации.</p>
+<p><strong>A2:</strong> Другим способом является попытка “сдампить” поток утилитой socat. Подробнее об утилите и пример команды читайте в разделе  <a class="reference internal" href="#id23">Q: Как “сдампить” мультикаст поток, для дальнейшего анализа?</a>. Если дамп создается успешно, это означает, что вы принимаете поток. Если файл дампа создается, но в него ничего не записывается (размер файла равен 0), это означает, что вы по каким-либо причинам не получаете указанный поток в user space.</p>
+<div class="admonition note">
+<p class="first admonition-title">Примечание</p>
+<p class="last">Стоит упомянуть, что в указанном примере работы с socat используется прямое указание сетевого интерфейса, поэтому таблица маршрутизации не влияет на возможность получения потока.</p>
+</div>
+<p><strong>A3:</strong> Если вы испытываете проблемы с приемом мультикаста зондом Boro, ознакомьтесь с двумя вариантами ситуации ниже</p>
+</div>
+<div class="section" id="boro">
+<h3>2.5.2. Почему Boro «не видит мультикаст», плеер на этой машине играет поток!<a class="headerlink" href="#boro" title="Ссылка на этот заголовок">¶</a></h3>
+<p><strong>A0:</strong> Ваш компьютер получает указанный мультикаст поток, проблема в настройке зонда.</p>
+<p><strong>A1:</strong> Наиболее популярной проблемой является невнимательная постановка задачи анализатору. Т.е. проблема банально кроется в ошибках написания мультикаст группы.</p>
+<p>Пример правильного указания URI: udp://235.0.0.5:123.</p>
+<p>Примеры адреса с ошибкой: udp://235.0.0:5:1234 или udp://235.0.0.0.5:1234</p>
+<div class="admonition tip">
+<p class="first admonition-title">Совет</p>
+<p class="last">На первый взгляд досадную ошибку сложно обнаружить, пожалуйста, проверяйте внимательно задаваемые URI.</p>
+</div>
+<p><strong>A2:</strong> Второй типичной ошибкой является указание неправильного IP адреса интерфейса. Проверьте правильность указания IP адреса, убедитесь, что данный интерфейс все еще присутствует в системе и, что именно данный интерфейс используется для приема мультикаста. В качестве адреса могут выступать IP сетевых карт, виртуальных интерфейсов и адрес 127.0.0.1 (т.н. localhost). Если адрес не задан, потоки будут приниматься согласно системной таблице маршрутизации.</p>
+<p>Данная ошибка часто возникает при копировании конфигов анализаторов с одной машины на другую. Мы рекомендуем для данных целей использовать удобный инструмент управления и сохранения конфигураций зонда, доступный на странице настройки зонда. Кнопки “Сохранить конфигурацию зонда” и “Применить конфигурацию зонда”.</p>
+</div>
+<div class="section" id="id16">
+<h3>2.5.3. Почему Boro «не видит мультикаст», плеер на этой машине не играет поток<a class="headerlink" href="#id16" title="Ссылка на этот заголовок">¶</a></h3>
+<p><strong>A0:</strong> Необходимо разобраться, доходит ли мультикаст вещание до машины или нет. Для этого необходимо выполнить два шага:</p>
+<ol class="arabic simple">
+<li>Подписаться на мультикаст группу.</li>
+<li>Исследовать трафик на необходимом сетевом интерфейсе.</li>
+</ol>
+<p><strong>Linux</strong></p>
+<p>Для установки утилит и пакетов используйте пакетный менеджер, соответствующий вашей операционной системе (в основном всегда требуются привилегии суперпользователя).
+Подписаться на мультикаст группу можно следующей командой (в одну строку):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">socat</span> <span class="o">-</span><span class="n">u</span> <span class="n">UDP4</span><span class="o">-</span><span class="n">RECV</span><span class="p">:</span><span class="mi">7777</span><span class="p">,</span><span class="n">ip</span><span class="o">-</span><span class="n">add</span><span class="o">-</span><span class="n">membership</span><span class="o">=&lt;</span><span class="n">MULTICAST_IP</span><span class="o">&gt;</span><span class="p">:</span><span class="o">&lt;</span><span class="n">NIC_IP</span><span class="o">&gt;</span><span class="p">,</span><span class="n">reuseaddr</span> <span class="n">CREATE</span><span class="p">:</span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span>
+</pre></div>
+</div>
+<p>Проследить трафик можно несколькими способами, все они связаны с захватом трафика (т.н. packet capture) в обход всевозможных системных фильтров. Кроме этого, можно использовать т.н. <a class="reference external" href="https://en.wikipedia.org/wiki/Promiscuous_mode">Promiscuous mode</a>  - режим, в котором сетевая карта позволяет принимать все пакеты независимо от того, кому они адресованы.</p>
+<ol class="arabic">
+<li><p class="first">Утилита iftop в promiscuous mode. <a class="reference external" href="https://linux-notes.org/monitoring-tool-iftop-v-rhel-centos-fedora-i-debian-ubuntu/">Руководство(rus)</a>. Пример команды:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iftop</span> <span class="o">-</span><span class="n">p</span> <span class="o">-</span><span class="n">i</span> <span class="o">&lt;</span><span class="n">INTERFACE_NAME</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">F</span> <span class="o">&lt;</span><span class="n">MULTICAST_IP</span><span class="o">&gt;/</span><span class="mi">32</span>
+</pre></div>
+</div>
+<p>В таблице должна отобразиться строка с указанной группой.</p>
+</li>
+<li><p class="first">Утилита tcpdump. <a class="reference external" href="https://www.tcpdump.org/manpages/tcpdump.1.html">Руководство</a>. Пример команды(в одну строку):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tcpdump</span> <span class="o">-</span><span class="n">i</span> <span class="o">&lt;</span><span class="n">INTERFACE_NAME</span><span class="o">&gt;</span> <span class="n">dst</span> <span class="o">&lt;</span><span class="n">MULTICAST_IP</span><span class="o">&gt;</span> <span class="ow">and</span> <span class="n">udp</span> <span class="n">dst</span> <span class="n">port</span> <span class="o">&lt;</span><span class="n">MULTICAST_PORT</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Должен отобразиться список принимаемых пакетов (необходимо подождать 10-20с) по указанному MULTICAST IP.</p>
+</li>
+</ol>
+<p><strong>Windows</strong></p>
+<p>Подписаться на мультикаст группу можно, запустив поток в <a class="reference external" href="https://www.videolan.org/">vlc плеере</a> или начав дампить поток с помощью утилиты socat (описание в <a class="reference internal" href="#id23">Q: Как “сдампить” мультикаст поток, для дальнейшего анализа?</a>).</p>
+<p>Для отслеживания трафика рекомендуется использовать следующие утилиты:</p>
+<ol class="arabic">
+<li><p class="first">Утилита <strong>WinDump</strong>. <a class="reference external" href="https://www.winpcap.org/windump/install/default.htm">Скачать</a>. <a class="reference external" href="https://www.winpcap.org/windump/docs/manual.htm">Руководство</a>. Требует <a class="reference external" href="https://www.winpcap.org/install/default.htm">установки</a> драйвера <strong>WinPcap</strong>.
+Команда идентична команде, описанной для ОС Linux:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">WinDump</span><span class="o">.</span><span class="n">exe</span> <span class="o">-</span><span class="n">i</span> <span class="o">&lt;</span><span class="n">INTERFACE_INDEX</span><span class="o">&gt;</span> <span class="n">dst</span> <span class="o">&lt;</span><span class="n">MULTICAST_IP</span><span class="o">&gt;</span> <span class="ow">and</span> <span class="n">udp</span> <span class="n">dst</span> <span class="n">port</span> <span class="o">&lt;</span><span class="n">MULTICAST_PORT</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Единственным отличием является указание имени адаптера - для версии Windows используются индексы, которые можно получить командой:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">WinDump</span><span class="o">.</span><span class="n">exe</span> <span class="o">-</span><span class="n">D</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Программа <strong>WireShark</strong>. Загрузить программу и прочитать руководство по использованию вы можете на официальном сайте www.wireshark.org</p>
+</li>
+</ol>
+<p>Если вы не видите трафика, то потенциальные проблемы могут крыться в источнике мультикаст вещания, сетевом оборудовании или проблемах с подпиской по протоколу IGMP.</p>
+<p>Если трафик доходит до машины, то, скорее всего, он фильтруется и не попадает в user space. Далее описаны возможные причины, по которым трафик может быть отфильтрован:</p>
+<p><strong>A1:</strong> Если сниффер видит трафик, необходимо проверить влияние Firewall (Brandmauer).</p>
+<p><strong>Linux</strong></p>
+<p>Для проверки влияния firewall  можно его временно отключить:</p>
+<ul class="simple">
+<li>ufw disable для Ubuntu,</li>
+<li>systemctl stop firewalld для CentOS 7.</li>
+</ul>
+<p>В CentOS 7 вместо отключения firewall можно использовать один из способов:</p>
+<ol class="arabic">
+<li><p class="first">Добавить разрешения для всех входящих igmp и мультикаст udp пакетов на всех интерфейсах:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">firewall</span><span class="o">-</span><span class="n">cmd</span> <span class="o">--</span><span class="n">permanent</span> <span class="o">--</span><span class="n">direct</span> <span class="o">--</span><span class="n">add</span><span class="o">-</span><span class="n">rule</span> <span class="n">ipv4</span> <span class="nb">filter</span> <span class="n">INPUT</span> <span class="mi">0</span> <span class="o">-</span><span class="n">m</span> <span class="n">udp</span> <span class="o">-</span><span class="n">p</span> <span class="n">udp</span> <span class="o">-</span><span class="n">m</span> <span class="n">pkttype</span> <span class="o">--</span><span class="n">pkt</span><span class="o">-</span><span class="nb">type</span> <span class="n">multicast</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>
+<span class="n">firewall</span><span class="o">-</span><span class="n">cmd</span> <span class="o">--</span><span class="n">permanent</span> <span class="o">--</span><span class="n">direct</span> <span class="o">--</span><span class="n">add</span><span class="o">-</span><span class="n">rule</span> <span class="n">ipv4</span> <span class="nb">filter</span> <span class="n">INPUT</span> <span class="mi">0</span> <span class="o">-</span><span class="n">p</span> <span class="n">igmp</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>
+<span class="n">firewall</span><span class="o">-</span><span class="n">cmd</span> <span class="o">--</span><span class="n">reload</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Переместить интерфейс с мультикастами в доверительную зону (в терминах <a class="reference external" href="https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-firewalld-on-centos-7">FirewallD on CentOS</a>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">firewall</span><span class="o">-</span><span class="n">cmd</span> <span class="o">--</span><span class="n">zone</span><span class="o">=</span><span class="n">trusted</span> <span class="o">--</span><span class="n">change</span><span class="o">-</span><span class="n">interface</span><span class="o">=&lt;</span><span class="n">INTERFACE_NAME</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p><strong>Windows</strong></p>
+<p>Случается, что брандмауэр Windows блокирует доступ к мультикаст вещанию. Разрешите использовать частные и публичные сети для работы streamMonitor.exe (установите две галочки в Брандмауэре Windows).</p>
+<div class="admonition note">
+<p class="first admonition-title">Примечание</p>
+<p class="last">способы настройки брандмауэра могут отличаться в различных версиях ОС Windows, воспользуйтесь поиском в вашем браузере.</p>
+</div>
+<p><strong>A2:</strong> Reverse Path Filtering (Linux only) - это механизм, проверяющий “маршрутизируемость” до отправителя пакета (<a class="reference external" href="http://tldp.org/HOWTO/Adv-Routing-HOWTO/lartc.kernel.rpf.html">ссылка</a>). Помогает отключение данного фильтра.</p>
+<p>Для проверки можно отключить так:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="mi">0</span> <span class="o">&gt;/</span><span class="n">proc</span><span class="o">/</span><span class="n">sys</span><span class="o">/</span><span class="n">net</span><span class="o">/</span><span class="n">ipv4</span><span class="o">/</span><span class="n">conf</span><span class="o">/&lt;</span><span class="n">IFACE</span><span class="o">&gt;/</span><span class="n">rp_filter</span>
+<span class="n">echo</span> <span class="mi">0</span> <span class="o">&gt;/</span><span class="n">proc</span><span class="o">/</span><span class="n">sys</span><span class="o">/</span><span class="n">net</span><span class="o">/</span><span class="n">ipv4</span><span class="o">/</span><span class="n">conf</span><span class="o">/</span><span class="nb">all</span><span class="o">/</span><span class="n">rp_filter</span>
+</pre></div>
+</div>
+<p>Где  &lt;IFACE&gt; имя интерфейса, для которого производится отключение фильтра.</p>
+<p>Если дело в Reverse Path Filtering, то для отключения фильтра навсегда, нужно внести правки в sysctl.conf (&lt;IFACE&gt; нужно поменять на имя интерфейса) следующим образом</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">&gt;&gt;/</span><span class="n">etc</span><span class="o">/</span><span class="n">sysctl</span><span class="o">.</span><span class="n">conf</span> <span class="o">&lt;&lt;</span><span class="n">EOF</span>
+<span class="c1"># disable RP filter:</span>
+<span class="n">net</span><span class="o">.</span><span class="n">ipv4</span><span class="o">.</span><span class="n">conf</span><span class="o">.&lt;</span><span class="n">IFACE</span><span class="o">&gt;.</span><span class="n">rp_filter</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">net</span><span class="o">.</span><span class="n">ipv4</span><span class="o">.</span><span class="n">conf</span><span class="o">.</span><span class="n">all</span><span class="o">.</span><span class="n">rp_filter</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">EOF</span>
+</pre></div>
+</div>
+<p><strong>A3:</strong> Использование порта меньше 1024 в Linux требует повышенных привилегий (root user). Порты из этого набора считаются системными во многих ОС, поэтому зонд не сможет получать данные (“сбиндиться”). Зонд будет выдавать подобный  лог в консоль:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">09</span><span class="p">:</span><span class="mi">08</span><span class="p">:</span><span class="mi">28</span> <span class="n">source_udp_start</span><span class="p">()[</span><span class="mi">258</span><span class="p">]:</span> <span class="n">Creating</span> <span class="n">UDP</span><span class="o">/</span><span class="n">RTP</span> <span class="n">receiver</span> <span class="k">for</span> <span class="mf">224.1</span><span class="o">.</span><span class="mf">5.172</span><span class="p">:</span><span class="mi">1001</span> <span class="p">(</span><span class="n">bind</span> <span class="n">iface</span> <span class="mf">172.16</span><span class="o">.</span><span class="mf">67.10</span><span class="p">)</span>
+<span class="mi">09</span><span class="p">:</span><span class="mi">08</span><span class="p">:</span><span class="mi">28</span> <span class="n">small_rtp_init_receiver</span><span class="p">()[</span><span class="mi">254</span><span class="p">]:</span> <span class="n">ERROR</span><span class="p">:</span> <span class="n">bind</span> <span class="n">failed</span><span class="p">,</span> <span class="n">err</span> <span class="mh">0xD</span>
+<span class="mi">09</span><span class="p">:</span><span class="mi">08</span><span class="p">:</span><span class="mi">28</span> <span class="n">small_rtp_init2</span><span class="p">()[</span><span class="mi">414</span><span class="p">]:</span> <span class="n">ERROR</span><span class="p">:</span> <span class="n">small_rtp_init_receiver</span><span class="p">:</span> <span class="n">failed</span>
+<span class="mi">09</span><span class="p">:</span><span class="mi">08</span><span class="p">:</span><span class="mi">28</span> <span class="n">source_udp_start</span><span class="p">()[</span><span class="mi">279</span><span class="p">]:</span> <span class="n">ERROR</span><span class="p">:</span> <span class="n">small_rtp_init</span> <span class="n">failed</span> <span class="k">with</span> <span class="n">code</span> <span class="o">-</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>Самое простое решение - запускать зонд от root.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">./</span><span class="n">streamMonitor</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id23">
+<h3>2.5.4. Q: Как “сдампить” мультикаст поток, для дальнейшего анализа?<a class="headerlink" href="#id23" title="Ссылка на этот заголовок">¶</a></h3>
+<p><strong>A:</strong> Самый простой способ “сдампить” (сохранить в .ts файл) мультикаст поток - утилитой socat.</p>
+<p><strong>Windows</strong></p>
+<p>Сборку socat для Windows можно скачать <a class="reference external" href="http://blog.gentilkiwi.com/programmes/socat">тут</a>. <a class="reference external" href="http://www.dest-unreach.org/socat/doc/socat.html">Руководство</a>. На момент написания статьи была протестирована версия socat 2.0.0 (beta 5) под управлением Windows 8.1.</p>
+<p>Пример команды (в одну строку):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">socat</span> <span class="o">-</span><span class="n">u</span> <span class="n">UDP4</span><span class="o">-</span><span class="n">RECV</span><span class="p">:</span><span class="o">&lt;</span><span class="n">PORT</span><span class="o">&gt;</span><span class="p">,</span><span class="n">ip</span><span class="o">-</span><span class="n">add</span><span class="o">-</span><span class="n">membership</span><span class="o">=&lt;</span><span class="n">MULTICAST_IP</span><span class="o">&gt;</span><span class="p">:</span><span class="o">&lt;</span><span class="n">NIC_IP</span><span class="o">&gt;</span><span class="p">,</span><span class="n">reuseaddr</span> <span class="n">CREATE</span><span class="p">:</span><span class="n">dump_name</span><span class="o">.</span><span class="n">ts</span>
+</pre></div>
+</div>
+<p>Создастся файл с указанным именем, в который будет записываться поток, пока утилита не будет остановлена.</p>
+<p><strong>Linux</strong></p>
+<p>Утилита socat. <a class="reference external" href="http://www.dest-unreach.org/socat/doc/socat.html">Руководство</a>. Пример команды (в одну строку):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>socat -u UDP4-RECV:&lt;PORT&gt;,ip-add-membership=&lt;MULTICAST_IP&gt;:&lt;NIC_IP&gt;,reuseaddr CREATE:dump_name-`date +&#39;%F-%H.%M&#39;`.ts
+</pre></div>
+</div>
+<p>Создастся файл с указанными именем и датой, в который будет записываться поток, пока утилита не будет остановлена.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Предупреждение</p>
+<p class="last">Особенность сборки под Linux: данная команда будет дампить все мультикасты, имеющие указанный порт. IP-адрес мультикаста тут фигурирует только для подписки на мультикаст (отправки IGMP запроса).</p>
+</div>
+</div>
+<div class="section" id="igmp">
+<h3>2.5.5. Версии протокола IGMP<a class="headerlink" href="#igmp" title="Ссылка на этот заголовок">¶</a></h3>
+<p><strong>A:</strong> Принудительно выбрать версию протокола IGMP в Linux можно командой:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="mi">2</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">proc</span><span class="o">/</span><span class="n">sys</span><span class="o">/</span><span class="n">net</span><span class="o">/</span><span class="n">ipv4</span><span class="o">/</span><span class="n">conf</span><span class="o">/</span><span class="n">eno2</span><span class="o">/</span><span class="n">force_igmp_version</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id27">
+<h2>2.6. Регистрируемые параметры<a class="headerlink" href="#id27" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="section" id="id28">
+<h3>2.6.1. Графики<a class="headerlink" href="#id28" title="Ссылка на этот заголовок">¶</a></h3>
+<p><strong>Download rate</strong> – график, отображающий скорость загрузки по протоколам HTTP/HTTPS. Для HLS-потоков скорость загрузки характеризуется отношением размера сегментов данных ко времени их скачивания.</p>
+<p><strong>Multicast Rate</strong> – график, отображающий общий битрейт входящего UDP/RTP.</p>
+<p><strong>Bitrate</strong> – график, отображающий битрейт потоков, как несущих полезную нагрузку (аудио и видео потоков), так и служебных потоков с EIT таблицами и PID 0x1fff, используемого для заполнения потока до фиксированного битрейта (т. н. «нули», null packet, padding).</p>
+<p><strong>EPSNR</strong> – график, отображающий статистическую оценку степени искажения цифровых видеоданных при их кодировании. Измеряется в децибелах и определяется отношением пикового квадратичного значения видеосигнала к среднеквадратическому отклонению декодированного изображения от исходного. Величина EPSNR (Estimated Peak Signal to Noise Ratio) оценивается на основании данных, содержащихся в закодированном видеопотоке, и не требует наличия исходных (незакодированных) видеоизображений. EPSNR применяется для оценки качества работы енкодеров. Для оценки можно принять следующие величины: 25-30dB - плохое качество, 45-50dB - хорошее качество.</p>
+<p><strong>Maximum Inter-packet Arrival Time (IAT) : Media Lose Rate (MLR)</strong> - сводный график параметров IAT и MLR. Данный график отображается только для мониторинга IPTV. Позволяет детально оценивать потери и джиттер сигнала на сетевом уровне. На графике расположены две горизонтальные линии, отображающие пороги предупреждения и ошибки параметра IAT. Применяется четырехуровневая цветовая схема. Зеленый цвет означает, что значения находятся ниже порога предупреждения, желтый - значения выше порога предупреждения, но ниже порога ошибки, оранжевый - значение IAT превышает порог ошибки. Отсутствие сигнала отображается красным цветом.</p>
+<p>Пороги обоих параметров задаются в разделе настроек оповещения проекта, на вкладке Thresholds.</p>
+<p><strong>MDI [Delay factor (DF) : Media Loss Rate (MLR)]</strong> - сводный график параметров Delay factor (DF) и MLR, т.н. Media Delivery Index (MDI). График позволяет оценить качество доставки сигнала на основе двух параметров: потери пакетов и косвенного анализа джиттера сигнала (на базе вычисления DF).</p>
+<p><strong>Continuity Counter Errors</strong> - график распределения CC ошибок  (TR 101 290 error 1.4 Continuity Counter) во времени.</p>
+<p><strong>Clock Continuity Errors</strong> - график распределения ошибок ClockContinuity во времени.</p>
+</div>
+<div class="section" id="id29">
+<h3>2.6.2. Эскизы<a class="headerlink" href="#id29" title="Ссылка на этот заголовок">¶</a></h3>
+<p><strong>Thumbnails</strong> – захват эскизов видеопотока с настраиваемым интервалом времени между снимками. Дополнительно настраивается интервал между снимками в период рекламы, обозначенный метками SCTE35. Для активации захвата эскизов необходимо установить галочку «Захват эскизов» в форме постановки задачи.</p>
+</div>
+<div class="section" id="id30">
+<h3>2.6.3. Параметры, события и ошибки<a class="headerlink" href="#id30" title="Ссылка на этот заголовок">¶</a></h3>
+<p><strong>Mapping</strong> - массив чисел, обозначающих количество TS пакетов внутри одного IP пакета, которые были обнаружены за последние 3 секунды, в порядке, пропорциональном частоте появления. Обычно 7 транспортных пакетов упаковываются в один IP пакет.</p>
+<p><strong>TOS/DSCP</strong> - <a class="reference external" href="https://en.wikipedia.org/wiki/Type_of_service">Type-of-service</a>, поле в IP заголовке. Может трактоваться совершенно по разному в различном оборудовании.</p>
+<p><strong>TTL</strong> - <a class="reference external" href="https://en.wikipedia.org/wiki/Time_to_live">Time to live</a></p>
+<p><strong>Src address/Src MAC</strong> - IP и MAC адреса источника мультикаст вещания.</p>
+<p><strong>Dst MAC</strong> -  Destination MAC. Для доставки мультикаста по IPv4 используется пул Ethernet MAC адресов 01:00:5e:00:00:00–01:00:5e:7f:ff:ff. Более подробную информацию можно найти, перейдя по <a class="reference external" href="https://en.wikipedia.org/wiki/IP_multicast">ссылке</a>.</p>
+<p><strong>Maximum Inter-packet Arrival Time (IAT)</strong> – график, отображающий максимальное время между приходящими пакетами. Джиттер может быть охарактеризован при помощи проверки времени между приходящими пакетами.  Максимальное время между приходящими пакетами (IAT) является суммой среднего времени между пакетами и джиттером. Фиксируется максимальное значение IAT за секунду. Измеряется в миллисекундах. Подробнее о данном параметре можно прочитать в параграфе <a href="#id38"><span class="problematic" id="id39">`Что такое Maximum Inter-packet Arrival Time (IAT)?`_</span></a></p>
+<p><strong>MinIAT</strong> – минимальное значение времени между приходящими пакетами (IAT), зафиксированное за одну секунду измерений. Измеряется в миллисекундах.</p>
+<p><strong>AvgIAT</strong> – среднее значение времени между приходящими пакетами (IAT), вычисляемое на интервале в одну секунду. Измеряется в миллисекундах. Получаемое значение AvgIAT приближено к расчетному значению IAT для Constant bitrate потока с постоянном mapping равным 7.</p>
+<p><strong>MDI Media Delivery Index [Delay factor (DF) : Media Loss Rate (MLR)]</strong> - <a class="reference external" href="https://tools.ietf.org/html/rfc4445">индекс</a>, который может быть использован как индикатор качества при мониторинге сети доставки вещания видеосервисов, чувствительной к джиттеру и потере данных. Определяется джиттером потока, характеризуемым как отклонение битрейта от ожидаемого значения (флуктуация), и потерями данных потока (MLR). Флуктуация битрейта, вызванная джиттером и потерями данных, может быть определена как относительная глубина буфера (DF), необходимого для приема такого потока.</p>
+<p><strong>Several broadcasters</strong> - несколько источников мультикаст вещания  в одной группе.</p>
+<p><strong>EIT</strong> - на сервер передается содержимое EIT таблиц.</p>
+<p><strong>ProgramSpecificInformation</strong>  – на сервер передается описание о программах (PAT, PMT и SDT), входящих в анализируемый поток. На основе полученных данных может быть построена сервисная таблица. Также в данном событии передается информация о типе (поле type) и  криптованности составляющих потоков, корректности потока и наличии PCR.</p>
+<p><strong>PCR</strong> – (Program Clock Reference) указывает на наличие меток синхронизации в составляющем потоке. Отображается во всплывающем окне «информация о сервисе» <strong>в виде часов</strong>. Информация о таких потоках приходит в PSI (ProgramSpecificInformation) событии.</p>
+<p><strong>PcrError</strong> – ошибка, в потоке полностью отсутствуют PCR метки.</p>
+<p><strong>Зашифрованный поток</strong> – отображается <strong>в виде символа замочка</strong> напротив соответствующего элементарного потока во всплывающем окне «информация о сервисе». Также символ замочка может отображаться на различных видах, указывая на то, что в потоке имеются признаки шифрования. Информация о шифрованности приходит в PSI (ProgramSpecificInformation) событии. Для таких потоков не производится анализ замирания картинки, захват эскизов, вычисление EPSNR.</p>
+<p><strong>Некорректный элементарный поток</strong> – (Invalid ES) отображается <strong>в виде символа молнии</strong> напротив соответствующего элементарного потока во всплывающем окне «информация о сервисе». Если для элементарного видео потока анализатор получает данные на заявленном PID, но в течении 10-20 секунд нет ни одного видео заголовка (SPS, PPS), такому потоку присваивается метка Invalid ES (возможно, поток шифрованный или используются произвольные данные). Информация о таких потоках приходит в PSI (ProgramSpecificInformation) событии. Для таких потоков не производятся: анализ замирания картинки, захват эскизов, вычисление EPSNR.</p>
+<p><strong>VideoInformation</strong> – на сервер передается описание заголовков видеопотоков. На основе полученных данных строится таблица во всплывающем окне «информация о видеопотоке». В таблице отображаются такие параметры, как формат кодирования, разрешение, количество кадров в секунду, соотношение сторон кадра и пр.</p>
+<p><strong>Download rate</strong> – скорость загрузки по протоколам HTTP/HTTPS.</p>
+<p><strong>Multicast Rate</strong> – сетевой битрейт входящего UDP/RTP потока.</p>
+<p><strong>Bitrate</strong> – величина текущего битрейта (усредненного за 1с) всех элементарных потоков, входящих в MPEG TS. Отображается во всплывающем окне «информация о сервисе» и в режиме TableView.</p>
+<p><strong>Min/Max bitrate</strong> – минимальная и максимальная величины битрейта всех элементарных потоков, входящих в MPEG TS. Отображается во всплывающем окне «информация о сервисе» и исчисляется с момента открытия окна.</p>
+<p><strong>Average bitrate</strong> – средний битрейт элементарного видеопотока за интервалы времени 5, 20 и 60 секунд. Отображается во всплывающем окне «информация о видеопотоке». Исчисляется с момента открытия окна.</p>
+<p><strong>Info/Stop</strong> – регистрируются события появления данных на входе зонда и момент передачи команды на остановку.</p>
+<p><strong>BadSource</strong> – регистрируется событие, когда зонд не может получать данные для анализа по какой-либо причине. Для разных типов доставки существуют разные критерии:</p>
+<ul class="simple">
+<li>для UDP/RTP - это отсутствие данных на входе в течение более, чем 1с;</li>
+<li>для HLS - это невозможность скачать сегмент по нескольким причинам:</li>
+</ul>
+<p>– отсутствие изменений в плейлисте. Производится 3 попытки скачивания плейлиста с интервалом, равным длительности последнего сегмента.  Если во всех трех попытках в плейлисте не произошло изменений - регистрируется BadSource;</p>
+<p>– для HTTP/HTTPS - это нулевая скорость загрузки (download rate) в течение определенного времени, в среднем около 5с. За это время анализатор опустошает входной буфер.</p>
+<p><strong>VideoFreeze</strong> – анализируется замирание видео. Отображается синим цветом на виде LiveView и <strong>символом снежинки</strong> в области эскизов или поля “детали”. Анализ производится в два этапа. Производится проверка отношения размера I кадров к P кадрам. Когда это отношение превышает установленное пороговое значение, декодируются два соседних I кадра, которые сравниваются по точкам. Для активации анализа замирания необходимо установить галочку «Фиксация VideoFreeze» в форме постановки задачи.</p>
+<p><strong>SCTE35</strong> – фиксируется метка в виде записи события в журнале, согласно стандарту  <a class="reference external" href="http://www.scte.org/documents/pdf/Standards/ANSI_SCTE352014.pdf">ANSI/SCTE 35</a>. Например: (SCTE35 00:01:01.157 {«event_id»=&gt;662, «duration»=&gt;242, «out_of_network_indicator»=&gt;true, «pts_time»=&gt;89742.159644})</p>
+<p><strong>ClosedCaption</strong> – под этими событиями отсылаются на сервер субтитры из видео. Поддерживаются стандарты CEA-608 и <a class="reference external" href="https://en.wikipedia.org/wiki/CEA-708">CEA-708</a>.</p>
+<p><strong>CC ошибки</strong> – Continuity Counter (TR 101 290 error 1.4). Отображаются в таблице окна «информация о сервисе» в трех полях:</p>
+<ul class="simple">
+<li>количество ошибок с момента открытия окна;</li>
+<li>количество ошибок за последний час;</li>
+<li>количество ошибок с момента начала анализа данного потока.</li>
+</ul>
+<p><strong>TR_101_290_errors (priority 1)</strong> – группа ошибок первого приоритета согласно стандарту <a class="reference external" href="http://www.etsi.org/deliver/etsi_tr/101200_101299/101290/01.02.01_60/tr_101290v010201p.pdf">ETSI TR 101 290</a> (на английском языке). Ошибки отображаются на странице задачи в виде групп квадратов зеленого (или красного, в случае активного состояния ошибки) цвета. Также, если в потоке присутствуют ошибки, на эскизе или в поле “Детали” отображается <strong>символ “TR”</strong>.</p>
+<ul class="simple">
+<li>TS_Sync_Loss – фиксируется при детектировании двух и более идущих подряд ошибок Sync_Byte_Error (см. ниже). Данная ошибка пропадает при последовательном обнаружении пяти и более синхробайтов (считается, что синхронизация установлена).</li>
+<li>Sync_Byte_Error – отсутствие синхробайта 0x47 в следующем пакете (после 188 или 204 байт).</li>
+<li><dl class="first docutils">
+<dt>PAT_Error – возникает при следующих условиях:</dt>
+<dd><ul class="first last">
+<li>PID 0x0000 не появляется каждые 0,5с (настраиваемая величина);</li>
+<li>PID 0x0000 не содержит секцию с table_id 0x00 (т.н. PAT таблица);</li>
+<li>поле Scrambling_control_field, не равно 00 для PID 0x0000.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Continuity_Count – возникает при следующих условиях:</dt>
+<dd><ul class="first last">
+<li>неправильный порядок следования пакетов;</li>
+<li>один и тот же пакет появляется последовательно более, чем два раза;</li>
+<li>потеря пакетов.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>PMT_Error – возникает при следующих условиях:</dt>
+<dd><ul class="first last">
+<li>секция с table_id 0x02 (т.н. PMT таблица) не появляется каждые 0,5с (настраиваемая величина) на PID, назначенном для этой цели в таблице PAT;</li>
+<li>поле Scrambling_control_field, не равно 00 для всех PID, содержащих секции с table_id 0x02 (т.н. PMT таблицы).</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Установка нуля в настройке порогов отключает детекцию PMT Error.</p>
+<ul class="simple">
+<li>PID_error – данные для указанного PID не появляются в течение установленного пользователем времени (по умолчанию 5с). Означает частичную потерю сервиса или ошибки в PAT/PMT. Отдельно ошибка настраивается и генерируется для элементарных потоков, которые являются видео или аудио. Установка нуля в настройке порогов отключает детекцию PID Error / AV PID Error.</li>
+</ul>
+<p><strong>TR_101_290_errors (priority 2)</strong>  – группа ошибок второго приоритета согласно стандарту <a class="reference external" href="http://www.etsi.org/deliver/etsi_tr/101200_101299/101290/01.02.01_60/tr_101290v010201p.pdf">ETSI TR 101 290</a> (на английском языке). Реализована частично.</p>
+<ul class="simple">
+<li>Transport_error – фиксируется, если поле Transport_error_indicator установлено в 1 в TS заголовке.</li>
+</ul>
+<p><strong>ClockContinuity</strong> – регистрируется разрыв временных меток видеопотока. ClockContinuity отслеживает равномерность временных меток PTS/DTS в потоке, определяет наличие резких скачков и обратного прироста времени (обычно связано с потерями пакетов и/или в результате склейки потока). В отличие от ошибки “Период повторения PTS меток более, чем 700 мс (ETSI TR 101 290 Second priority 2.5 PTS_error)”, ClockContinuity - это анализ меток синхронизации, а не наличие данных через установленный период (maxPTSInterval) времени. Установка нуля в настройке порогов отключает детекцию ClockContinuity.</p>
+</div>
+<div class="section" id="ott">
+<h3>2.6.4. Параметры OTT<a class="headerlink" href="#ott" title="Ссылка на этот заголовок">¶</a></h3>
+<p><strong>Resolution</strong> – разрешение (Ш x В) кадра профиля, заявленное в главном плейлисте.</p>
+<p><strong>Bandwidth</strong> – битрейт профиля, заявленный в главном плейлисте. Отображается в битах в секунду.</p>
+<p><strong>Actual bitrate</strong>       – средний битрейт сегмента. Рассчитывается как: размер сегмента (Segment size) / длительность сегмента (Segment duration). Отображается в мегабитах в секунду (Mb/s).</p>
+<p><strong>Download speed</strong> – средняя скорость скачивания сегмента. Рассчитывается как: размер сегмента (Segment size) / время скачивания сегмента (Download time). Отображается в мегабитах в секунду (Mb/s).</p>
+<p><strong>Segment duration</strong> – длительность скачанного сегмента данных, заявленная в плейлисте второго уровня (Media Playlist). Отображается в секундах.</p>
+<p><strong>Download time</strong> – время, затраченное на скачивание сегмента данных. Отображается в секундах.</p>
+<p><strong>Segment size, B</strong> – точный размер скачанного сегмента. Отображается в байтах.</p>
+<p><strong>Segment size, MB</strong> – оценочный размер скачанного сегмента. Отображается в мегабайтах.</p>
+<p><strong>Start with an IDR frame</strong> – если сегмент не зашифрован и не сброшен перед началом анализа, то зонд производит проверку на наличие IDR кадра в начале сегмента (требование HLS спецификации). Если сегмент начинается с IDR кадра, то значение - OK, если нет, значение - Error.</p>
+<p><strong>INDEPENDENT tag</strong> – логический тип, Yes означает наличие #EXT-X-INDEPENDENT-SEGMENTS тега в Master или Media плейлистах.</p>
+</div>
+<div class="section" id="id34">
+<h3>2.6.5. События и ошибки OTT<a class="headerlink" href="#id34" title="Ссылка на этот заголовок">¶</a></h3>
+<p><strong>HlsEvent</strong> – регистрация события скачивания очередного сегмента данных протокола HLS. Фиксируется время и дата скачивания, название, размер, длительность и порядковый номер сегмента. Размер сегмента и время его скачивания характеризуют скорость скачивания.</p>
+<p><strong>Profile changed (HlsBandwidthSwitched)</strong> – зафиксировано переключение на профиль с другим битрейтом. Только для анализатора в режиме «Плеер».</p>
+<p><strong>The number of profiles changed (HlsNumberOfProfilesChanged)</strong> – зафиксировано изменение количества профилей в плейлисте верхнего уровня (Master Playlist).</p>
+<p><strong>Minimum profiles (HlsMinimumProfiles)</strong> – количество профилей, заявленных в главном плейлисте, меньше, чем минимальное значение, заданное в настройках порогов.</p>
+<p><strong>Profiles sequence divergence (HlsSequenceDivergence)</strong> –  зафиксировано расхождение значения полей #EXT-X-MEDIA-SEQUENCE в плейлистах второго уровня (Media Playlist).</p>
+<p><strong>Profile streamtype changed (HlsProfileStreamTypeChanged)</strong> – изменилась информация о профиле в плейлисте верхнего уровня (Master Playlist).</p>
+<p><strong>Profile duplicate bandwidth (HlsDuplicateBandwidth)</strong> –  в плейлисте верхнего уровня (Master Playlist) заявлены одинаковые максимальные битрейты для разных профилей (поля BANDWIDTH).</p>
+<p><strong>Profile invalid resolution (HlsInvalidResolution )</strong> – зафиксировано некорректное разрешение в поле RESOLUTION плейлиста верхнего уровня (Master Playlist).</p>
+<p><strong>(LowDownloadrate)</strong> – время закачки чанка больше, чем длительность самого чанка. В Elecard Boro событие используется для отображение недостататка скорости скачивания на виде LiveView.</p>
+<p><strong>Download bitrate low</strong> (HlsDownloadSpeed = «Warning») – Низкая скорость скачивания чанка. Генерируется предупреждение, когда скорость скачивания ниже, чем установленный порог Download speed warning (download_speed_warning), выраженный в процентном отношении. Время загрузки / длительность чанка &gt;= порог предупреждения (%). Порог предупреждения не может быть выше порога ошибки.</p>
+<p><strong>Download bitrate too low</strong> (HlsDownloadSpeed = «Error») – слишком низкая скорость скачивания чанка. Генерируется ошибка, когда скорость скачивания ниже, чем установленный порог Download speed error (download_speed_error), выраженный в процентном отношении. Время загрузки / длительность чанка &gt;= порог ошибки (%).</p>
+<p><strong>Actual bitrate</strong> (HlsActualBitrate = «Error») – средний битрейт скачанного сегмента больше или меньше заявленного в границах, установленных пользователем. Actual bitrate min (actual_bitrate_min) задает нижнюю границу, и Actual bitrate max (actual_bitrate_max) – верхнюю границу в процентах. Условие генерации ошибки по нижней границе: Размер скачанного чанка / заявленная длительность &lt;= заявленного битрейта профайла (%). Условие генерации ошибки по верхней границе: Размер скачанного чанка / заявленная длительность  &gt;= заявленного битрейта профайла (%).</p>
+<p><strong>Bad segment size</strong> (HlsBadSegmentSize ) – ошибочный размер сегмента данных. Битрейт сегмента в 50 раз превышает максимальный битрейт, указанный в поле BANDWIDTH в главном плейлисте (Master Playlist).</p>
+<p><strong>Manifest sequence discontinuity</strong> (HlsSequenceNumberDiscontinuity) – зафиксирована потеря одного или нескольких плейлистов с потерей HLS сегментов. Ошибка фиксируется в случае, если номер полученного плейлиста отличается от предыдущего более, чем на 1, и, при этом, были потеряны сегменты данных. Данная ошибка может быть вызвана как проблемами в генерации и раздаче OTT контента, так и недостаточной производительностью зонда.</p>
+<p><strong>Static manifest</strong> (HlsStaticManifest) – плейлист второго уровня не обновился в течение нескольких скачиваний подряд. Число попыток задается пользователем в Number of identical playlist (sequance_age). Между попытками выдерживается пауза, равная длительности последнего скачанного сегмента.</p>
+<p><strong>Manifest error</strong> (HlsManifestError) – ошибка обработки/разбора плейлиста или несоответствие содержимого плейлиста стандарту. Содержимое плейлиста, которое не удалось разобрать, возвращается. Также ошибка генерируется, если версия плейлиста выше поддерживаемой.</p>
+<p><strong>Unknown manifest</strong> (HlsUnknownManifest ) – неизвестный манифест. Возвращаются возможные причины ошибки (TARGETDURATIONMissing, EXTM3UMissing, PlaylistEmpty).</p>
+<p><strong>Manifest size</strong> (HlsManifestSize) – размер плейлиста превышает пороговое значение Manifest size (manifest_size), установленное пользователем.</p>
+<p><strong>Manifest download failure</strong> (HlsFailedDownloadPlaylist) – ошибка, при которой приемник не может скачать плейлист первого или второго уровня, дополнительно возвращается <strong>HlsCurlError</strong> или <strong>HlsHTTPError</strong>.</p>
+<p><strong>Key download failure</strong> (HlsFailedDownloadKey) – ошибка получения ключа для зашифрованного сегмента, дополнительно возвращается <strong>HlsCurlError</strong> или <strong>HlsHTTPError</strong>.</p>
+<p><strong>Segment download failure</strong> (HlsFailedDownloadChunk) - ошибка, при которой приемник не может скачать сегмент данных, дополнительно возвращается <strong>HlsCurlError</strong> или <strong>HlsHTTPError</strong>.</p>
+<p><strong>Curl error</strong> (HlsCurlError) – код ошибки приема HLS и ее описание, возвращаемые модулем libcurl. Подробнее об ошибках можно узнать на официальной странице <a class="reference external" href="https://curl.haxx.se/libcurl/c/libcurl-errors.html">проекта libcurl</a>.</p>
+<p><strong>HTTP error</strong> (HlsHTTPError)  – ошибка приема HLS, возвращается код HTTP ошибки.</p>
+</div>
+<div class="section" id="id35">
+<h3>2.6.6. Системные ошибки<a class="headerlink" href="#id35" title="Ссылка на этот заголовок">¶</a></h3>
+<p><strong>Error</strong> – группа системных ошибок и ошибок общего плана:</p>
+<ul class="simple">
+<li><strong>“Buffer overflow, data skipped”</strong> – данные сбрасываются перед декодером. Такая ситуация возникает в результате недостаточной производительности системы. Необходимо отметить, что данные сбрасываются уже после прохождения анализа на целостность сигнала (TR 101 290) и вычисления битрейта, поэтому данная ошибка не влияет на результаты вычисления целостности. Это утверждение также применимо для OTT: данные сбрасываются перед декодированием, не влияя на вычисление скорости загрузки сегментов и детектирование OTT ошибок. Сброс данных может появиться при вычислении следующих параметров: ошибки замирания картинки, захват эскизов и вычисление EPSNR.</li>
+<li><strong>“Resumption”</strong> – фиксируется событие перезагрузки дочернего процесса, анализирующего поток, родительским процессом, так как он не отвечал в течении 10с. Главный процесс следит за работоспособностью всех задач анализатора (дочерних процессов) и, в случае критической ошибки, производит перезапуск с восстановлением состояния.</li>
+<li><strong>Skip segment</strong> (HlsSkipSegment) – пропущен сегмент данных, очередь скачанных сегментов превысила установленное значение. Недостаточная производительность зонда, скорость скачивания чанков превышает скорость их обработки.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="ethernet">
+<h2>2.7. Вычисление Ethernet параметров<a class="headerlink" href="#ethernet" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="section" id="ethernet-pcap">
+<h3>2.7.1. Ethernet параметры и библиотека pcap<a class="headerlink" href="#ethernet-pcap" title="Ссылка на этот заголовок">¶</a></h3>
+<p>К Ethernet параметрам относятся: Inter-packet Arrival Time (IAT), Delay Factor (DF), Media Loss Rate (MLR), Type-of-service (TOS/DSCP), Time to live (TTL), destination MAC, source IP/MAC, mapping. Вычисление указанных параметров базируется на сторонней библиотеке <a class="reference external" href="http://www.tcpdump.org/">libpcap</a> для Linux приложения или <a class="reference external" href="https://www.winpcap.org/">winpcap</a> для Windows приложения. Анализатор не будет вычислять указанные параметры, если в системе не установлена соответствующая библиотека. Кроме этого, для системы Linux, зонд должен запускаться с правами суперпользователя (sudo ./streamMonitor).</p>
+<p>Для некоторых параметров могут существовать альтернативные пути получения данных, такие параметры будут отображаться даже при отсутствии драйвера pcap.</p>
+</div>
+<div class="section" id="q-ethernet">
+<h3>2.7.2. Q: Ограничения на вычисление Ethernet параметров в зависимости от ОС?<a class="headerlink" href="#q-ethernet" title="Ссылка на этот заголовок">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Свойство</th>
+<th class="head">Linux</th>
+<th class="head">Windows</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Вычисление Ethernet параметров(IAT/MLR/DF).</td>
+<td>Зонд должен быть запущен с правами суперпользователя(sudo ./streamMonitor).</td>
+<td>На компьютере, где запускается зонд, должна быть установлена библиотека захвата пакетов WinPcap (<a class="reference external" href="https://www.winpcap.org/install/">https://www.winpcap.org/install/</a>).</td>
+</tr>
+<tr class="row-odd"><td>Вычисление Ethernet параметров для localhost (127.0.0.1).</td>
+<td>Ограничения нет.</td>
+<td>Вычисление IAT для localhost невозможно.</td>
+</tr>
+<tr class="row-even"><td>Вычисление Ethernet параметров на основе меток времени, проставляемых сетевым адаптером. (Высокая точность вычисления IAT).</td>
+<td>Поддерживается. Данный режим используется автоматически (если есть поддержка в адаптере). Подробнее в параграфе <a class="reference internal" href="#ethernet">Вычисление Ethernet параметров</a>.</td>
+<td>Не поддерживается.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="q-maximum-inter-packet-arrival-time-iat">
+<h3>2.7.3. Q: Что такое Maximum Inter-packet Arrival Time (IAT)?<a class="headerlink" href="#q-maximum-inter-packet-arrival-time-iat" title="Ссылка на этот заголовок">¶</a></h3>
+<p><strong>A: Maximum Inter-packet Arrival Time (IAT)</strong> – максимальное время между приходящими пакетами. Джиттер может быть охарактеризован при помощи проверки времени между приходящими пакетами. Максимальное время между приходящими пакетами (IAT) является суммой среднего времени между пакетами и джиттером. Фиксируется максимальное значение IAT за секунду.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Алфавитный указатель"
+             >указатель</a></li>
+        <li class="right" >
+          <a href="requirements.html" title="1. Технические требования"
+             >назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Документация Elecard Boro: Часто задаваемые вопросы </a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Elecard.
+      Создано с помощью <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.3.
+    </div>
+  </body>
+</html>
