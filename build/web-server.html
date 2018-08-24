@@ -1,0 +1,1000 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>3. Web-сервер &#8212; Документация Elecard Boro: Часто задаваемые вопросы </title>
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/bizstyle.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="genindex.html" />
+    <link rel="search" title="Поиск" href="search.html" />
+    <link rel="prev" title="2. Зонд" href="probe.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Алфавитный указатель"
+             accesskey="I">указатель</a></li>
+        <li class="right" >
+          <a href="probe.html" title="2. Зонд"
+             accesskey="P">назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Документация Elecard Boro: Часто задаваемые вопросы </a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Оглавление</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">3. Web-сервер</a><ul>
+<li><a class="reference internal" href="#id1">3.1. Система оповещения</a><ul>
+<li><a class="reference internal" href="#id2">3.1.1. Триггеры событий</a><ul>
+<li><a class="reference internal" href="#eth">3.1.1.1. ETH</a></li>
+<li><a class="reference internal" href="#etr-tr-101-290">3.1.1.2. ETR (TR 101 290)</a></li>
+<li><a class="reference internal" href="#str">3.1.1.3. STR</a></li>
+<li><a class="reference internal" href="#ott">3.1.1.4. OTT</a></li>
+<li><a class="reference internal" href="#sys-system">3.1.1.5. SYS (Настройки проекта &gt; Профили зондов &gt; SYSTEM)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#q-thresholds">3.1.2. Q: Как настроить профили порогов (thresholds)?</a><ul>
+<li><a class="reference internal" href="#ethernet-parameters">3.1.2.1. Ethernet parameters</a></li>
+<li><a class="reference internal" href="#tr-101-290">3.1.2.2. TR 101 290</a></li>
+<li><a class="reference internal" href="#ott-control">3.1.2.3. OTT control</a></li>
+<li><a class="reference internal" href="#http-query-string-parameters">3.1.2.4. HTTP query string parameters</a></li>
+<li><a class="reference internal" href="#id4">3.1.2.5. Настройка анализируемых задач</a></li>
+<li><a class="reference internal" href="#system">3.1.2.6. Профили System</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#snmp">3.1.3. Как настроить и использовать SNMP оповещение?</a><ul>
+<li><a class="reference internal" href="#id5">3.1.3.1. Общая информация</a></li>
+<li><a class="reference internal" href="#mib">3.1.3.2. MIB файлы</a></li>
+<li><a class="reference internal" href="#id6">3.1.3.3. Настройка порогов оповещений</a></li>
+<li><a class="reference internal" href="#id7">3.1.3.4. Настройка профиля SNMP оповещений</a></li>
+<li><a class="reference internal" href="#id9">3.1.3.5. Настройка анализируемых задач</a></li>
+<li><a class="reference internal" href="#id10">3.1.3.6. Настройка и применение системного профиля</a></li>
+<li><a class="reference internal" href="#snmp-trap">3.1.3.7. Структура SNMP trap сообщения</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id13">3.2. Мониторинг OTT сервисов</a><ul>
+<li><a class="reference internal" href="#q-user-agent-http">3.2.1. Q: Как изменить User-agent в http запросах от зонда?</a></li>
+<li><a class="reference internal" href="#http">3.2.2. Как передать дополнительные параметры в http запросах от зонда?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Предыдущий раздел</h4>
+  <p class="topless"><a href="probe.html"
+                        title="предыдущая глава">2. Зонд</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Эта страница</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/web-server.rst.txt"
+            rel="nofollow">Исходный текст</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Быстрый поиск</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Искать" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="web">
+<h1>3. Web-сервер<a class="headerlink" href="#web" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="section" id="id1">
+<h2>3.1. Система оповещения<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="section" id="id2">
+<h3>3.1.1. Триггеры событий<a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h3>
+<p>По механизму настройки и функционированию триггеры можно разбить на три типа:</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/1trigger_ru_en.png"><img alt="_images/1trigger_ru_en.png" src="_images/1trigger_ru_en.png" style="width: 608.0px; height: 28.0px;" /></a>
+</div>
+<ul class="simple">
+<li>Триггеры, где каждое событие генерирует срабатывание. Настраивается только уровень.</li>
+</ul>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/2trigger_ru.png"><img alt="_images/2trigger_ru.png" src="_images/2trigger_ru.png" style="width: 608.0px; height: 30.0px;" /></a>
+</div>
+<ul class="simple">
+<li>Триггеры, интегрирующие длительность события на определенном интервале времени. Настраивается суммарная длительность события, интервал времени и уровень.</li>
+</ul>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/3trigger_ru.png"><img alt="_images/3trigger_ru.png" src="_images/3trigger_ru.png" style="width: 608.0px; height: 30.0px;" /></a>
+</div>
+<ul class="simple">
+<li>Триггеры, интегрирующие количество событий на определенном интервале времени.</li>
+</ul>
+<p>Настраивается суммарное количество событий, интервал времени и уровень.</p>
+<p>По логике оповещения триггеры разделены на два типа: анонсирующие состояния и анонсирующие события.</p>
+<p><strong>Состояния (state)</strong> -  оповещения такого типа передают начало и конец события. Состояние передается в поле Status, которое может иметь значение active|cleared. Сообщения отправляются дважды, при появлении события и при его окончании. Например, при регистрации события BadSource (No signal), когда пропадают данные на входе анализатора, отправляется оповещение, в котором поле Status = active. Когда появляются валидные данные (ошибка снята), отправляется второе сообщение, в котором поле Status = cleared, и дополнительно фиксируется время окончания события.</p>
+<p><strong>События (event)</strong> - оповещения такого типа приходят единожды. В основном, такие оповещения связаны с фактом изменения состояния. Например, при каком-либо изменении в PSI таблице отправляется оповещение Program Specific Information changed. Для некоторых событий (Continuity Counter и Clock Continuity) оповещение отправляется при достижении установленного количества зарегистрированных ошибок.</p>
+<p>Ниже перечислены все доступные триггеры и их краткое описание. Подробное  описание параметров и событий можно найти в параграфе <a class="reference external" href="probe.html#id25">Регистрируемые параметры</a>. Подробное описание порогов и настроек можно найти в разделе <a class="reference internal" href="#q-thresholds">Q: Как настроить профили порогов (thresholds)?</a>.</p>
+<div class="section" id="eth">
+<h4>3.1.1.1. ETH<a class="headerlink" href="#eth" title="Ссылка на этот заголовок">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Имя триггера</th>
+<th class="head">Тип</th>
+<th class="head">Уровень</th>
+<th class="head">Описание</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>TOS/DSCP changed</td>
+<td>event</td>
+<td>Error</td>
+<td>Изменение TOS/DSCP поля.</td>
+</tr>
+<tr class="row-odd"><td>TTL changed</td>
+<td>event</td>
+<td>Error</td>
+<td>Изменение TTL потока.</td>
+</tr>
+<tr class="row-even"><td>IAT Error</td>
+<td>state</td>
+<td>Error</td>
+<td>Превышение порога IAT Error.</td>
+</tr>
+<tr class="row-odd"><td>IAT Warning</td>
+<td>state</td>
+<td>Warning</td>
+<td>Превышение порога IAT Warning.</td>
+</tr>
+<tr class="row-even"><td>MLR Error</td>
+<td>state</td>
+<td>Error</td>
+<td>Превышение порога MLR Error.</td>
+</tr>
+<tr class="row-odd"><td>MLR Warning</td>
+<td>state</td>
+<td>Warning</td>
+<td>Превышение порога MLR Warning.</td>
+</tr>
+<tr class="row-even"><td>Max bitrate (Bitrate overflow)</td>
+<td>state</td>
+<td>Error</td>
+<td>Битрейт мультикаст потока выше заданного порога.</td>
+</tr>
+<tr class="row-odd"><td>Min bitrate (Bitrate underflow)</td>
+<td>state</td>
+<td>Error</td>
+<td>Битрейт мультикаст потока ниже заданного порога.</td>
+</tr>
+<tr class="row-even"><td>BadSource (No signal)</td>
+<td>state</td>
+<td>Major</td>
+<td>Отсутствие сервиса (данных).</td>
+</tr>
+<tr class="row-odd"><td>Several broadcasters</td>
+<td>state</td>
+<td>Error</td>
+<td>Несколько источников мультикаста в одной группе.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="etr-tr-101-290">
+<h4>3.1.1.2. ETR (TR 101 290)<a class="headerlink" href="#etr-tr-101-290" title="Ссылка на этот заголовок">¶</a></h4>
+<table border="1" class="docutils" id="id14">
+<caption><span class="caption-text"><strong>Priority 1</strong></span><a class="headerlink" href="#id14" title="Постоянная ссылка на таблицу">¶</a></caption>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Имя триггера</th>
+<th class="head">Тип</th>
+<th class="head">Уровень</th>
+<th class="head">Описание</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>TS Sync Loss</td>
+<td>state</td>
+<td>Major</td>
+<td>Потеря синхронизации транспортного потока.</td>
+</tr>
+<tr class="row-odd"><td>Sync Byte Error</td>
+<td>state</td>
+<td>Major</td>
+<td>Отсутствие синхробайта 0x47 в следующем пакете.</td>
+</tr>
+<tr class="row-even"><td>PAT Error</td>
+<td>state</td>
+<td>Major</td>
+<td>Ошибки в приеме PAT таблицы.</td>
+</tr>
+<tr class="row-odd"><td>Continuity Counter</td>
+<td>event</td>
+<td>Major</td>
+<td>Потеря транспортных пакетов.</td>
+</tr>
+<tr class="row-even"><td>PMT Error</td>
+<td>state</td>
+<td>Major</td>
+<td>Ошибки в приеме PMT таблицы.</td>
+</tr>
+<tr class="row-odd"><td>PID error</td>
+<td>state</td>
+<td>Major</td>
+<td>Данные для указанного PID не появляются в течение установленного пользователем времени.</td>
+</tr>
+<tr class="row-even"><td>PID error (VidAud)</td>
+<td>state</td>
+<td>Major</td>
+<td>Данные для указанного аудио/видео PID не появляются в течение установленного пользователем времени.</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils" id="id15">
+<caption><span class="caption-text"><strong>Priority 2</strong></span><a class="headerlink" href="#id15" title="Постоянная ссылка на таблицу">¶</a></caption>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Имя триггера</th>
+<th class="head">Тип</th>
+<th class="head">Уровень</th>
+<th class="head">Описание</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Transport error</td>
+<td>state</td>
+<td>Major</td>
+<td>Поле Transport_error_indicator = 1.</td>
+</tr>
+<tr class="row-odd"><td>Clock Continuity</td>
+<td>event</td>
+<td>Major</td>
+<td>Скачок или обратный прирост временных меток PTS/DTS.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="str">
+<h4>3.1.1.3. STR<a class="headerlink" href="#str" title="Ссылка на этот заголовок">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Имя триггера</th>
+<th class="head">Тип</th>
+<th class="head">Уровень</th>
+<th class="head">Описание</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Invalid Elementary Stream</td>
+<td>state</td>
+<td>Major</td>
+<td>В течение 20 секунд для видеопотока нет ни одного видео заголовка (SPS, PPS), возможно поток шифрованный.</td>
+</tr>
+<tr class="row-odd"><td>Program Specific Information changed</td>
+<td>event</td>
+<td>Warning</td>
+<td>Изменилась информация о потоке, описанная в таблицах PAT, PMT и SDT.</td>
+</tr>
+<tr class="row-even"><td>Encryption map changed</td>
+<td>event</td>
+<td>Major</td>
+<td>Изменилась информация о шифровании PID.</td>
+</tr>
+<tr class="row-odd"><td>Video Information changed</td>
+<td>event</td>
+<td>Warning</td>
+<td>Изменился заголовок(и) видеопотока(ов).</td>
+</tr>
+<tr class="row-even"><td>Video Freeze Warning</td>
+<td>state</td>
+<td>Warning</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Video Freeze Error</td>
+<td>state</td>
+<td>Major</td>
+<td>Замирание картинки.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="ott">
+<h4>3.1.1.4. OTT<a class="headerlink" href="#ott" title="Ссылка на этот заголовок">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Имя триггера</th>
+<th class="head">Тип</th>
+<th class="head">Уровень</th>
+<th class="head">Описание</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Profile changed</td>
+<td>event</td>
+<td>OK</td>
+<td>Переключение на профиль с другим битрейтом. Только для анализатора в режиме «Плеер».</td>
+</tr>
+<tr class="row-odd"><td>The number of profiles changed</td>
+<td>event</td>
+<td>Warning</td>
+<td>Изменение количества профилей, заявленных в плейлисте верхнего уровня.</td>
+</tr>
+<tr class="row-even"><td>Minimum profiles</td>
+<td>state</td>
+<td>Warning</td>
+<td>Количество профилей, заявленных в плейлисте верхнего уровня, меньше, чем минимальное значение, заданное в настройках порогов.</td>
+</tr>
+<tr class="row-odd"><td>Profiles sequence divergence</td>
+<td>event</td>
+<td>Warning</td>
+<td>Расхождение значения полей #EXT-X-MEDIA-SEQUENCE.</td>
+</tr>
+<tr class="row-even"><td>Profile streamtype changed</td>
+<td>event</td>
+<td>Warning</td>
+<td>Изменилась информация о профиле в плейлисте верхнего уровня.</td>
+</tr>
+<tr class="row-odd"><td>Profile duplicate bandwidth</td>
+<td>state</td>
+<td>Error</td>
+<td>В плейлисте верхнего уровня заявлены одинаковые максимальные битрейты для разных профилей.</td>
+</tr>
+<tr class="row-even"><td>Profile invalid resolution</td>
+<td>state</td>
+<td>Error</td>
+<td>Некорректное разрешение в поле RESOLUTION плейлиста верхнего уровня.</td>
+</tr>
+<tr class="row-odd"><td>Download bitrate low</td>
+<td>event</td>
+<td>Warning</td>
+<td>Низкая скорость скачивания чанка. Время загрузки / длительность чанка &gt;= порог предупреждения (%).</td>
+</tr>
+<tr class="row-even"><td>Download bitrate too low</td>
+<td>event</td>
+<td>Error</td>
+<td>Слишком низкая скорость скачивания чанка. Время загрузки / длительность чанка &gt;= порог ошибки (%).</td>
+</tr>
+<tr class="row-odd"><td>Actual bitrate</td>
+<td>event</td>
+<td>Warning</td>
+<td>Средний битрейт скачанного сегмента больше или меньше порогов, заданных пользователем. Пороги задаются относительно битрейта, заявленного в плейлисте верхнего уровня (%).</td>
+</tr>
+<tr class="row-even"><td>Bad segment size</td>
+<td>event</td>
+<td>Error</td>
+<td>Битрейт сегмента в 50 раз превышает максимальный битрейт, указанный в поле BANDWIDTH в плейлисте верхнего уровня.</td>
+</tr>
+<tr class="row-odd"><td>Manifest sequence discontinuity</td>
+<td>event</td>
+<td>Error</td>
+<td>Потеря одного или нескольких плейлистов с потерей HLS сегментов. Данная ошибка может быть вызвана как проблемами в генерации и раздаче OTT контента, так и недостаточной производительностью зонда.</td>
+</tr>
+<tr class="row-even"><td>Static manifest</td>
+<td>state</td>
+<td>Major</td>
+<td>Плейлист второго уровня не обновился в течении нескольких скачиваний подряд. Число попыток задается пользователем в Number of identical playlist (sequance_age).</td>
+</tr>
+<tr class="row-odd"><td>Manifest error</td>
+<td>event</td>
+<td>Major</td>
+<td>Ошибка обработки/разбора плейлиста или несоответствие содержимого плейлиста стандарту.</td>
+</tr>
+<tr class="row-even"><td>Unknown manifest</td>
+<td>event</td>
+<td>Fatal</td>
+<td>Не удается распознать плейлист.</td>
+</tr>
+<tr class="row-odd"><td>Manifest Size</td>
+<td>state</td>
+<td>Warning</td>
+<td>Размер плейлиста превышает пороговое значение Manifest size, установленное пользователем.</td>
+</tr>
+<tr class="row-even"><td>Manifest download failure</td>
+<td>event</td>
+<td>Fatal</td>
+<td>Невозможно скачать плейлист.</td>
+</tr>
+<tr class="row-odd"><td>Key download failure</td>
+<td>event</td>
+<td>Error</td>
+<td>Невозможно скачать ключ для расшифровки сегмента.</td>
+</tr>
+<tr class="row-even"><td>Segment download failure</td>
+<td>event</td>
+<td>Error</td>
+<td>Невозможно скачать сегмент данных.</td>
+</tr>
+<tr class="row-odd"><td>Skip segment (low system performance)</td>
+<td>event</td>
+<td>Major</td>
+<td>Пропущен сегмент данных. Недостаточная производительность зонда.</td>
+</tr>
+<tr class="row-even"><td>Start with an IDR frame</td>
+<td>state</td>
+<td>Error</td>
+<td>Проверка на то, что сегмент начинается с IDR кадра.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="sys-system">
+<h4>3.1.1.5. SYS (Настройки проекта &gt; Профили зондов &gt; SYSTEM)<a class="headerlink" href="#sys-system" title="Ссылка на этот заголовок">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Имя триггера</th>
+<th class="head">Тип</th>
+<th class="head">Уровень</th>
+<th class="head">Описание</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Out of memory warning</td>
+<td>state</td>
+<td>Warning</td>
+<td>Предупреждение о превышении warning порога использования RAM.</td>
+</tr>
+<tr class="row-odd"><td>Out of memory error</td>
+<td>state</td>
+<td>Error</td>
+<td>Ошибка, превышение error порога использования RAM.</td>
+</tr>
+<tr class="row-even"><td>High CPU usage warning</td>
+<td>state</td>
+<td>Warning</td>
+<td>Предупреждение о превышении warning порога использования CPU.</td>
+</tr>
+<tr class="row-odd"><td>High CPU usage error</td>
+<td>state</td>
+<td>Error</td>
+<td>Ошибка, превышение error порога использования CPU.</td>
+</tr>
+<tr class="row-even"><td>Потеря связи с зондом</td>
+<td>event</td>
+<td>Major</td>
+<td>Потеря связи с зондом.</td>
+</tr>
+<tr class="row-odd"><td>Потеря связи зонда с сервером</td>
+<td>event</td>
+<td>Major</td>
+<td>Потеря связи с сервером.</td>
+</tr>
+<tr class="row-even"><td>Переполнение видео буфера</td>
+<td>event</td>
+<td>Major</td>
+<td>Данные сбрасываются перед декодером. Недостаточная производительность зонда.</td>
+</tr>
+<tr class="row-odd"><td>Ошибка загрузки библиотеки PCAP</td>
+<td>state</td>
+<td>Major</td>
+<td>Ошибка загрузки драйвера pcap/WinPcap. <strong>Триггер срабатывает только в том случае, когда зонд имеет по крайней мере одну задачу с анализом Ethernet параметров.</strong></td>
+</tr>
+<tr class="row-even"><td>Зафиксирована перезагрузка задачи</td>
+<td>event</td>
+<td>Major</td>
+<td>Дочерний процесс, анализирующий поток, был перезапущен родительским процессом, так как не отвечал в течение 10 сек.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="q-thresholds">
+<h3>3.1.2. Q: Как настроить профили порогов (thresholds)?<a class="headerlink" href="#q-thresholds" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Перейдите в Настройки проекта &gt; Профили задач &gt; THRESHOLDS</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/thresholds_tab_ru.png"><img alt="_images/thresholds_tab_ru.png" src="_images/thresholds_tab_ru.png" style="width: 536.0px; height: 187.0px;" /></a>
+</div>
+<p>Необходимо отредактировать профиль порогов. Для этого кликом выберите название профиля или скопируйте один из существующих профилей и отредактируйте его. Обратите внимание, что у каждого профиля есть счетчик, который указывает, сколько анализируемых задач имеет такой профиль. По умолчанию в созданном проекте доступны три профиля (их можно редактировать, удалять или создавать новые по их образу):</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="63%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Профиль</strong></th>
+<th class="head"><strong>Мультикаст</strong></th>
+<th class="head"><strong>OTT</strong></th>
+<th class="head"><strong>Особенность</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>TV</td>
+<td>Да</td>
+<td>Нет</td>
+<td>Для мониторинга SD IPTV. Включен анализ Ethernet параметров (базируется на драйвере pcap). Включена проверка TR 101 290.</td>
+</tr>
+<tr class="row-odd"><td>HDTV</td>
+<td>Да</td>
+<td>Нет</td>
+<td>Для мониторинга HD IPTV. Включен анализ Ethernet параметров (базируется на драйвере pcap). Включена проверка TR 101 290. Имеет более узкие рамки по IAT и допускает больший битрейт чем профиль TV.</td>
+</tr>
+<tr class="row-even"><td>OTT</td>
+<td>Нет</td>
+<td>Да</td>
+<td>Для мониторинга SD/HD OTT. Включен анализ всех OTT событий. Отключена проверка TR 101 290 (при необходимости можно задействовать для незашифрованных сервисов или сервисов с AES-128). Отключено вычисление Ethernet параметров.</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="ethernet-parameters">
+<h4>3.1.2.1. Ethernet parameters<a class="headerlink" href="#ethernet-parameters" title="Ссылка на этот заголовок">¶</a></h4>
+<p>Данный чекбокс включает проверку <a class="reference external" href="probe.html#ethernet">Ethernet параметров</a> принимаемого потока. Т.е. при отключенном чекбоксе параметры IAT, DF и MLR вычисляться и отправляться на сервер не будут. Для профилей мониторинга OTT сервисов чекбокс должен быть отключен.</p>
+<table border="1" class="colwidths-given docutils" id="id16">
+<caption><span class="caption-text"><strong>Ethernet parameters</strong></span><a class="headerlink" href="#id16" title="Постоянная ссылка на таблицу">¶</a></caption>
+<colgroup>
+<col width="19%" />
+<col width="19%" />
+<col width="63%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Название порога</strong></th>
+<th class="head"><strong>Значение по умолчанию</strong></th>
+<th class="head"><strong>Описание</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>IAT Error, ms</td>
+<td>50 - TV, 30 - HDTV</td>
+<td>Время в миллисекундах, пороговое значение IAT, при котором зонд выставит значение Error.</td>
+</tr>
+<tr class="row-odd"><td>IAT Warning, ms</td>
+<td>45 - TV, 20 - HDTV</td>
+<td>Время в миллисекундах, пороговое значение IAT, при котором зонд выставит значение Warning.</td>
+</tr>
+<tr class="row-even"><td>MLR Error</td>
+<td>8 - TV/HDTV</td>
+<td>Пороговое значение потерянных транспортных пакетов за секунду, при котором зонд выставит состояние Error.</td>
+</tr>
+<tr class="row-odd"><td>MLR Warning</td>
+<td>1- TV/HDTV</td>
+<td>Пороговое значение потерянных транспортных пакетов за секунду, при котором зонд выставит состояние Warning.</td>
+</tr>
+<tr class="row-even"><td>Multicast Bitrate overflow, Kbps</td>
+<td>15000 - TV, 30000 - HDTV</td>
+<td>Пороговое значение для мультикаст битрейта, при котором зонд выставит состояние превышение битрейта.</td>
+</tr>
+<tr class="row-odd"><td>Multicast Bitrate underflow, Kbps</td>
+<td>100 - TV, 1000 - HDTV</td>
+<td>Пороговое значение для мультикаст битрейта, при котором зонд выставит состояние низкого битрейта.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="tr-101-290">
+<h4>3.1.2.2. TR 101 290<a class="headerlink" href="#tr-101-290" title="Ссылка на этот заголовок">¶</a></h4>
+<p>Данный чекбокс включает проверку соответствия потока стандарту TR 101 290. Стандарт регламентирует пороги, однако IPTV потоки не обязаны соответствовать строгим рамкам. В связи с этим, в системе введена возможность пользовательских настроек порогов, чтобы избежать нежелательных срабатываний триггеров. Проверку TR 101 290 можно использовать как для IPTV, так и для открытых OTT сервисов (либо сервисов, которые можно декриптовать).</p>
+<table border="1" class="colwidths-given docutils" id="id17">
+<caption><span class="caption-text"><strong>Проверять на соответствие TR 101 290</strong></span><a class="headerlink" href="#id17" title="Постоянная ссылка на таблицу">¶</a></caption>
+<colgroup>
+<col width="19%" />
+<col width="19%" />
+<col width="63%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Название порога</strong></th>
+<th class="head"><strong>Значение по умолчанию</strong></th>
+<th class="head"><strong>Описание</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Интервал ошибок PAT, мс</td>
+<td>500</td>
+<td>PID 0x0000 (PAT таблица) должен передаваться в потоке не реже, чем установленный интервал в миллисекундах.</td>
+</tr>
+<tr class="row-odd"><td>Интервал ошибок PMT, мс</td>
+<td>500</td>
+<td>Cекция с table_id 0x02 (т.н. PMT таблица) должна передаваться в потоке не реже, чем установленный интервал в миллисекундах. PMT таблица имеет PID, назначенный в таблице PAT. <strong>Установка нуля в настройке порогов отключает детекцию PMT Error.</strong></td>
+</tr>
+<tr class="row-even"><td>Интервал ошибок Audio/Video PID, мс</td>
+<td>5000</td>
+<td>Данные для заявленных аудио и видео PID не появляются в течение времени, установленного пользователем. Означает частичную потерю сервиса или ошибки в PAT/PMT таблицах. <strong>Установка нуля в настройке порогов отключает детекцию AV PID error.</strong></td>
+</tr>
+<tr class="row-odd"><td>Интервал ошибок остальных PID, мс</td>
+<td>5000</td>
+<td>Данные для заявленных PID не появляются в течение установленного пользователем времени. Означает частичную потерю сервиса или ошибки в PAT/PMT таблицах. <strong>Установка нуля в настройке порогов отключает детекцию PID error.</strong></td>
+</tr>
+<tr class="row-even"><td>Интервал ошибок ClockContinuity, мс</td>
+<td>1000</td>
+<td>Время в миллисекундах, задает максимально допустимую разницу значений времени меток синхронизации PTS. Отрицательный прирост генерирует ошибку вне зависимости от величины порога.
+<strong>Установка нуля в настройке порогов отключает детекцию ClockContinuity.</strong></td>
+</tr>
+<tr class="row-odd"><td>Интервал фиксации VideoFreeze, с</td>
+<td>5</td>
+<td>Задает порог времени в секундах, если в течение этого интервала сохраняется состояние замирания, регистрируется факт замирания. Настройка чувствительности детектора замирания.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="ott-control">
+<h4>3.1.2.3. OTT control<a class="headerlink" href="#ott-control" title="Ссылка на этот заголовок">¶</a></h4>
+<p>Данный чекбокс включает проверку OTT параметров и настройку Query String параметров. Должен быть включен для мониторинга OTT сервисов.</p>
+<table border="1" class="colwidths-given docutils" id="id18">
+<caption><span class="caption-text"><strong>OTT control</strong></span><a class="headerlink" href="#id18" title="Постоянная ссылка на таблицу">¶</a></caption>
+<colgroup>
+<col width="19%" />
+<col width="19%" />
+<col width="63%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Название порога</strong></th>
+<th class="head"><strong>Значение по умолчанию</strong></th>
+<th class="head"><strong>Описание</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Download speed error, %</td>
+<td>100</td>
+<td>Когда скорость скачивания ниже, чем установленный порог <strong>Download speed error</strong>, выраженный в процентном соотношении, генерируется ошибка Download bitrate too low. Время загрузки / длительность чанка &gt;= порог ошибки (%).</td>
+</tr>
+<tr class="row-odd"><td>Download speed warning, %</td>
+<td>80</td>
+<td>Когда скорость скачивания ниже, чем установленный порог Download speed warning, выраженный в процентном соотношении, генерируется предупреждение <strong>Download bitrate low</strong>. Время загрузки / длительность чанка &gt;= порог предупреждения (%). Порог предупреждения не может быть выше порога ошибки.</td>
+</tr>
+<tr class="row-even"><td>Actual bitrate min, %</td>
+<td>50</td>
+<td>Средний битрейт скачанного сегмента меньше порога, установленного пользователем. Actual bitrate min задает нижнюю границу относительно битрейта, заявленного в плейлисте верхнего уровня, в процентах. Условие генерации ошибки <strong>Actual bitrate</strong>: Размер скачанного чанка / заявленная длительность &lt;= заявленного битрейта профайла (%).</td>
+</tr>
+<tr class="row-odd"><td>Actual bitrate max, %</td>
+<td>200</td>
+<td>Средний битрейт скачанного сегмента больше порога, установленного пользователем. Actual bitrate max задает верхнюю границу относительно битрейта, заявленного в плейлисте верхнего уровня, в процентах. Условие генерации ошибки <strong>Actual bitrate</strong>: Размер скачанного чанка / заявленная длительность &gt;= заявленного битрейта профайла (%).</td>
+</tr>
+<tr class="row-even"><td>Number of identical playlist downloads</td>
+<td>3</td>
+<td>Задается число попыток скачивания плейлиста второго уровня. Между попытками выдерживается пауза, равная длительности последнего скачанного сегмента. Если плейлист второго уровня не обновился в течение нескольких скачиваний подряд, генерируется ошибка <strong>Static manifest</strong>.</td>
+</tr>
+<tr class="row-odd"><td>Manifest size, bytes</td>
+<td>500000</td>
+<td>Если размер плейлиста превышает установленное пользователем пороговое значение, генерируется ошибка <strong>Manifest size</strong>.</td>
+</tr>
+<tr class="row-even"><td>Min. profiles</td>
+<td>1</td>
+<td>Если количество профилей, заявленных в главном плейлисте меньше, чем минимальное значение, заданное в настройках порогов, генерируется ошибка <strong>Minimum profiles</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="http-query-string-parameters">
+<h4>3.1.2.4. HTTP query string parameters<a class="headerlink" href="#http-query-string-parameters" title="Ссылка на этот заголовок">¶</a></h4>
+<p>Секция предназначена для настройки дополнительных параметров в http запросе от зонда. Более подробная информация в разделе: «<a href="#id20"><span class="problematic" id="id21">`Q: Как передать дополнительные параметры в http запросах от зонда?`_</span></a>».</p>
+</div>
+<div class="section" id="id4">
+<h4>3.1.2.5. Настройка анализируемых задач<a class="headerlink" href="#id4" title="Ссылка на этот заголовок">¶</a></h4>
+<p>Перейдите на страницу зонда (например, кликнув на его имени в левой выпадающей панели).</p>
+<div class="admonition important">
+<p class="first admonition-title">Важно</p>
+<p class="last">Зонд должен быть активным, и все необходимые анализируемые задачи должны быть запущены.</p>
+</div>
+<p>Отметьте все задачи, для которых необходимо применить профиль порогов, и нажмите кнопку Конфигурировать.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/Task_config_menu_threshold_ru.png"><img alt="_images/Task_config_menu_threshold_ru.png" src="_images/Task_config_menu_threshold_ru.png" style="width: 355.5px; height: 399.6px;" /></a>
+</div>
+<p>В раскрывшемся модальном окне выберите необходимый профиль для пункта Profile Threshold и нажмите кнопку Применить. Система настройки достаточно гибкая, например можно применять различные профили порогов к разным задачам одного зонда.</p>
+<div class="admonition note">
+<p class="first admonition-title">Примечание</p>
+<p class="last">Задача не может не иметь профиля порогов. По умолчанию, задаче применяется профиль “TV”.</p>
+</div>
+</div>
+<div class="section" id="system">
+<h4>3.1.2.6. Профили System<a class="headerlink" href="#system" title="Ссылка на этот заголовок">¶</a></h4>
+<p>Часть настраиваемых порогов находится в системных профилях, относящихся к зонду. Перейдите Настройки проекта &gt; Профили зондов &gt; SYSTEM</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/System_tab_ru.png"><img alt="_images/System_tab_ru.png" src="_images/System_tab_ru.png" style="width: 583.0px; height: 186.0px;" /></a>
+</div>
+<p>Необходимо отредактировать системный профиль. Для этого кликом выберите название профиля или скопируйте один из существующих профилей и отредактируйте его. Обратите внимание, что у каждого профиля есть счетчик, который указывает, сколько зондов имеет такой профиль.</p>
+<p>Настройте пороги производительности системы.</p>
+<table border="1" class="colwidths-given docutils" id="id19">
+<caption><span class="caption-text"><strong>System</strong></span><a class="headerlink" href="#id19" title="Постоянная ссылка на таблицу">¶</a></caption>
+<colgroup>
+<col width="19%" />
+<col width="19%" />
+<col width="63%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Название порога</strong></th>
+<th class="head"><strong>Значение по умолчанию</strong></th>
+<th class="head"><strong>Описание</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>CPU warning, %</td>
+<td>70</td>
+<td>Процент загрузки CPU, при котором зонд выставит состояние CPU warning.</td>
+</tr>
+<tr class="row-odd"><td>CPU error, %</td>
+<td>90</td>
+<td>Процент загрузки CPU, при котором зонд выставит состояние CPU error.</td>
+</tr>
+<tr class="row-even"><td>RAM warning, %</td>
+<td>70</td>
+<td>Процент утилизации RAM, при котором зонд выставит состояние RAM warning.</td>
+</tr>
+<tr class="row-odd"><td>RAM error, %</td>
+<td>90</td>
+<td>Процент утилизации RAM, при котором зонд выставит состояние RAM error.</td>
+</tr>
+</tbody>
+</table>
+<p>Перейдите на страницу зонда (например, кликнув на его имени в левой выпадающей панели).</p>
+<div class="admonition note">
+<p class="first admonition-title">Примечание</p>
+<p class="last">Зонд должен быть активным.</p>
+</div>
+<p>Задайте из выпадающего списка (нажав надпись Изменить) необходимый профиль зонда.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/Probe_sys_profile_ru.png"><img alt="_images/Probe_sys_profile_ru.png" src="_images/Probe_sys_profile_ru.png" style="width: 597.0px; height: 248.0px;" /></a>
+</div>
+</div>
+</div>
+<div class="section" id="snmp">
+<h3>3.1.3. Как настроить и использовать SNMP оповещение?<a class="headerlink" href="#snmp" title="Ссылка на этот заголовок">¶</a></h3>
+<div class="section" id="id5">
+<h4>3.1.3.1. Общая информация<a class="headerlink" href="#id5" title="Ссылка на этот заголовок">¶</a></h4>
+<p>Необходимо понимать, что система SNMP trap оповещения устроена так, что зонд в ней является шлюзом. Т.е. решение об отправке оповещения и само тело сообщения формируются на сервере и передаются зонду по протоколу https. Решение об оповещении принимается на сервере на основании преднастроенных триггеров. Зонд выполняет функцию шлюза, полученное от сервера сообщение пересылается по протоколу SNMP на указанный в настройках IP-адрес[:Порт] назначения ловушки.</p>
+</div>
+<div class="section" id="mib">
+<h4>3.1.3.2. MIB файлы<a class="headerlink" href="#mib" title="Ссылка на этот заголовок">¶</a></h4>
+<p>В пакет зонда, скачиваемого в личном кабинете, входят два MIB файла:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://boro.elecard.com/ELECARD-MIB.txt">ELECARD-MIB.txt</a></li>
+<li><a class="reference external" href="https://boro.elecard.com/ELECARD-BORO-TRAP-MIB.txt">ELECARD-BORO-TRAP-MIB.txt</a></li>
+</ul>
+<p>Данные файлы должны быть скопированы в необходимое место и добавлены в настройках вашей трап ловушки.</p>
+<div class="admonition important">
+<p class="first admonition-title">Важно</p>
+<p class="last">Для передачи некоторых полей в MIB файле используется синтаксис “SnmpAdminString”, который поддерживает UTF-8 кодирование. UTF-8 имеет полную обратную совместимость с ASCII кодировкой. Поэтому при использовании только ASCII-символов в названиях зонда и анализируемых каналов, «SnmpAdminString» - поля будут выглядеть как ASCII строки.</p>
+</div>
+</div>
+<div class="section" id="id6">
+<h4>3.1.3.3. Настройка порогов оповещений<a class="headerlink" href="#id6" title="Ссылка на этот заголовок">¶</a></h4>
+<p>Настройте и примените профили задачам согласно разделу «<a class="reference internal" href="#q-thresholds">Q: Как настроить профили порогов (thresholds)?</a>». Убедитесь, что для задач OTT мониторинга выбран профиль, в котором разрешен OTT контроль.</p>
+</div>
+<div class="section" id="id7">
+<h4>3.1.3.4. Настройка профиля SNMP оповещений<a class="headerlink" href="#id7" title="Ссылка на этот заголовок">¶</a></h4>
+<p>Перейдите Настройки проекта &gt; Профили задач &gt; SNMP</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/SNMP_tab_ru.png"><img alt="_images/SNMP_tab_ru.png" src="_images/SNMP_tab_ru.png" style="width: 651.0px; height: 190.0px;" /></a>
+</div>
+<p>Необходимо отредактировать профиль SNMP оповещений. Для этого кликом выберите  название профиля или скопируйте один из существующих профилей и отредактируйте его. Обратите внимание, что у каждого профиля есть счетчик, который указывает, сколько анализируемых задач имеют такой профиль. Подробнее о том, как добавить задаче профиль, описано ниже (<a class="reference external" href="web-server.html#id9">Настройка анализируемых задач</a>).</p>
+<p>Установите часовой пояс и отметьте чекбокс “Отправлять оповещения об ошибках по протоколу SNMP”.</p>
+<p>Укажите Community string и установите до трех адресов назначений trap ловушек. Адрес вводится в формате IP:[PORT], например, 10.10.30.235:1234.
+Если порт не указан, по умолчанию будет использоваться порт 162.</p>
+<p>Для рассылки SNMP trap сообщений реализован выбор шлюза (зонда). При выборе опции Triggered сообщения будут рассылаться через тот зонд, который анализирует поток (для которого сработал триггер). Опция Triggered необходима, если зонды находятся в разных сетях, и установлено несколько ловушек. Можно отправлять все SNMP trap сообщения через один зонд, для этого выберите его из выпадающего списка.</p>
+<div class="admonition note">
+<p class="first admonition-title">Примечание</p>
+<p class="last">Чтобы имя зонда присутствовало в выпадающем списке, он должен быть успешно запущен, по крайней мере, один раз.</p>
+</div>
+<p>Далее включите и настройте необходимые триггеры. Триггеры разбиты по функциональным группам. Подробное описание параметров и событий можно найти в параграфе «<a class="reference external" href="probe.html#id25">Регистрируемые параметры</a>». Подробное описание триггеров представлено в разделе «<a class="reference internal" href="#id2">Триггеры событий</a>».</p>
+<p>После редактирования профиля нажмите кнопку Сохранить.</p>
+<div class="admonition note">
+<p class="first admonition-title">Примечание</p>
+<p class="last">Для применения новых настроек может понадобиться до 1-2 мин., в зависимости от количества задач, использующих данный профиль.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Примечание</p>
+<p class="last">Чтобы запретить рассылку SNMP trap оповещений для всех задач, для которых в качестве профиля SNMP оповещений выбран, например, профиль default, снимите в настройках этого профиля чекбокс “Отправлять оповещения об ошибках по протоколу SNMP”.</p>
+</div>
+</div>
+<div class="section" id="id9">
+<h4>3.1.3.5. Настройка анализируемых задач<a class="headerlink" href="#id9" title="Ссылка на этот заголовок">¶</a></h4>
+<p>Перейдите на страницу зонда (например, кликнув на его имени в левой выпадающей панели).</p>
+<div class="admonition important">
+<p class="first admonition-title">Важно</p>
+<p class="last">Зонд должен быть активным, и все необходимые анализируемые задачи должны быть запущены.</p>
+</div>
+<p>Отметьте все задачи, для которых необходимо применить профиль SNMP оповещения, и нажмите кнопку Конфигурировать.</p>
+<p>В раскрывшемся модальном окне для пункта Profile SNMP выберите необходимый профиль и нажмите кнопку Применить. Таким образом, отправка SNMP trap сообщений будет разрешена для каждой выбранной задачи по настроенным в профиле триггерам.</p>
+<p>Система настройки достаточно гибкая, например, можно применять различные профили настроек к разным задачам одного зонда.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/Task_config_menu_SNMP_ru.png"><img alt="_images/Task_config_menu_SNMP_ru.png" src="_images/Task_config_menu_SNMP_ru.png" style="width: 356.40000000000003px; height: 400.5px;" /></a>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Примечание</p>
+<p class="last">Чтобы запретить какой-либо задаче отправлять SNMP trap оповещения, выберите “none” для пункта Profile SNMP.</p>
+</div>
+<p>После применения настроек задачам, должны начать отправляться trap оповещения (при условии срабатывания триггеров). Если параметры ловушки настроены корректно, она должна принимать сообщения.</p>
+</div>
+<div class="section" id="id10">
+<h4>3.1.3.6. Настройка и применение системного профиля<a class="headerlink" href="#id10" title="Ссылка на этот заголовок">¶</a></h4>
+<p>Настройка данного профиля опциональна. Данные настройки относятся к настройкам зонда.</p>
+<p>Перейдите Настройки проекта &gt; Профили зондов &gt; SYSTEM</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/System_tab_ru.png"><img alt="_images/System_tab_ru.png" src="_images/System_tab_ru.png" style="width: 583.0px; height: 186.0px;" /></a>
+</div>
+<p>Необходимо отредактировать системный профиль. Для этого кликом выберите название профиля или скопируйте один из существующих профилей и отредактируйте его. Обратите внимание, что у каждого профиля есть счетчик, который указывает, сколько зондов имеют такой профиль.</p>
+<p>В правой нижней части страницы есть область, где сгруппированы настройки системных оповещений по протоколу SNMP. Как указано в предыдущем разделе, необходимо:</p>
+<ul class="simple">
+<li>указать Community string,</li>
+<li>задать адрес ловушки IP:[PORT],</li>
+<li>выбрать зонд через который будет вестись оповещение или оставить настройку Triggered,</li>
+<li>выбрать и настроить необходимые триггеры,</li>
+<li>сохраните изменения.</li>
+</ul>
+<p>Перейдите на страницу зонда (например, кликнув на его имени в левой выпадающей панели).</p>
+<div class="admonition important">
+<p class="first admonition-title">Важно</p>
+<p class="last">Зонд должен быть активным.</p>
+</div>
+<p>Задайте из выпадающего списка (нажав надпись Изменить) необходимый профиль зонда.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/Probe_sys_profile_ru.png"><img alt="_images/Probe_sys_profile_ru.png" src="_images/Probe_sys_profile_ru.png" style="width: 597.0px; height: 248.0px;" /></a>
+</div>
+</div>
+<div class="section" id="snmp-trap">
+<h4>3.1.3.7. Структура SNMP trap сообщения<a class="headerlink" href="#snmp-trap" title="Ссылка на этот заголовок">¶</a></h4>
+<p>Для работы необходимо иметь два MIB файла, входящие в пакет анализаторов:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://boro.elecard.com/ELECARD-MIB.txt">ELECARD-MIB.txt</a></li>
+<li><a class="reference external" href="https://boro.elecard.com/ELECARD-BORO-TRAP-MIB.txt">ELECARD-BORO-TRAP-MIB.txt</a></li>
+</ul>
+<p>Решение об отправке сообщений основывается на анализе предустановленных триггеров (см. раздел «<a class="reference internal" href="#id2">Триггеры событий</a>»).</p>
+<p>Существует три разновидности SNMP trap сообщений, описанных в ELECARD-BORO-TRAP-MIB файле:</p>
+<dl class="docutils">
+<dt><strong>1. Сообщение о смене состояния (state в</strong> «<a class="reference internal" href="#id2">Триггеры событий</a>»)</dt>
+<dd><p class="first">Такие сообщения отправляются дважды, при появлении события и при его окончании.</p>
+<p><code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">status,</span> <span class="pre">probeName,</span> <span class="pre">taskName,</span> <span class="pre">errorName,</span> <span class="pre">level,</span> <span class="pre">beginTime,</span> <span class="pre">endTime,</span> <span class="pre">trapTime</span> <span class="pre">}</span></code></p>
+<blockquote class="last">
+<div><p><strong>status</strong> - active|cleared состояние активно или снято</p>
+<p><strong>probeName</strong> - имя зонда, анализирующего поток, для которого сработал триггер</p>
+<p><strong>taskName</strong> - название и URI потока, для которого сработал триггер</p>
+<p><strong>errorName</strong> - название ошибки (триггера)</p>
+<p><strong>level</strong> - уровень критичности ошибки, заданный в настройках триггера</p>
+<p><strong>beginTime</strong> - время начала состояния</p>
+<p><strong>endTime</strong> - если status = active передается ноль, если status = cleared время выхода из состояния</p>
+<p><strong>trapTime</strong>  - время генерации SNMP trap сообщения</p>
+</div></blockquote>
+</dd>
+<dt><strong>2. Сообщение о событии (event в</strong> «<a class="reference internal" href="#id2">Триггеры событий</a>»)</dt>
+<dd><p class="first">Сообщение отправляется единожды, когда срабатывает триггер с типом event.</p>
+<p><code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">probeName,</span> <span class="pre">taskName,</span> <span class="pre">errorName,</span> <span class="pre">level,</span> <span class="pre">beginTime,</span> <span class="pre">endTime,</span> <span class="pre">errorsCount,</span> <span class="pre">trapTime</span> <span class="pre">}</span></code></p>
+<blockquote class="last">
+<div><p><strong>probeName</strong> - имя зонда, анализирующего поток, для которого сработал триггер</p>
+<p><strong>taskName</strong> - название и URI потока, для которого сработал триггер</p>
+<p><strong>errorName</strong> - название ошибки (триггера)</p>
+<p><strong>level</strong> - уровень критичности ошибки, заданный в настройках триггера</p>
+<p><strong>beginTime</strong> - время начала события (для Continuity Counter и Clock Continuity время регистрации первой ошибки)</p>
+<p><strong>endTime</strong> - для Continuity Counter и Clock Continuity время регистрации последней ошибки, для остальных событий передаются нули.</p>
+<p><strong>errorsCount</strong> - число ошибок для событий Continuity Counter и Clock Continuity за период, для остальных событий передается единица.</p>
+<p><strong>trapTime</strong>  - время генерации SNMP trap сообщения</p>
+</div></blockquote>
+</dd>
+<dt><strong>3. Сообщение о потере пробой сервера</strong></dt>
+<dd><p class="first">Сообщение отправляется зондом, который утратил соединение с сервером. На сообщения такого типа не действует выбор шлюза (пробы), т.е. сообщение будет отправлено именно тем зондом, который утратил соединение.</p>
+<p><code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">probeName,</span> <span class="pre">messageError,</span> <span class="pre">beginTime</span> <span class="pre">}</span></code></p>
+<blockquote class="last">
+<div><p><strong>probeName</strong> - имя зонда, утратившего соединение</p>
+<p><strong>messageError</strong> - сообщение о потере связи с сервером</p>
+<p><strong>beginTime</strong> - время начала состояния</p>
+</div></blockquote>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="section" id="id13">
+<h2>3.2. Мониторинг OTT сервисов<a class="headerlink" href="#id13" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="section" id="q-user-agent-http">
+<h3>3.2.1. Q: Как изменить User-agent в http запросах от зонда?<a class="headerlink" href="#q-user-agent-http" title="Ссылка на этот заголовок">¶</a></h3>
+<p>User-Agent - это текстовая строка, являющаяся частью заголовка HTTP запроса, начинающаяся с User-agent: или User-Agent:, и обычно включающая такую информацию, как название и версия приложения, операционная система компьютера и язык.</p>
+<p>Если данное поле не заполнено, в качестве User-agent используется «Boro client (&lt;PLATFORM&gt;) &lt;VERSION&gt;» по умолчанию.</p>
+<p>Если необходимо задать собственный User-agent, перейдите Настройки проекта &gt; Профили зондов &gt; SYSTEM</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/System_tab_ru.png"><img alt="_images/System_tab_ru.png" src="_images/System_tab_ru.png" style="width: 583.0px; height: 186.0px;" /></a>
+</div>
+<p>Необходимо отредактировать системный профиль. Для этого кликом выберите название профиля или скопируйте один из существующих профилей и отредактируйте его. Обратите внимание, что у каждого профиля есть счетчик, который указывает, сколько зондов имеют такой профиль.</p>
+<p>Введите в поле UserAgent пользовательское значение (строка длиной до 4kB) и нажмите кнопку Сохранить внизу страницы.</p>
+<p>Перейдите на страницу зонда (например, кликнув на его имени в левой выпадающей панели).</p>
+<div class="admonition important">
+<p class="first admonition-title">Важно</p>
+<p class="last">Зонд должен быть активным.</p>
+</div>
+<p>Задайте из выпадающего списка (нажав надпись <strong>Изменить</strong>) необходимый профиль зонда.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/Probe_sys_profile_ru.png"><img alt="_images/Probe_sys_profile_ru.png" src="_images/Probe_sys_profile_ru.png" style="width: 597.0px; height: 248.0px;" /></a>
+</div>
+<p>После применения настроенного профиля зонд будет отправлять запросы с указанным User-Agent.</p>
+</div>
+<div class="section" id="http">
+<h3>3.2.2. Как передать дополнительные параметры в http запросах от зонда?<a class="headerlink" href="#http" title="Ссылка на этот заголовок">¶</a></h3>
+<p><strong>Query string parameters</strong> - строка, является частью URL и содержит данные, которые необходимо передать на сервер, и которые не могут быть включены в структуру пути.</p>
+<p>Параметры задаются в профилях порогов. Как настроить и применить профили порогов описано в разделе «<a class="reference internal" href="#q-thresholds">Q: Как настроить профили порогов (thresholds)?</a>».</p>
+<div class="admonition important">
+<p class="first admonition-title">Важно</p>
+<p class="last">Чекбокс “OTT control” должен быть включен.</p>
+</div>
+<p>В разделе HTTP query string parameters задайте необходимые параметры. Используйте кнопку “+”, чтобы добавить больше параметров. После завершения редактирования сохраните профиль, нажав зеленую кнопку Сохранить.</p>
+<p>Например, строка запроса без применения параметров выглядела так:
+<code class="docutils literal notranslate"><span class="pre">http://MyOTTservice.com/service1.m3u8</span></code></p>
+<p>Если в настройках порогов задать следующие параметры,</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/Query_String_parameters_ru_en.png"><img alt="_images/Query_String_parameters_ru_en.png" src="_images/Query_String_parameters_ru_en.png" style="width: 393.0px; height: 354.0px;" /></a>
+</div>
+<p>строка запроса будет передана так:</p>
+<p><code class="docutils literal notranslate"><span class="pre">http://MyOTTservice.com/service1.m3u8?param1=val1&amp;param2=val2</span></code></p>
+<p>Примените настроенный профиль порогов в настройках задач.</p>
+<p><strong>Force</strong> - принудительное переназначение указанных параметров, если они присутствуют в строке запроса. Если настройка force отключена, то переназначение применяться не будет для параметров с совпадающим названием. Если указанные параметры отсутствуют в строке запроса, они будут добавлены вне зависимости от состояния force.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Алфавитный указатель"
+             >указатель</a></li>
+        <li class="right" >
+          <a href="probe.html" title="2. Зонд"
+             >назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Документация Elecard Boro: Часто задаваемые вопросы </a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Elecard.
+      Создано с помощью <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.3.
+    </div>
+  </body>
+</html>
