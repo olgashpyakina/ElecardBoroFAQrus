@@ -18,6 +18,7 @@
     <script type="text/javascript" src="_static/bizstyle.js"></script>
     <link rel="index" title="Алфавитный указатель" href="genindex.html" />
     <link rel="search" title="Поиск" href="search.html" />
+    <link rel="next" title="3. Web-сервер" href="web-server.html" />
     <link rel="prev" title="1. Технические требования" href="requirements.html" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <!--[if lt IE 9]>
@@ -30,6 +31,9 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="Алфавитный указатель"
              accesskey="I">указатель</a></li>
+        <li class="right" >
+          <a href="web-server.html" title="3. Web-сервер"
+             accesskey="N">вперёд</a> |</li>
         <li class="right" >
           <a href="requirements.html" title="1. Технические требования"
              accesskey="P">назад</a> |</li>
@@ -92,21 +96,21 @@
 </li>
 <li><a class="reference internal" href="#linux">2.8.2. Как узнать какой контроллер/адаптер у меня установлен (Linux)?</a></li>
 <li><a class="reference internal" href="#hardware-timestamping">2.8.3. Как узнать, поддерживает ли мой сетевой адаптер hardware timestamping?</a></li>
-<li><a class="reference internal" href="#id40">2.8.4. Как узнать запущена ли балансировка прерываний адаптера (Linux)?</a></li>
+<li><a class="reference internal" href="#q-linux">2.8.4. Q: Как узнать запущена ли балансировка прерываний адаптера (Linux)?</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id41">2.9. Поддержка карт захвата</a><ul>
+<li><a class="reference internal" href="#id40">2.9. Поддержка карт захвата</a><ul>
 <li><a class="reference internal" href="#boro-asi-sdi-hdmi">2.9.1. Может ли Boro мониторить различные карточки захвата, например, ASI/SDI/HDMI?</a></li>
 <li><a class="reference internal" href="#dvb">2.9.2. Есть ли поддержка анализа DVB сигнала?</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id42">2.10. Некорректное поведение анализатора</a><ul>
+<li><a class="reference internal" href="#id41">2.10. Некорректное поведение анализатора</a><ul>
 <li><a class="reference internal" href="#liveview-badsource">2.10.1. Анализатор постоянно падает, система “тормозит”, на LiveView периодически регистрируются хаотичные состояния BadSource</a></li>
 <li><a class="reference internal" href="#c-liveview-cc-clockcontinuity">2.10.2. Cистема “тормозит”, на LiveView периодически регистрируются ложные CC и ClockContinuity ошибки</a></li>
 <li><a class="reference internal" href="#q-windows">2.10.3. Q: Значительный расход дискового пространства в Windows</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id43">2.11. Поддерживаемые форматы</a></li>
+<li><a class="reference internal" href="#id42">2.11. Поддерживаемые форматы</a></li>
 </ul>
 </li>
 </ul>
@@ -114,6 +118,9 @@
   <h4>Предыдущий раздел</h4>
   <p class="topless"><a href="requirements.html"
                         title="предыдущая глава">1. Технические требования</a></p>
+  <h4>Следующий раздел</h4>
+  <p class="topless"><a href="web-server.html"
+                        title="следующая глава">3. Web-сервер</a></p>
   <div role="note" aria-label="source link">
     <h3>Эта страница</h3>
     <ul class="this-page-menu">
@@ -242,7 +249,7 @@
 <ul class="simple">
 <li>Неустойчивое Internet соединение (попробуйте повторный запуск);</li>
 <li>Выход в Internet осуществляется через прокси сервер, но он не указан (указан неправильно) в файле <em>monitor.cfg</em>, либо строка в конфиге «закомментирована»;</li>
-<li>Firewall (Brandmauer) ограничивает доступ приложения к сети. Решение данной проблемы описано в <a href="#id48"><span class="problematic" id="id49">`Q: Почему Boro «не видит мультикаст»`_</span></a> -&gt; <strong>A1: Firewall (Brandmauer)</strong>.</li>
+<li>Firewall (Brandmauer) ограничивает доступ приложения к сети. Решение данной проблемы описано в <a class="reference internal" href="#boro">Почему Boro «не видит мультикаст», плеер на этой машине играет поток!</a> -&gt; <strong>A1: Firewall (Brandmauer)</strong>.</li>
 </ul>
 <p><strong>A2:</strong> В файле <em>monitor.cfg</em> были внесены правки, нарушающие формат .json, или добавлены данные, которые не соответствуют структуре данных, определенных в файле <em>monitor.cfg</em>. Кроме этого, <strong>файл monitor.cfg обязан сохраняться в utf-8</strong>. Обычно, при проблемах с конфигурационным файлом в лог консоли попадают сообщения об ошибках парсинга при запуске. Это первый признак проблем в файле <em>monitor.cfg</em>.
 <strong>Решение проблемы:</strong></p>
@@ -537,11 +544,11 @@ Platform: lin64
 <p><strong>«AppDescription»</strong> – текстовое описание/название зонда (кириллица поддерживается). Данное поле описывает зонд, например, адрес его расположения. Данная информация появится в виде записи в левой колонке «Зонды» вашего браузера (работа с сервером).</p>
 <div class="admonition note">
 <p class="first admonition-title">Примечание</p>
-<p>После первого запуска зонда на сервере будет создана запись, которую вы не сможете изменить редактированием поля AppDescription в конфигурационном файле. Если необходимо, отредактируйте имя в браузере или используйте следующий ключ для создания новой записи в колонке «Зонды»:</p>
-<p class="last">streamMonitor.exe –create-new-record</p>
+<p class="last">После первого запуска зонда на сервере будет создана запись, которую вы не сможете изменить редактированием поля AppDescription в конфигурационном файле. Если необходимо, отредактируйте имя в браузере или используйте следующий ключ для создания новой записи в колонке «Зонды»:
+<code class="docutils literal notranslate"><span class="pre">streamMonitor.exe</span> <span class="pre">--create-new-record</span></code></p>
 </div>
 <p><strong>«uri» &amp; «addr»</strong> - пути к анализируемым потокам. Существует несколько вариантов указания URI (групп URI). Пожалуйста, обратитесь к примерам в конце данного параграфа.</p>
-<p>Поддерживаются следующие префиксы: <a class="reference external" href="file://">file://</a>, udp://, rtp://, http://. Кроме этого, поддерживается формат HLS (URL должен оканчиваться на .m3u или. m3u8).</p>
+<p>Поддерживаются следующие префиксы: <code class="docutils literal notranslate"><span class="pre">file://,</span> <span class="pre">udp://,</span> <span class="pre">rtp://,</span> <span class="pre">http://</span></code>. Кроме этого, поддерживается формат HLS (URL должен оканчиваться на .m3u или. m3u8).</p>
 <p>Каждому потоку можно присвоить название, заполнив поле <strong>«name»</strong> (кириллица поддерживается).</p>
 <p>Дополнительно существует возможность связать URI (группы URI) с определенным сетевым интерфейсом путем указания параметра <strong>«iface»</strong>.</p>
 <p>Если в конфигурации задана группа URI, в случае истечения срока действия подписки, будет анализироваться только один поток из списка.</p>
@@ -829,7 +836,7 @@ Platform: lin64
 <p><strong>TTL</strong> - <a class="reference external" href="https://en.wikipedia.org/wiki/Time_to_live">Time to live</a></p>
 <p><strong>Src address/Src MAC</strong> - IP и MAC адреса источника мультикаст вещания.</p>
 <p><strong>Dst MAC</strong> -  Destination MAC. Для доставки мультикаста по IPv4 используется пул Ethernet MAC адресов 01:00:5e:00:00:00–01:00:5e:7f:ff:ff. Более подробную информацию можно найти, перейдя по <a class="reference external" href="https://en.wikipedia.org/wiki/IP_multicast">ссылке</a>.</p>
-<p><strong>Maximum Inter-packet Arrival Time (IAT)</strong> – график, отображающий максимальное время между приходящими пакетами. Джиттер может быть охарактеризован при помощи проверки времени между приходящими пакетами.  Максимальное время между приходящими пакетами (IAT) является суммой среднего времени между пакетами и джиттером. Фиксируется максимальное значение IAT за секунду. Измеряется в миллисекундах. Подробнее о данном параметре можно прочитать в параграфе <a href="#id50"><span class="problematic" id="id51">`Что такое Maximum Inter-packet Arrival Time (IAT)?`_</span></a></p>
+<p><strong>Maximum Inter-packet Arrival Time (IAT)</strong> – график, отображающий максимальное время между приходящими пакетами. Джиттер может быть охарактеризован при помощи проверки времени между приходящими пакетами.  Максимальное время между приходящими пакетами (IAT) является суммой среднего времени между пакетами и джиттером. Фиксируется максимальное значение IAT за секунду. Измеряется в миллисекундах. Подробнее о данном параметре можно прочитать в параграфе <a class="reference internal" href="#q-maximum-inter-packet-arrival-time-iat">Q: Что такое Maximum Inter-packet Arrival Time (IAT)?</a>.</p>
 <p><strong>MinIAT</strong> – минимальное значение времени между приходящими пакетами (IAT), зафиксированное за одну секунду измерений. Измеряется в миллисекундах.</p>
 <p><strong>AvgIAT</strong> – среднее значение времени между приходящими пакетами (IAT), вычисляемое на интервале в одну секунду. Измеряется в миллисекундах. Получаемое значение AvgIAT приближено к расчетному значению IAT для Constant bitrate потока с постоянном mapping равным 7.</p>
 <p><strong>MDI Media Delivery Index [Delay factor (DF) : Media Loss Rate (MLR)]</strong> - <a class="reference external" href="https://tools.ietf.org/html/rfc4445">индекс</a>, который может быть использован как индикатор качества при мониторинге сети доставки вещания видеосервисов, чувствительной к джиттеру и потере данных. Определяется джиттером потока, характеризуемым как отклонение битрейта от ожидаемого значения (флуктуация), и потерями данных потока (MLR). Флуктуация битрейта, вызванная джиттером и потерями данных, может быть определена как относительная глубина буфера (DF), необходимого для приема такого потока.</p>
@@ -1031,7 +1038,7 @@ Platform: lin64
 <p>«Суть технологии RSS достаточно проста – входящий поток данных сетевого уровня разбивается на несколько очередей, обработка каждой из которых (вызов прерываний, копирование информации) производится выделенным виртуальным процессором (т.е. или отдельным физическим, или ядром). Таким образом, в случае наличия нескольких процессоров Вы можете распределить интенсивный сетевой трафик по ним, снизив количество вызовов прерываний, переключений контекста, очистки кэша и прочих неприятностей, которые, если происходят много тысяч раз в секунду, могут ощутимо навредить производительности системы в целом…» (Цитата из технической статьи «<a class="reference external" href="https://www.atraining.ru/windows-network-tuning/">Тонкая настройка сетевого стека на Windows-хостах</a>»).</p>
 <p>Вышесказанное справедливо, и при распределении прерываний между ядрами только одного процессора, нагрузка по обслуживанию прерываний перераспределяется между ядрами, что исключает чрезмерную загрузку одного ядра.</p>
 <p>С практической точки зрения недорогой сетевой адаптер, не имеющей технологии RSS, начнет терять данные (регистрировать ложные MLR и CC ошибки) при определенном битрейте. Вся нагрузка по обслуживанию прерываний контроллера ляжет на одно ядро, которое будет загружено на 100%, хотя остальные ядра будут свободны. Величина этого битрейта будет зависеть от производительности CPU и системы в целом.</p>
-<p>Наличие поддержки RSS сетевым контроллером еще не означает, что ваша ОС использует разные ядра для обслуживания прерываний. Для автоматического распределения прерываний по ядрам в ОС Linux может быть установлен и запущен пакет irqbalance, который осуществляет балансировку прерываний на различные ядра. Подробнее о балансировке в параграфе «<a href="#id52"><span class="problematic" id="id53">`Q: Как узнать запущена ли балансировка прерываний сетевого контроллера (Linux)?`_</span></a>». Кроме этого, в Linux, <a class="reference external" href="https://downloadcenter.intel.com/download/15817/Intel-Network-Adapter-Driver-for-PCIe-Intel-Gigabit-Ethernet-Network-Connections-Under-Linux-">для части контроллеров компании Intel</a> используется драйвер <a class="reference external" href="https://www.kernel.org/doc/Documentation/networking/e1000e.txt">e1000e</a>, который не имеет поддержки RSS (даже если в документации на контроллер заявлена поддержка нескольких очередей).</p>
+<p>Наличие поддержки RSS сетевым контроллером еще не означает, что ваша ОС использует разные ядра для обслуживания прерываний. Для автоматического распределения прерываний по ядрам в ОС Linux может быть установлен и запущен пакет irqbalance, который осуществляет балансировку прерываний на различные ядра. Подробнее о балансировке в параграфе «<a class="reference internal" href="#q-linux">Q: Как узнать запущена ли балансировка прерываний адаптера (Linux)?</a>». Кроме этого, в Linux, <a class="reference external" href="https://downloadcenter.intel.com/download/15817/Intel-Network-Adapter-Driver-for-PCIe-Intel-Gigabit-Ethernet-Network-Connections-Under-Linux-">для части контроллеров компании Intel</a> используется драйвер <a class="reference external" href="https://www.kernel.org/doc/Documentation/networking/e1000e.txt">e1000e</a>, который не имеет поддержки RSS (даже если в документации на контроллер заявлена поддержка нескольких очередей).</p>
 <p>Нельзя дать однозначный совет, при каком битрейте необходимо переходить на карты с несколькими очередями, различные системы показывают различные результаты. Если вы явно испытываете большую нагрузку на одном из ядер процессора при отключенном вычислении Ethernet parameters (<a class="reference internal" href="#ethernet">Вычисление Ethernet параметров</a> может давать схожую неравномерную нагрузку одного или нескольких ядер), необходимо переходить на контроллеры с поддержкой RSS.</p>
 <p><strong>Вывод:</strong> рекомендуется использовать сетевые адаптеры с поддержкой нескольких очередей (Receive-Side Scaling).</p>
 </div>
@@ -1148,8 +1155,8 @@ Platform: lin64
 <p>Sniffer use timestamp type: adapter_unsynced (4)</p>
 </div></blockquote>
 </div>
-<div class="section" id="id40">
-<h3>2.8.4. Как узнать запущена ли балансировка прерываний адаптера (Linux)?<a class="headerlink" href="#id40" title="Ссылка на этот заголовок">¶</a></h3>
+<div class="section" id="q-linux">
+<h3>2.8.4. Q: Как узнать запущена ли балансировка прерываний адаптера (Linux)?<a class="headerlink" href="#q-linux" title="Ссылка на этот заголовок">¶</a></h3>
 <p>Как указано в статье о <a class="reference external" href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Performance_Tuning_Guide/network-rss.html">Receive-Side Scaling (RSS)</a>, для проверки, распределены ли прерывания интерфейса на различные ядра, можно воспользоваться следующим способом:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">egrep</span> <span class="s1">&#39;CPU|p1p1&#39;</span> <span class="o">/</span><span class="n">proc</span><span class="o">/</span><span class="n">interrupts</span><span class="p">,</span>
 </pre></div>
@@ -1177,8 +1184,8 @@ Platform: lin64
 <p>Подробнее о настройке irqbalance можно прочитать в <a class="reference external" href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux_for_Real_Time/7/html/Tuning_Guide/Interrupt_and_process_binding.html">официальной документации RedHat</a>.</p>
 </div>
 </div>
-<div class="section" id="id41">
-<h2>2.9. Поддержка карт захвата<a class="headerlink" href="#id41" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="section" id="id40">
+<h2>2.9. Поддержка карт захвата<a class="headerlink" href="#id40" title="Ссылка на этот заголовок">¶</a></h2>
 <div class="section" id="boro-asi-sdi-hdmi">
 <h3>2.9.1. Может ли Boro мониторить различные карточки захвата, например, ASI/SDI/HDMI?<a class="headerlink" href="#boro-asi-sdi-hdmi" title="Ссылка на этот заголовок">¶</a></h3>
 <p><strong>A:</strong> Boro может мониторить только IP потоки и файлы TS. Но, если поток с карточки может быть доставлен в IP, например в интерфейс localhost, тогда можно проводить измерения. Это касается только карты ASI.</p>
@@ -1202,8 +1209,8 @@ Platform: lin64
 </ul>
 </div>
 </div>
-<div class="section" id="id42">
-<h2>2.10. Некорректное поведение анализатора<a class="headerlink" href="#id42" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="section" id="id41">
+<h2>2.10. Некорректное поведение анализатора<a class="headerlink" href="#id41" title="Ссылка на этот заголовок">¶</a></h2>
 <div class="section" id="liveview-badsource">
 <h3>2.10.1. Анализатор постоянно падает, система “тормозит”, на LiveView периодически регистрируются хаотичные состояния BadSource<a class="headerlink" href="#liveview-badsource" title="Ссылка на этот заголовок">¶</a></h3>
 <p><strong>A:</strong> Стоит обратить внимание на утилизацию оперативной памяти, особенно при большом количестве запущенных задач и использовании декодера (включена одна или несколько опций: вычисление EPSNR, захват эскизов, анализ замирания картинки). Процессы приложения начинают вытесняться в swap, и скорости не хватает для нормальной работы анализаторов (которые начинают периодически перезагружаться из-за долгого молчания).</p>
@@ -1226,8 +1233,8 @@ Platform: lin64
 </div>
 </div>
 </div>
-<div class="section" id="id43">
-<h2>2.11. Поддерживаемые форматы<a class="headerlink" href="#id43" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="section" id="id42">
+<h2>2.11. Поддерживаемые форматы<a class="headerlink" href="#id42" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Видеокодеки: MPEG-2, AVC/H.264, HEVC/H.265</p>
 <p>Транспорт: MPEG-2 TS (SPTS /MPTS)</p>
 <p>Источники:</p>
@@ -1238,7 +1245,7 @@ Platform: lin64
 <col width="50%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Тип <a class="footnote-reference" href="#id46" id="id44">[2]</a></th>
+<tr class="row-odd"><th class="head">Тип <a class="footnote-reference" href="#id45" id="id43">[2]</a></th>
 <th class="head">Пример URI</th>
 </tr>
 </thead>
@@ -1264,7 +1271,7 @@ Platform: lin64
 <col width="50%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Тип <a class="footnote-reference" href="#id47" id="id45">[3]</a></th>
+<tr class="row-odd"><th class="head">Тип <a class="footnote-reference" href="#id46" id="id44">[3]</a></th>
 <th class="head">Пример URI</th>
 </tr>
 </thead>
@@ -1277,16 +1284,16 @@ Platform: lin64
 </tr>
 </tbody>
 </table>
+<table class="docutils footnote" frame="void" id="id45" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id43">[2]</a></td><td>Для всех типов сетевой доставки поддерживается только транспорт MPEG-2 TS (SPTS /MPTS)</td></tr>
+</tbody>
+</table>
 <table class="docutils footnote" frame="void" id="id46" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id44">[2]</a></td><td>Для всех типов сетевой доставки поддерживается только транспорт MPEG-2 TS (SPTS /MPTS)</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id47" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id45">[3]</a></td><td>Для всех типов анализа из файла поддерживается только транспорт MPEG-2 TS (SPTS /MPTS)</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id44">[3]</a></td><td>Для всех типов анализа из файла поддерживается только транспорт MPEG-2 TS (SPTS /MPTS)</td></tr>
 </tbody>
 </table>
 </div>
@@ -1304,6 +1311,9 @@ Platform: lin64
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="Алфавитный указатель"
              >указатель</a></li>
+        <li class="right" >
+          <a href="web-server.html" title="3. Web-сервер"
+             >вперёд</a> |</li>
         <li class="right" >
           <a href="requirements.html" title="1. Технические требования"
              >назад</a> |</li>
